@@ -14,6 +14,11 @@ def team_select():
     return render_template("team_select.html")
 
 
+@app.route('/create-team')
+def team_create():
+    return render_template("team_create.html")
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
