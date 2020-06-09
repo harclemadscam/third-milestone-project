@@ -1,7 +1,17 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+from os import path
+if path.exists("env.py"):
+    import env
 
 app = Flask(__name__)
+
+
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+
+mongo = PyMongo(app)
 
 
 @app.route('/')
@@ -22,6 +32,11 @@ def team_create():
 @app.route('/create-player')
 def player_create():
     return render_template("player_create.html")
+
+
+@app.route('/players')
+def player_list():
+    return render_template("player_list.html", players=mongo.db.players.find())
 
 
 if __name__ == '__main__':
