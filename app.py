@@ -9,7 +9,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/select-team')
+@app.route('/teams')
 def team_select():
     return render_template("team_select.html")
 
@@ -17,6 +17,11 @@ def team_select():
 @app.route('/create-team')
 def team_create():
     return render_template("team_create.html")
+
+
+@app.route('/create-player')
+def player_create():
+    return render_template("player_create.html")
 
 
 if __name__ == '__main__':
