@@ -33,18 +33,27 @@
             </tr>
             </thead>
                 <tbody>
+                {% for player in players %}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>{{player.shirt_number}}</td>
+                        <td>{{player.position}}</td>
+                        <td>{{player.first_name}}</td>
+                        <td>{{player.last_name}}</td>
+                        <td>{{player.nation}}</td>
+                        <td>{{player.attacking}}</td>
+                        <td>{{player.technique}}</td>
+                        <td>{{player.physical}}</td>
+                        <td>{{player.defending}}</td>
+                        <td>{{player.stamina}}</td>
+                        <td>{{player.speed}}</td>
+                        <td>{{player.foot}}</td>
+                        <td>{{player.height}}</td>
+                        <td>{{player.weight}}</td>
+                        <td>{{player.injured}}</td>
                     </tr>
+                {% endfor %}
                 </tbody>
         </table>
     </div>
-    
-    {% for player in players %}
-        {{player.first_name}}
-        {{player.last_name}}
-    {% endfor %}
+        
 {% endblock %}
