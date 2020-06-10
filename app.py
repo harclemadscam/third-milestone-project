@@ -34,6 +34,13 @@ def player_create():
     return render_template("player_create.html")
 
 
+@app.route('/submit-player', methods=['POST'])
+def submit_player():
+    players = mongo.db.players
+    players.insert_one(request.form.to_dict())
+    return redirect(url_for('player_list'))
+
+
 @app.route('/players')
 def player_list():
     return render_template("player_list.html", players=mongo.db.players.find())
