@@ -46,6 +46,12 @@ def player_list():
     return render_template("player_list.html", players=mongo.db.players.find())
 
 
+@app.route('/players/<player_id>')
+def player_details(player_id):
+    player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
+    return render_template('player_details.html', player=player)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
