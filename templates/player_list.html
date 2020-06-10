@@ -1,6 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Players</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h1>Players</h1>
+                <p>Instructions, buttons etc</p>
+            </div>
+            <div class="col-md-2">
+                <a href="{{ url_for('player_create') }}">Create a Player</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <table class="table table-striped">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Number</th>
+                <th scope="col">Position</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Nation</th>
+                <th scope="col">Attacking</th>
+                <th scope="col">Technique</th>
+                <th scope="col">Physical</th>
+                <th scope="col">Defending</th>
+                <th scope="col">Stamina</th>
+                <th scope="col">Speed</th>
+                <th scope="col">Foot</th>
+                <th scope="col">Height</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Injured</th>
+            </tr>
+            </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+    
     {% for player in players %}
         {{player.first_name}}
         {{player.last_name}}
