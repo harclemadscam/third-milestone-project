@@ -1,4 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<div class="container">
     <h1>Create Team</h1>
+</div>
+<div class="container">
+    <form action="" method="POST">
+            <div class="form-group">
+                <label for="team_name">Team Name</label>
+                <input type="text" class="form-control" id="team_name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="year">Year Established</label>
+                <input type="text" class="form-control" id="year" name="year">
+            </div>
+            <div class="form-group">
+                <label for="nation">Nation</label>
+                <select class="form-control" id="nation" name="nation">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="manager">Manager Name</label>
+                <input type="text" class="form-control" id="manager" name="manager">
+            </div>
+            <div class="form-group">
+                <label for="team_nation">Formation</label>
+                <select class="form-control" id="team_nation" name="nation">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="emblem">Team Emblem</label>
+                <input type="file" class="form-control-file" id="emblem" name="emblem">
+            </div>
+            <div class="form-group">
+                <label for="emblem">First Colour</label>
+                <input type="color" class="form-control-file" id="first_colour" name="first_colour">
+            </div>
+            <div class="form-group">
+                <label for="emblem">Second Colour</label>
+                <input type="color" class="form-control-file" id="second_colour" name="second_colour">
+            </div>
+            <a type="button" href="{{ url_for('team_select') }}" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
 {% endblock %}
