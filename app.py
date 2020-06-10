@@ -21,7 +21,7 @@ def index():
 
 @app.route('/teams')
 def team_select():
-    return render_template("team_select.html")
+    return render_template("team_select.html", teams=mongo.db.teams.find())
 
 
 @app.route('/create-team')
@@ -39,6 +39,13 @@ def submit_player():
     players = mongo.db.players
     players.insert_one(request.form.to_dict())
     return redirect(url_for('player_list'))
+
+
+@app.route('/submit-team', methods=['POST'])
+def submit_team():
+    teams = mongo.db.teams
+    teams.insert_one(request.form.to_dict())
+    return redirect(url_for('team_select'))
 
 
 @app.route('/players')
