@@ -26,7 +26,7 @@
                 <li>Formation: {{team.formation}}</li>
           </ul>
         </p>
-        <a href="#" class="btn btn-primary">Select Team</a>
+        <a href="{{ url_for('team_home', team_id=team._id) }}" class="btn btn-primary">Select Team</a>
       </div>
     </div>
 {% endfor %}
