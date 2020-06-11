@@ -24,6 +24,12 @@ def team_select():
     return render_template("team_select.html", teams=mongo.db.teams.find())
 
 
+@app.route('/teams/<team_id>')
+def team_home(team_id):
+    team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
+    return render_template("team_home.html", team=team)
+
+
 @app.route('/create-team')
 def team_create():
     return render_template("team_create.html")
@@ -56,7 +62,7 @@ def player_list():
 @app.route('/players/<player_id>')
 def player_details(player_id):
     player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
-    return render_template('player_details.html', player=player)
+    return render_template("player_details.html", player=player)
 
 
 if __name__ == '__main__':
