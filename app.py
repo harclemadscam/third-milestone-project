@@ -41,7 +41,8 @@ def player_create(team_id):
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
     positions = mongo.db.positions.find()
-    return render_template("player_create.html", team=team, nations=nations, positions=positions)
+    positions_list = list(positions)
+    return render_template("player_create.html", team=team, nations=nations, positions=positions_list)
 
 
 @app.route('/teams/<team_id>/submit-player', methods=['POST'])
@@ -69,6 +70,13 @@ def player_list(team_id):
 def player_details(player_id):
     player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
     return render_template("player_details.html", player=player)
+
+
+@app.route('/teams/<team_id>/line-up')
+def lineup(team_id):
+    players = mongo.db.players.find({'team_id': team_id})
+    players_list = list(players)
+    return render_template("lineup.html", players=players_list)
 
 
 if __name__ == '__main__':
