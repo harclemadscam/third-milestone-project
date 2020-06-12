@@ -54,9 +54,11 @@ def submit_team():
     return redirect(url_for('team_select'))
 
 
-@app.route('/players')
-def player_list():
-    return render_template("player_list.html", players=mongo.db.players.find())
+@app.route('/teams/<team_id>/players')
+def player_list(team_id):
+    team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
+    players = mongo.db.players.find({'team_id': team_id})
+    return render_template("player_list.html", team=team, players=players)
 
 
 @app.route('/players/<player_id>')
