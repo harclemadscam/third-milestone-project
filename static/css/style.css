@@ -1,3 +1,29 @@
 body {
     background-color: rgb(152, 199, 152);
 }
+
+.lineup {
+    height: 100vh;
+    position: relative;
+}
+
+.formation-position {
+    position: absolute;
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: red;
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid black;
+    align-items: center;
+}
+
+#eleven {
+    left: 30%;  
+}
