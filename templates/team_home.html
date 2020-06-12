@@ -13,7 +13,7 @@
             <a href="{{ url_for('player_create', team_id=team._id) }}">Create a player</a>
         </div>
         <div class="col-md-4">
-            <a href="">Edit team line-up</a>
+            <a href="{{ url_for('lineup', team_id=team._id) }}">Edit team line-up</a>
         </div>
     </div>
     <div class="row">
