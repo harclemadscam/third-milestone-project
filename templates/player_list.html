@@ -7,7 +7,7 @@
                 <p>Instructions, buttons etc</p>
             </div>
             <div class="col-md-2">
-                <a href="{{ url_for('player_create') }}">Create a Player</a>
+                <a href="{{ url_for('player_create', team_id=team._id) }}">Create a Player</a>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
                 <tbody>
                 {% for player in players %}
                     <tr>
-                        <td><a href="{{ url_for('player_details', player_id=player._id) }}" class="btn btn-primary">View Player</a>
+                        <td><a href="{{ url_for('player_details', player_id=player._id) }}" class="btn btn-primary">View Player</a></td>
                         <td>{{player.shirt_number}}</td>
                         <td>{{player.first_position}}</td>
                         <td>{{player.first_name}}</td>
