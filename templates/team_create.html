@@ -17,8 +17,10 @@
             <div class="form-group">
                 <label for="nation">Nation</label>
                 <select class="form-control" id="nation" name="nation">
-                    <option selected>Choose...</option>
-                    <option>...</option>
+                    <option selected>...</option>
+                    {% for nation in nations %}
+                        <option>{{nation.name}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="form-group">
