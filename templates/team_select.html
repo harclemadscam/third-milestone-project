@@ -13,7 +13,9 @@
   </div>
 </div>
 <div class="container">
+    <div class="row">
 {% for team in teams %}
+    <div class="col-md-3">
     <div class="card" style="width: 18rem; background-color: {{team.first_colour}}">
       <img src="..." class="card-img-top" alt="..." />
       <div class="card-body">
@@ -28,9 +30,11 @@
         </p>
         <a href="{{ url_for('team_home', team_id=team._id) }}" class="btn btn-primary">Select Team</a>
       </div>
+      </div>
     </div>
+    
 {% endfor %}
-
+    </div>
 </div>
 
 {% endblock %}
