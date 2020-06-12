@@ -40,7 +40,8 @@ def team_create():
 def player_create(team_id):
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
-    return render_template("player_create.html", team=team, nations=nations)
+    positions = mongo.db.positions.find()
+    return render_template("player_create.html", team=team, nations=nations, positions=positions)
 
 
 @app.route('/teams/<team_id>/submit-player', methods=['POST'])
