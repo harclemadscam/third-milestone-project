@@ -7,10 +7,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <a href="">View Player List</a>
+            <a href="{{ url_for('player_list', team_id=team._id) }}">View Player List</a>
         </div>
         <div class="col-md-4">
-            <a href="">Create a player</a>
+            <a href="{{ url_for('player_create', team_id=team._id) }}">Create a player</a>
         </div>
         <div class="col-md-4">
             <a href="">Edit team line-up</a>
