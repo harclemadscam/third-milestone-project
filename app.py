@@ -35,16 +35,17 @@ def team_create():
     return render_template("team_create.html")
 
 
-@app.route('/create-player')
-def player_create():
-    return render_template("player_create.html")
+@app.route('/teams/<team_id>/create-player')
+def player_create(team_id):
+    team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
+    return render_template("player_create.html", team=team)
 
 
-@app.route('/submit-player', methods=['POST'])
-def submit_player():
+@app.route('/teams/<team_id>/submit-player', methods=['POST'])
+def submit_player(team_id):
     players = mongo.db.players
     players.insert_one(request.form.to_dict())
-    return redirect(url_for('player_list'))
+    return redirect(url_for('player_list', team_id=team_id))
 
 
 @app.route('/submit-team', methods=['POST'])
