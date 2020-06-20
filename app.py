@@ -37,6 +37,14 @@ def team_create():
     return render_template("team_create.html", nations=nations, formations=formations)
 
 
+@app.route('/teams/<team_id>/edit-team')
+def team_edit(team_id):
+    team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
+    nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
+    formations = mongo.db.formations.find()
+    return render_template("team_edit.html", team=team, nations=nations, formations=formations)
+
+
 @app.route('/teams/<team_id>/create-player')
 def player_create(team_id):
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
