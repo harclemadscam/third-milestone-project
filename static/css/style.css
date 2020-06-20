@@ -76,3 +76,7 @@ body {
     left: 50%;
     top: 75%
 }
+
+th, td {
+    text-align: center;
+}
