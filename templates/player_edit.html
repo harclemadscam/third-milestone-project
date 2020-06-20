@@ -4,7 +4,7 @@
     <h1>Edit Player</h1>
 </div>
 <div class="container">
-  <form action="{{ url_for('submit_player', team_id=team._id) }}" method="POST">
+  <form action="{{ url_for('update_player', player_id=player._id, team_id=team._id) }}" method="POST">
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="first_name">First Name</label>
@@ -15,13 +15,13 @@
         <input type="text" class="form-control" id="last_name" name="last_name" value="{{player.last_name}}">
       </div>
       <div class="form-group col-md-4">
-        <label for="team_name">Team</label>
-        <select class="form-control" id="team_name" name="team_name">
+        <label for="team_id">Team</label>
+        <select class="form-control" id="team_id" name="team_id">
                     {% for team in teams %}
                         {% if player.team_name == team._id %}
-                        <option selected value="{{team._id}}">{{team.name}}</option>
+                            <option selected value="{{team._id}}">{{team.name}}</option>
                         {% else %}
-                        <option value="{{team._id}}">{{team.name}}</option>
+                            <option value="{{team._id}}">{{team.name}}</option>
                         {% endif %}
                     {% endfor %}
         </select>
@@ -155,7 +155,7 @@
         </div>
       </div>
     </div>
-    <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger">Cancel</a>
+    <a type="button" href="{{ url_for('player_details', player_id=player._id, team_id=team._id) }}" class="btn btn-danger">Cancel</a>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
