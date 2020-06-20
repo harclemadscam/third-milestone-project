@@ -74,13 +74,13 @@ def player_create(team_id):
 
 @app.route('/teams/<team_id>/players/<player_id>/edit-player')
 def player_edit(player_id, team_id):
-    player = mongo.db.teams.find_one({'_id': ObjectId(player_id)})
+    player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     teams = mongo.db.teams.find()
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
     positions = mongo.db.positions.find()
     positions_list = list(positions)
-    return render_template("player_edit.html", team=team, teams=teams, nations=nations, positions=positions_list)
+    return render_template("player_edit.html", player=player, team=team, teams=teams, nations=nations, positions=positions_list)
 
 
 @app.route('/teams/<team_id>/submit-player', methods=['POST'])
