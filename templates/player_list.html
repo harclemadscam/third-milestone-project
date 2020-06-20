@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-                <h1>Players</h1>
+                <h1>{{team.name}} - Players</h1>
                 <p>Instructions, buttons etc</p>
             </div>
             <div class="col-md-2">
@@ -51,7 +51,13 @@
                         <td>{{player.foot}}</td>
                         <td>{{player.height}}</td>
                         <td>{{player.weight}}</td>
-                        <td>{{player.is_injured}}</td>
+                        <td>
+                        {% if player.is_injured == "Yes" %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
