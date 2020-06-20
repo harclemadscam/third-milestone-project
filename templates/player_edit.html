@@ -8,30 +8,37 @@
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="first_name">First Name</label>
-        <input type="text" class="form-control" id="first_name" name="first_name">
+        <input type="text" class="form-control" id="first_name" name="first_name" value="{{player.first_name}}">
       </div>
       <div class="form-group col-md-4">
         <label for="last_name">Last Name</label>
-        <input type="text" class="form-control" id="last_name" name="last_name">
+        <input type="text" class="form-control" id="last_name" name="last_name" value="{{player.last_name}}">
       </div>
       <div class="form-group col-md-4">
         <label for="team_name">Team</label>
-        <input type="text" class="form-control" id="team_name" name="team_name" value="{{team.name}}" disabled>
-        <input type="hidden" class="form-control" id="team_id" name="team_id" value="{{team._id}}">
+        <select class="form-control" id="team_name" name="team_name">
+                    {% for team in teams %}
+                        {% if player.team_name == team._id %}
+                        <option selected value="{{team._id}}">{{team.name}}</option>
+                        {% else %}
+                        <option value="{{team._id}}">{{team.name}}</option>
+                        {% endif %}
+                    {% endfor %}
+        </select>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-2">
         <label for="age">Age</label>
-        <input type="number" min="0" class="form-control" id="age" name="age">
+        <input type="number" min="0" class="form-control" id="age" name="age" value="{{player.age}}">
       </div>
       <div class="form-group col-md-3">
         <label for="height">Height (cm)</label>
-        <input type="number" min="1" class="form-control" id="height" name="height">
+        <input type="number" min="1" class="form-control" id="height" name="height" value="{{player.height}}">
       </div>
       <div class="form-group col-md-3">
         <label for="weight">Weight (kg)</label>
-        <input type="number" min="1" class="form-control" id="weight" name="weight">
+        <input type="number" min="1" class="form-control" id="weight" name="weight" value="{{player.weight}}">
       </div>
       <div class="form-group col-md-4">
         <label for="player_nation">Nation</label>
@@ -73,43 +80,43 @@
       </div>
       <div class="form-group col-md-3">
         <label for="shirt_number">Shirt Number</label>
-        <input type="number" min="1" max="99" class="form-control" id="shirt_number" name="shirt_number">
+        <input type="number" min="1" max="99" class="form-control" id="shirt_number" name="shirt_number" value="{{player.shirt_number}}">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-2">
         <label for="attacking">Attacking</label>
-        <input type="number" min="1" max="20" class="form-control" id="attacking" name="attacking">
+        <input type="number" min="1" max="20" class="form-control" id="attacking" name="attacking" value="{{player.attacking}}">
       </div>
       <div class="form-group col-md-2">
         <label for="technique">Technique</label>
-        <input type="number" min="1" max="20" class="form-control" id="technique" name="technique">
+        <input type="number" min="1" max="20" class="form-control" id="technique" name="technique" value="{{player.technique}}">
       </div>
       <div class="form-group col-md-2">
         <label for="physical">Physical</label>
-        <input type="number" min="1" max="20" class="form-control" id="physical" name="physical">
+        <input type="number" min="1" max="20" class="form-control" id="physical" name="physical" value="{{player.physical}}">
       </div>
       <div class="form-group col-md-2">
         <label for="defending">Defending</label>
-        <input type="number" min="1" max="20" class="form-control" id="defending" name="defending">
+        <input type="number" min="1" max="20" class="form-control" id="defending" name="defending" value="{{player.defending}}">
       </div>
       <div class="form-group col-md-2">
         <label for="stamina">Stamina</label>
-        <input type="number" min="1" max="20" class="form-control" id="stamina" name="stamina">
+        <input type="number" min="1" max="20" class="form-control" id="stamina" name="stamina" value="{{player.stamina}}">
       </div>
       <div class="form-group col-md-2">
         <label for="speed">Speed</label>
-        <input type="number" min="1" max="20" class="form-control" id="speed" name="speed">
+        <input type="number" min="1" max="20" class="form-control" id="speed" name="speed" value="{{player.speed}}">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="notes">Notes</label>
-        <textarea class="form-control" id="notes" rows="3" name="notes"></textarea>
+        <textarea class="form-control" id="notes" rows="3" name="notes" value="{{player.notes}}"></textarea>
       </div>
       <div class="form-group col-md-4">
         <label for="player_image">Player Image</label>
-        <input type="file" class="form-control-file" id="player_image" name="image">
+        <input type="file" class="form-control-file" id="player_image" name="image" value="{{player.image}}">
       </div>
       <div class="form-group col-md-4">
         <label for="injured">Injured</label>
