@@ -33,7 +33,8 @@ def team_home(team_id):
 @app.route('/create-team')
 def team_create():
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
-    return render_template("team_create.html", nations=nations)
+    formations = mongo.db.formations.find()
+    return render_template("team_create.html", nations=nations, formations=formations)
 
 
 @app.route('/teams/<team_id>/create-player')
