@@ -45,6 +45,24 @@ def team_edit(team_id):
     return render_template("team_edit.html", team=team, nations=nations, formations=formations)
 
 
+@app.route('/teams/<team_id>/update-team', methods=['POST'])
+def update_team(team_id):
+    teams = mongo.db.teams
+    teams.update({'_id': ObjectId(team_id)},
+    {
+        'name': request.form.get('name'),
+        'year': request.form.get('year'),
+        'nation': request.form.get('nation'),
+        'manager': request.form.get('manager'),
+        'formation': request.form.get('formation'),
+        'emblem': request.form.get('emblem'),
+        'first_colour': request.form.get('first_colour'),
+        'second_colour': request.form.get('second_colour'),
+    })
+    team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
+    return redirect(url_for('team_home', team_id=team_id, team=team))
+
+
 @app.route('/teams/<team_id>/create-player')
 def player_create(team_id):
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
