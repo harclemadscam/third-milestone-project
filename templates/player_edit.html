@@ -43,10 +43,13 @@
       <div class="form-group col-md-4">
         <label for="player_nation">Nation</label>
         <select class="form-control" id="player_nation" name="nation">
-          <option selected>...</option>
-          {% for nation in nations %}
-            <option>{{nation.name}}</option>
-          {% endfor %}
+            {% for nation in nations %}
+            {% if player.nation == nation.name %}
+                <option selected>{{nation.name}}</option>
+            {% else %}
+                <option>{{nation.name}}</option>
+            {% endif %}
+            {% endfor %}
         </select>
       </div>
     </div>
@@ -54,28 +57,51 @@
       <div class="form-group col-md-3">
         <label for="first_position">Best Position</label>
         <select class="form-control" id="first_position" name="first_position">
-            <option selected>...</option>
-          {% for position in positions %}
-            <option>{{position.name}}</option>
-          {% endfor %}
+            {% for position in positions %}
+            {% if player.first_position == position.name %}
+                <option selected>{{position.name}}</option>
+            {% else %}
+                <option>{{position.name}}</option>
+            {% endif %}
+            {% endfor %}
         </select>
       </div>
       <div class="form-group col-md-3">
         <label for="second_position">Second Position</label>
         <select class="form-control" id="second_position" name="second_position">
-            <option selected>...</option>
-          {% for position in positions %}
-            <option>{{position.name}}</option>
-          {% endfor %}
+            {% for position in positions %}
+            {% if player.second_position == position.name %}
+                <option selected>{{position.name}}</option>
+            {% else %}
+                <option>{{position.name}}</option>
+            {% endif %}
+            {% endfor %}
         </select>
       </div>
       <div class="form-group col-md-3">
         <label for="foot">Preferred Foot</label>
         <select class="form-control" id="foot" name="foot">
-          <option selected>...</option>
-          <option>Right</option>
-          <option>Left</option>
-          <option>Either</option>
+            {% if player.foot == "Right" %}
+                <option>...</option>
+                <option selected>Right</option>
+                <option>Left</option>
+                <option>Either</option>
+            {% elif player.foot == "Left" %}
+                <option>...</option>
+                <option>Right</option>
+                <option selected>Left</option>
+                <option>Either</option>
+            {% elif player.foot == "Either" %}
+                <option>...</option>
+                <option>Right</option>
+                <option>Left</option>
+                <option selected>Either</option>
+            {% else %}
+                <option selected>...</option>
+                <option>Right</option>
+                <option>Left</option>
+                <option>Either</option>
+            {% endif %}
         </select>
       </div>
       <div class="form-group col-md-3">
@@ -112,18 +138,21 @@
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="notes">Notes</label>
-        <textarea class="form-control" id="notes" rows="3" name="notes" value="{{player.notes}}"></textarea>
+        <textarea class="form-control" id="notes" rows="3" name="notes">{{player.notes}}</textarea>
       </div>
       <div class="form-group col-md-4">
         <label for="player_image">Player Image</label>
         <input type="file" class="form-control-file" id="player_image" name="image" value="{{player.image}}">
       </div>
       <div class="form-group col-md-4">
-        <label for="injured">Injured</label>
-        <select class="form-control" id="injured" name="is_injured">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
+        <div class="form-check">
+        {% if player.is_injured == "Yes" %}
+            <input type="checkbox" class="form-check-input" id="injured" name="is_injured" value="Yes" checked>
+        {% else %}
+            <input type="checkbox" class="form-check-input" id="injured" name="is_injured" value="Yes">
+        {% endif %}
+            <label class="form-check-label" for="injured">Injured</label>
+        </div>
       </div>
     </div>
     <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger">Cancel</a>
