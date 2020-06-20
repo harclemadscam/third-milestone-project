@@ -18,7 +18,7 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <a href="">Edit team details</a>
+            <a href="{{ url_for('team_edit', team_id=team._id) }}">Edit team details</a>
         </div>
         <div class="col-md-4">
             <a href="{{ url_for('team_select') }}">Select a different team</a>
