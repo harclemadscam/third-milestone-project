@@ -36,7 +36,7 @@
                 <tbody>
                 {% for player in players %}
                     <tr>
-                        <td><a href="{{ url_for('player_details', player_id=player._id) }}" class="btn btn-primary">View Player</a></td>
+                        <td><a href="{{ url_for('player_details', player_id=player._id, team_id=team._id) }}" class="btn btn-primary">View Player</a></td>
                         <td>{{player.shirt_number}}</td>
                         <td>{{player.first_position}}</td>
                         <td>{{player.first_name}}</td>
