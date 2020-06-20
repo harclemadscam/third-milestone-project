@@ -18,8 +18,8 @@
         <label for="team_id">Team</label>
         <select class="form-control" id="team_id" name="team_id">
                     {% for team in teams %}
-                        {% if player.team_name == team._id %}
-                            <option selected value="{{team._id}}">{{team.name}}</option>
+                        {% if team._id == team_id %}
+                            <option value="{{team._id}}" selected>{{team.name}}</option>
                         {% else %}
                             <option value="{{team._id}}">{{team.name}}</option>
                         {% endif %}
