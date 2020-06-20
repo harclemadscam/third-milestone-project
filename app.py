@@ -83,6 +83,35 @@ def player_edit(player_id, team_id):
     return render_template("player_edit.html", player=player, team=team, teams=teams, nations=nations, positions=positions_list)
 
 
+@app.route('/teams/<team_id>/players/<player_id>/update-player', methods=['POST'])
+def update_player(player_id, team_id):
+    players = mongo.db.players
+    players.update({'_id': ObjectId(player_id)},
+    {
+        'first_name': request.form.get('first_name'),
+        'last_name': request.form.get('last_name'),
+        'team_id': request.form.get('team_id'),
+        'age': request.form.get('age'),
+        'height': request.form.get('height'),
+        'weight': request.form.get('weight'),
+        'nation': request.form.get('nation'),
+        'first_position': request.form.get('first_position'),
+        'second_position': request.form.get('second_position'),
+        'foot': request.form.get('foot'),
+        'shirt_number': request.form.get('shirt_number'),
+        'attacking': request.form.get('attacking'),
+        'technique': request.form.get('technique'),
+        'physical': request.form.get('physical'),
+        'defending': request.form.get('defending'),
+        'stamina': request.form.get('stamina'),
+        'speed': request.form.get('speed'),
+        'notes': request.form.get('notes'),
+        'image': request.form.get('image'),
+        'is_injured': request.form.get('is_injured'),
+    })
+    return redirect(url_for('player_list', team_id=team_id))
+
+
 @app.route('/teams/<team_id>/submit-player', methods=['POST'])
 def submit_player(team_id):
     players = mongo.db.players
@@ -115,7 +144,8 @@ def player_details(player_id, team_id):
 def lineup(team_id):
     players = mongo.db.players.find({'team_id': team_id})
     players_list = list(players)
-    return render_template("lineup.html", players=players_list)
+    team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
+    return render_template("lineup.html", players=players_list, team=team)
 
 
 if __name__ == '__main__':
