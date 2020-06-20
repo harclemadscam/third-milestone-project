@@ -113,6 +113,45 @@
             </div>
             <div class="col-md-6">
                 <h5>Selection side</h5>
+            <div class="container-fluid">
+                <table class="table table-striped">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">#</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Alt Position</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Attacking</th>
+                        <th scope="col">Technique</th>
+                        <th scope="col">Physical</th>
+                        <th scope="col">Defending</th>
+                        <th scope="col">Stamina</th>
+                        <th scope="col">Speed</th>
+                        <th scope="col">Foot</th>
+                        <th scope="col">Injured</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for player in players %}
+                    <tr>
+                        <td><a href="{{ url_for('player_details', player_id=player._id) }}" class="btn btn-primary">View Player</a></td>
+                        <td>{{player.shirt_number}}</td>
+                        <td>{{player.first_position}}</td>
+                        <td>{{player.second_position}}</td>
+                        <td>{{player.last_name}}</td>
+                        <td>{{player.attacking}}</td>
+                        <td>{{player.technique}}</td>
+                        <td>{{player.physical}}</td>
+                        <td>{{player.defending}}</td>
+                        <td>{{player.stamina}}</td>
+                        <td>{{player.speed}}</td>
+                        <td>{{player.foot}}</td>
+                        <td>{{player.is_injured}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                </table>
             </div>
         </div> 
     </div>
