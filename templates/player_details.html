@@ -18,4 +18,6 @@
     {{player.weight}}
     {{player.notes}}
     {{player.is_injured}}
+    <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger">Back</a>
+    <a type="button" href="{{ url_for('player_edit', player_id=player._id, team_id=team._id) }}" class="btn btn-primary">Edit Player</a>
 {% endblock %}
