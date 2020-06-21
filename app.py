@@ -184,6 +184,35 @@ def free_agent_edit(player_id):
     return render_template("free_agent_edit.html", player=player, team_id=team_id, teams=teams, nations=nations, positions=positions_list)
 
 
+@app.route('/free_agents/<player_id>/update-player', methods=['POST'])
+def update_free_agent(player_id):
+    players = mongo.db.players
+    players.update({'_id': ObjectId(player_id)},
+    {
+        'first_name': request.form.get('first_name'),
+        'last_name': request.form.get('last_name'),
+        'team_id': request.form.get('team_id'),
+        'age': request.form.get('age'),
+        'height': request.form.get('height'),
+        'weight': request.form.get('weight'),
+        'nation': request.form.get('nation'),
+        'first_position': request.form.get('first_position'),
+        'second_position': request.form.get('second_position'),
+        'foot': request.form.get('foot'),
+        'shirt_number': request.form.get('shirt_number'),
+        'attacking': request.form.get('attacking'),
+        'technique': request.form.get('technique'),
+        'physical': request.form.get('physical'),
+        'defending': request.form.get('defending'),
+        'stamina': request.form.get('stamina'),
+        'speed': request.form.get('speed'),
+        'notes': request.form.get('notes'),
+        'image': request.form.get('image'),
+        'is_injured': request.form.get('is_injured'),
+    })
+    return redirect(url_for('free_agents'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
