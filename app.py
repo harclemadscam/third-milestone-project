@@ -48,8 +48,7 @@ def team_edit(team_id):
 @app.route('/teams/<team_id>/update-team', methods=['POST'])
 def update_team(team_id):
     teams = mongo.db.teams
-    teams.update({'_id': ObjectId(team_id)},
-    {
+    teams.update({'_id': ObjectId(team_id)}, {
         'name': request.form.get('name'),
         'year': request.form.get('year'),
         'nation': request.form.get('nation'),
@@ -61,6 +60,19 @@ def update_team(team_id):
     })
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     return redirect(url_for('team_home', team_id=team_id, team=team))
+
+
+@app.route('/teams/<team_id>/delete-team')
+def delete_team(team_id):
+    mongo.db.players.update_many(
+        {'team_id': team_id},
+        {
+          '$set': {
+            'team_id': '',
+          }
+        })
+    mongo.db.teams.delete_one({'_id': ObjectId(team_id)})
+    return redirect(url_for('team_select'))
 
 
 @app.route('/teams/<team_id>/create-player')
