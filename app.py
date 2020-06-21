@@ -161,6 +161,17 @@ def lineup(team_id):
     return render_template("lineup.html", players=players_list, team=team)
 
 
+@app.route('/free-agents')
+def free_agents():
+    players = mongo.db.players.find({'team_id': ''})
+    return render_template("free_agents.html", players=players)
+
+@app.route('/free_agents/<player_id>')
+def free_agent_details(player_id):
+    player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
+    return render_template("free_agent_details.html", player=player)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
