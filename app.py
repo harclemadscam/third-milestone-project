@@ -153,6 +153,17 @@ def player_details(player_id, team_id):
     return render_template("player_details.html", player=player, team=team)
 
 
+@app.route('/<player_id>/delete-player')
+def delete_player(player_id):
+    player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
+    mongo.db.players.delete_one({'_id': ObjectId(player_id)})
+    team_id = player['team_id']
+    if team_id == "":
+        return redirect(url_for('free_agents'))
+    else:
+        return redirect(url_for('player_list', team_id=team_id))
+
+
 @app.route('/teams/<team_id>/line-up')
 def lineup(team_id):
     players = mongo.db.players.find({'team_id': team_id})
