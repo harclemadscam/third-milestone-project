@@ -25,12 +25,15 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <h1>{{team.name}} - Players</h1>
                 <p>Instructions, buttons etc</p>
             </div>
             <div class="col-md-2">
                 <a href="{{ url_for('player_create', team_id=team._id) }}">Create a Player</a>
+            </div>
+            <div class="col-md-2">
+                <a href="{{ url_for('free_agents') }}">Free Agents</a>
             </div>
         </div>
     </div>
