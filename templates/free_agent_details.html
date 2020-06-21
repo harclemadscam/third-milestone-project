@@ -21,4 +21,5 @@
     {{player.is_injured}}
     <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-danger">Back</a>
     <a type="button" href="{{ url_for('free_agent_edit', player_id=player._id) }}" class="btn btn-primary">Edit Player</a>
+    <a type="button" href="{{ url_for('delete_player', player_id=player._id) }}" class="btn btn-danger">Delete Player</a>
 {% endblock %}
