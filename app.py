@@ -166,10 +166,22 @@ def free_agents():
     players = mongo.db.players.find({'team_id': ''})
     return render_template("free_agents.html", players=players)
 
+
 @app.route('/free_agents/<player_id>')
 def free_agent_details(player_id):
     player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
     return render_template("free_agent_details.html", player=player)
+
+
+@app.route('/free_agents/<player_id>/edit-player')
+def free_agent_edit(player_id):
+    player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
+    team_id = ""
+    teams = mongo.db.teams.find()
+    nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
+    positions = mongo.db.positions.find()
+    positions_list = list(positions)
+    return render_template("free_agent_edit.html", player=player, team_id=team_id, teams=teams, nations=nations, positions=positions_list)
 
 
 if __name__ == '__main__':
