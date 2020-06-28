@@ -29,6 +29,46 @@ body {
     background-size: 100% 100%;
 }
 
+.left-forward {
+    left: 7%;
+    top: 15%;
+}
+
+.left-centre-forward {
+    left: 24%;
+    top: 15%;
+}
+
+.centre-forward {
+    left: 45%;
+    top: 15%;
+}
+
+.right-centre-forward {
+    left: 55%;
+    top: 15%;
+}
+
+.right-forward {
+    left: 75%;
+    top: 15%;
+}
+
+.left-attacking-midfield {
+    left: 7%;
+    top: 25%;
+}
+
+.centre-attacking-midfield {
+    left: 45%;
+    top: 25%;
+}
+
+.right-attacking-midfield {
+    left: 75%;
+    top: 25%;
+}
+
 #eleven {
     left: 30%;  
 }
