@@ -134,59 +134,6 @@ body {
     top: 88%;
 }
 
-#eleven {
-    left: 30%;  
-}
-
-#ten {
-    left: 60%;
-}
-
-#nine {
-    left: 20%;
-    top: 25%
-}
-
-#eight {
-    left: 40%;
-    top: 25%
-}
-
-#seven {
-    left: 60%;
-    top: 25%
-}
-
-#six {
-    left: 80%;
-    top: 25%
-}
-
-#five {
-    left: 20%;
-    top: 50%
-}
-
-#four{
-    left: 40%;
-    top: 50%
-}
-
-#three {
-    left: 60%;
-    top: 50%
-}
-
-#two {
-    left: 80%;
-    top: 50%
-}
-
-#one {
-    left: 50%;
-    top: 75%
-}
-
 th, td {
     text-align: center;
 }
