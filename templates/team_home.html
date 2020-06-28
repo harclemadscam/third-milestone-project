@@ -1,27 +1,5 @@
 {% extends 'base.html' %}
 
-{% block home_nav %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('team_home', team_id=team._id) }}">{{team.name}}</a>
-            </li>
-{% endblock %}
-
-{% block player_nav %}
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Players</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ url_for('player_list', team_id=team._id) }}">Player List</a>
-                    <a class="dropdown-item" href="{{ url_for('player_create', team_id=team._id) }}">Create Player</a>
-                </div>
-            </li>
-{% endblock %}
-
-{% block lineup_nav %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('lineup', team_id=team._id) }}">Line-Up Creator</a>
-            </li>
-{% endblock %}
-
 {% block content %}
 <div class="container">
     <h1>{{team.name}} - Home</h1>
