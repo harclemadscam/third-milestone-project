@@ -169,7 +169,8 @@ def lineup(team_id):
     players = mongo.db.players.find({'team_id': team_id})
     players_list = list(players)
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
-    return render_template("lineup.html", players=players_list, team=team)
+    formation = mongo.db.formations.find_one({'name': team['formation']})
+    return render_template("lineup.html", players=players_list, team=team, formation=formation)
 
 
 @app.route('/free-agents')
