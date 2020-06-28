@@ -35,12 +35,12 @@ body {
 }
 
 .left-centre-forward {
-    left: 24%;
+    left: 30%;
     top: 15%;
 }
 
 .centre-forward {
-    left: 40%;
+    left: 43%;
     top: 15%;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 .right-forward {
-    left: 75%;
+    left: 78%;
     top: 15%;
 }
 
@@ -60,12 +60,12 @@ body {
 }
 
 .centre-attacking-midfield {
-    left: 40%;
+    left: 43%;
     top: 25%;
 }
 
 .right-attacking-midfield {
-    left: 75%;
+    left: 78%;
     top: 25%;
 }
 
@@ -75,7 +75,7 @@ body {
 }
 
 .left-centre-midfield {
-    left: 24%;
+    left: 30%;
     top: 45%;
 }
 
@@ -85,7 +85,7 @@ body {
 }
 
 .right-midfield {
-    left: 75%;
+    left: 78%;
     top: 45%;
 }
 
@@ -95,12 +95,12 @@ body {
 }
 
 .centre-defensive-midfield {
-    left: 40%;
+    left: 43%;
     top: 60%;
 }
 
 .right-wing-back {
-    left: 75%;
+    left: 78%;
     top: 60%;
 }
 
@@ -110,12 +110,12 @@ body {
 }
 
 .left-centre-back {
-    left: 24%;
+    left: 30%;
     top: 70%;
 }
 
 .centre-back {
-    left: 40%;
+    left: 43%;
     top: 70%;
 }
 
@@ -125,12 +125,12 @@ body {
 }
 
 .right-back {
-    left: 75%;
+    left: 78%;
     top: 70%;
 }
 
 .goalkeeper {
-    left: 40%;
+    left: 43%;
     top: 88%;
 }
 
