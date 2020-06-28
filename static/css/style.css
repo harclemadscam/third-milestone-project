@@ -109,6 +109,31 @@ body {
     top: 70%;
 }
 
+.left-centre-back {
+    left: 24%;
+    top: 70%;
+}
+
+.centre-back {
+    left: 40%;
+    top: 70%;
+}
+
+.right-centre-back {
+    left: 55%;
+    top: 70%;
+}
+
+.right-back {
+    left: 75%;
+    top: 70%;
+}
+
+.goalkeeper {
+    left: 40%;
+    top: 88%;
+}
+
 #eleven {
     left: 30%;  
 }
