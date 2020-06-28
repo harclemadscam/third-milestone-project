@@ -47,17 +47,20 @@ def team_edit(team_id):
 
 @app.route('/teams/<team_id>/update-team', methods=['POST'])
 def update_team(team_id):
-    teams = mongo.db.teams
-    teams.update({'_id': ObjectId(team_id)}, {
-        'name': request.form.get('name'),
-        'year': request.form.get('year'),
-        'nation': request.form.get('nation'),
-        'manager': request.form.get('manager'),
-        'formation': request.form.get('formation'),
-        'emblem': request.form.get('emblem'),
-        'first_colour': request.form.get('first_colour'),
-        'second_colour': request.form.get('second_colour'),
-    })
+    mongo.db.teams.update_one(
+        {'_id': ObjectId(team_id)},
+        {
+          '$set': {
+            'name': request.form.get('name'),
+            'year': request.form.get('year'),
+            'nation': request.form.get('nation'),
+            'manager': request.form.get('manager'),
+            'formation': request.form.get('formation'),
+            'emblem': request.form.get('emblem'),
+            'first_colour': request.form.get('first_colour'),
+            'second_colour': request.form.get('second_colour'),
+          }
+        })
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     return redirect(url_for('team_home', team_id=team_id, team=team))
 
@@ -98,30 +101,32 @@ def player_edit(player_id, team_id):
 
 @app.route('/teams/<team_id>/players/<player_id>/update-player', methods=['POST'])
 def update_player(player_id, team_id):
-    players = mongo.db.players
-    players.update({'_id': ObjectId(player_id)},
-    {
-        'first_name': request.form.get('first_name'),
-        'last_name': request.form.get('last_name'),
-        'team_id': request.form.get('team_id'),
-        'age': request.form.get('age'),
-        'height': request.form.get('height'),
-        'weight': request.form.get('weight'),
-        'nation': request.form.get('nation'),
-        'first_position': request.form.get('first_position'),
-        'second_position': request.form.get('second_position'),
-        'foot': request.form.get('foot'),
-        'shirt_number': request.form.get('shirt_number'),
-        'attacking': request.form.get('attacking'),
-        'technique': request.form.get('technique'),
-        'physical': request.form.get('physical'),
-        'defending': request.form.get('defending'),
-        'stamina': request.form.get('stamina'),
-        'speed': request.form.get('speed'),
-        'notes': request.form.get('notes'),
-        'image': request.form.get('image'),
-        'is_injured': request.form.get('is_injured'),
-    })
+    mongo.db.players.update_one(
+        {'_id': ObjectId(player_id)},
+        {
+          '$set': {
+            'first_name': request.form.get('first_name'),
+            'last_name': request.form.get('last_name'),
+            'team_id': request.form.get('team_id'),
+            'age': request.form.get('age'),
+            'height': request.form.get('height'),
+            'weight': request.form.get('weight'),
+            'nation': request.form.get('nation'),
+            'first_position': request.form.get('first_position'),
+            'second_position': request.form.get('second_position'),
+            'foot': request.form.get('foot'),
+            'shirt_number': request.form.get('shirt_number'),
+            'attacking': request.form.get('attacking'),
+            'technique': request.form.get('technique'),
+            'physical': request.form.get('physical'),
+            'defending': request.form.get('defending'),
+            'stamina': request.form.get('stamina'),
+            'speed': request.form.get('speed'),
+            'notes': request.form.get('notes'),
+            'image': request.form.get('image'),
+            'is_injured': request.form.get('is_injured'),
+          }
+        })
     return redirect(url_for('player_list', team_id=team_id))
 
 
@@ -173,6 +178,28 @@ def lineup(team_id):
     return render_template("lineup.html", players=players_list, team=team, formation=formation)
 
 
+@app.route('/teams/<team_id>/line-up/submit-team', methods=['POST'])
+def submit_lineup(team_id):
+    mongo.db.teams.update_one(
+        {'_id': ObjectId(team_id)},
+        {
+          '$set': {
+            'eleven': request.form.get('eleven'),
+            'ten': request.form.get('ten'),
+            'nine': request.form.get('nine'),
+            'eight': request.form.get('eight'),
+            'seven': request.form.get('seven'),
+            'six': request.form.get('six'),
+            'five': request.form.get('five'),
+            'four': request.form.get('four'),
+            'three': request.form.get('three'),
+            'two': request.form.get('two'),
+            'one': request.form.get('one'),
+          }
+        })
+    return redirect(url_for('lineup', team_id=team_id))
+
+
 @app.route('/free-agents')
 def free_agents():
     players = mongo.db.players.find({'team_id': ''})
@@ -198,30 +225,32 @@ def free_agent_edit(player_id):
 
 @app.route('/free_agents/<player_id>/update-player', methods=['POST'])
 def update_free_agent(player_id):
-    players = mongo.db.players
-    players.update({'_id': ObjectId(player_id)},
-    {
-        'first_name': request.form.get('first_name'),
-        'last_name': request.form.get('last_name'),
-        'team_id': request.form.get('team_id'),
-        'age': request.form.get('age'),
-        'height': request.form.get('height'),
-        'weight': request.form.get('weight'),
-        'nation': request.form.get('nation'),
-        'first_position': request.form.get('first_position'),
-        'second_position': request.form.get('second_position'),
-        'foot': request.form.get('foot'),
-        'shirt_number': request.form.get('shirt_number'),
-        'attacking': request.form.get('attacking'),
-        'technique': request.form.get('technique'),
-        'physical': request.form.get('physical'),
-        'defending': request.form.get('defending'),
-        'stamina': request.form.get('stamina'),
-        'speed': request.form.get('speed'),
-        'notes': request.form.get('notes'),
-        'image': request.form.get('image'),
-        'is_injured': request.form.get('is_injured'),
-    })
+    mongo.db.players.update_one(
+        {'_id': ObjectId(player_id)},
+        {
+          '$set': {
+            'first_name': request.form.get('first_name'),
+            'last_name': request.form.get('last_name'),
+            'team_id': request.form.get('team_id'),
+            'age': request.form.get('age'),
+            'height': request.form.get('height'),
+            'weight': request.form.get('weight'),
+            'nation': request.form.get('nation'),
+            'first_position': request.form.get('first_position'),
+            'second_position': request.form.get('second_position'),
+            'foot': request.form.get('foot'),
+            'shirt_number': request.form.get('shirt_number'),
+            'attacking': request.form.get('attacking'),
+            'technique': request.form.get('technique'),
+            'physical': request.form.get('physical'),
+            'defending': request.form.get('defending'),
+            'stamina': request.form.get('stamina'),
+            'speed': request.form.get('speed'),
+            'notes': request.form.get('notes'),
+            'image': request.form.get('image'),
+            'is_injured': request.form.get('is_injured'),
+          }
+        })
     return redirect(url_for('free_agents'))
 
 
