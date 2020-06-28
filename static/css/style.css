@@ -56,17 +56,17 @@ body {
 
 .left-attacking-midfield {
     left: 7%;
-    top: 25%;
+    top: 28%;
 }
 
 .centre-attacking-midfield {
     left: 43%;
-    top: 25%;
+    top: 28%;
 }
 
 .right-attacking-midfield {
     left: 78%;
-    top: 25%;
+    top: 28%;
 }
 
 .left-midfield {
@@ -91,21 +91,26 @@ body {
 
 .left-wing-back {
     left: 7%;
-    top: 60%;
+    top: 58%;
 }
 
 .centre-defensive-midfield {
     left: 43%;
-    top: 60%;
+    top: 58%;
 }
 
 .right-wing-back {
     left: 78%;
-    top: 60%;
+    top: 58%;
 }
 
 .left-back {
     left: 7%;
+    top: 70%;
+}
+
+.back-three-left {
+    left: 25%;
     top: 70%;
 }
 
@@ -124,6 +129,10 @@ body {
     top: 70%;
 }
 
+.back-three-right {
+    left: 60%;
+    top: 70%;
+}
 .right-back {
     left: 78%;
     top: 70%;
