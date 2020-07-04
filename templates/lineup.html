@@ -16,12 +16,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="eleven">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.eleven == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.eleven == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -32,12 +33,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="ten">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.ten == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.ten == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -48,12 +50,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="nine">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.nine == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.nine == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -64,12 +67,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="eight">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.eight == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.eight == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -80,12 +84,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="seven">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.seven == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.seven == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -96,12 +101,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="six">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.six == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.six == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -112,12 +118,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="five">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.five == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.five == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -128,12 +135,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="four">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.four == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.four == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -144,12 +152,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="three">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.three == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.three == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -160,12 +169,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="two">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.two == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.two == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -176,12 +186,13 @@
                             <div class="circle"></div>
                             <div class="formation-select">
                                 <select class="form-control" name="one">
+                                    <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.one == player._id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.one == player.last_name %}
+                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
