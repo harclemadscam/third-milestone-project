@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
 
 body {
-    font-family: 'Arimo', sans-serif;
-    background-color: rgb(152, 199, 152);
-    background-image: url("../images/pitch-background.jpg");
+    background-image: linear-gradient(rgba(152, 199, 152, 0.8), rgba(152, 199, 152, 0.8)), url("../images/pitch-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    background-attachment: fixed; 
+    background-attachment: fixed;
+    background-color: rgb(152, 199, 152);
+    font-family: 'Arimo', sans-serif;
 }
 
 ul {
@@ -33,6 +33,10 @@ ul {
     object-fit: cover;
 }
 
+.card-body {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 .lineup {
     height: 100vh;
     position: relative;
@@ -51,8 +55,10 @@ ul {
     background-color: red;
     height: 3rem;
     width: 3rem;
-    border: 1px solid black;
+    border: 2px solid black;
     align-items: center;
+    line-height: 3rem;
+    font-weight: 700;
 }
 
 #football_field {
