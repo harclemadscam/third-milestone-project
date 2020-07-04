@@ -8,6 +8,21 @@
         <div class="row">
             <div class="col-md-6">
                 <h5>Formation side</h5>
+                <form action="{{ url_for('update_formation', team_id=team._id) }}" method="POST">
+                    <div class="form-group">
+                        <label for="formation">Formation</label>
+                            <select class="form-control" id="formation" name="formation">
+                            {% for formation in formations %}
+                                {% if team.formation == formation.name %}
+                                <option selected>{{formation.name}}</option>
+                                {% else %}
+                                <option>{{formation.name}}</option>
+                            {% endif %}
+                            {% endfor %}
+                            </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Formation</button>
+                </form>
                 <form action="{{ url_for('submit_lineup', team_id=team._id) }}" method="POST">
                 <button type="submit" class="btn btn-primary">Set line-up</button>
                 <div class="row lineup">
