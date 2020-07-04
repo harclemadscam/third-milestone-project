@@ -17,7 +17,7 @@
 {% for team in teams %}
     <div class="col-md-3">
     <div class="card" style="width: 18rem; background-color: {{team.first_colour}}">
-      <img src="..." class="card-img-top" alt="..." />
+      <img src="{{team.emblem}}" class="card-img-top" alt="Team Emblem" />
       <div class="card-body">
         <h5 class="card-title">{{team.name}}</h5>
         <p class="card-text">
