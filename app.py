@@ -176,7 +176,20 @@ def lineup(team_id):
     players_list = list(players)
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     formation = mongo.db.formations.find_one({'name': team['formation']})
-    return render_template("lineup.html", players=players_list, team=team, formation=formation)
+    formations = mongo.db.formations.find()
+    return render_template("lineup.html", players=players_list, team=team, formation=formation, formations=formations)
+
+
+@app.route('/teams/<team_id>/line-up/update-formation', methods=['POST'])
+def update_formation(team_id):
+    mongo.db.teams.update_one(
+        {'_id': ObjectId(team_id)},
+        {
+          '$set': {
+            'formation': request.form.get('formation')
+          }
+        })
+    return redirect(url_for('lineup', team_id=team_id))
 
 
 @app.route('/teams/<team_id>/line-up/submit-team', methods=['POST'])
