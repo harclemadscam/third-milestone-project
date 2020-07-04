@@ -16,10 +16,10 @@
     <div class="row">
 {% for team in teams %}
     <div class="col-md-3 text-center">
-    <div class="card" style="background-color: {{team.first_colour}}">
+    <div class="card" style="background-image: linear-gradient(to right, {{team.first_colour}}, {{team.second_colour}})">
       <img src="{{team.emblem}}" class="card-img-top" alt="Team Emblem" />
       <div class="card-body">
-        <h5 class="card-title">{{team.name}}</h5>
+        <h4 class="card-title">{{team.name}}</h4>
         <p class="card-text">
           <ul>
                 <li>Nation: {{team.nation}}</li>
