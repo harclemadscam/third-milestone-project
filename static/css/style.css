@@ -3,6 +3,19 @@
 body {
     font-family: 'Arimo', sans-serif;
     background-color: rgb(152, 199, 152);
+    background-image: url("../images/pitch-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed; 
+}
+
+.home-button {
+    width: 100%;
+    height: 25vh;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 .card-img-top {
