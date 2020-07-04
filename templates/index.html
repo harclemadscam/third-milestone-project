@@ -8,10 +8,14 @@
 <div class="container">
     <div class="row">
     <div class="col-sm">
-      <a href="{{ url_for('team_select') }}">Select a Team</a>
+      <a type="button" href="{{ url_for('team_select') }}" class="btn btn-primary home-button">
+        <h2>Select a Team</h2>
+      </a>
     </div>
     <div class="col-sm">
-      <a href="{{ url_for('team_create') }}">Create a Team</a>
+      <a type="button" href="{{ url_for('team_create') }}" class="btn btn-success home-button">
+        <h2>Create a Team</h2>
+      </a>
     </div>
     </div>
 </div>
