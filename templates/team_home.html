@@ -7,21 +7,31 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <a href="{{ url_for('player_list', team_id=team._id) }}">View Player List</a>
+            <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-primary home-button">
+                View Player List
+            </a>
         </div>
         <div class="col-md-4">
-            <a href="{{ url_for('player_create', team_id=team._id) }}">Create a player</a>
+            <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success home-button">
+                Create a player
+            </a>
         </div>
         <div class="col-md-4">
-            <a href="{{ url_for('lineup', team_id=team._id) }}">Edit team line-up</a>
+            <a type="button" href="{{ url_for('lineup', team_id=team._id) }}" class="btn btn-info home-button">
+                Edit team line-up
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
-            <a href="{{ url_for('team_edit', team_id=team._id) }}">Edit team details</a>
+            <a type="button" href="{{ url_for('team_edit', team_id=team._id) }}" class="btn btn-secondary home-button">
+                Edit team details
+            </a>
         </div>
         <div class="col-md-4">
-            <a href="{{ url_for('team_select') }}">Select a different team</a>
+            <a type="button" href="{{ url_for('team_select') }}" class="btn btn-warning home-button">
+                Select a different team
+            </a>
         </div>
     </div>
 </div>
