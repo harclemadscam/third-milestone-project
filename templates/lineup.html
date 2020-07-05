@@ -36,7 +36,11 @@
                             {% for player in players %}
                                 {% if team.eleven == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.eleven == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -49,7 +53,11 @@
                             {% for player in players %}
                                 {% if team.ten == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.ten == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -63,7 +71,11 @@
                             {% for player in players %}
                                 {% if team.nine == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.nine == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -76,7 +88,11 @@
                             {% for player in players %}
                                 {% if team.eight == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.eight == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -89,7 +105,11 @@
                             {% for player in players %}
                                 {% if team.seven == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.seven == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -102,7 +122,11 @@
                             {% for player in players %}
                                 {% if team.six == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.six == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -115,7 +139,11 @@
                             {% for player in players %}
                                 {% if team.five == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.five == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -128,7 +156,11 @@
                             {% for player in players %}
                                 {% if team.four == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.four == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -140,7 +172,11 @@
                             {% for player in players %}
                                 {% if team.three == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.three == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -152,7 +188,11 @@
                             {% for player in players %}
                                 {% if team.two == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.two == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -164,7 +204,11 @@
                             {% for player in players %}
                                 {% if team.one == player.string_id %}
                                 {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
                             </div>
+                            {% for player in players %}
+                                {% if team.one == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -366,8 +410,6 @@
                                     </select>
                                 </div>
                             </div>
-                
-                
                 </form>
         </div> 
     </div>
@@ -410,5 +452,5 @@
                 {% endfor %}
                 </tbody>
                 </table>
-            </div>
+    </div>
 {% endblock %}
