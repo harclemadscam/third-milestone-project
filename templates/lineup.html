@@ -36,9 +36,12 @@
                             {% for player in players %}
                                 {% if team.eleven == player.string_id %}
                                 {{player.shirt_number}}
+                            </div>
+                            <div>
+                                {{player.last_name}}
+                            </div>
                                 {% endif %}
                             {% endfor %}
-                            </div>
                             
                         </div>
                         <div id="ten" class="formation-position {{formation.ten}}">
@@ -46,9 +49,13 @@
                             {% for player in players %}
                                 {% if team.ten == player.string_id %}
                                 {{player.shirt_number}}
+                            </div>
+                            <div>
+                                {{player.last_name}}
+                            </div>
                                 {% endif %}
                             {% endfor %}
-                            </div>
+                            
                             
                         </div>
                         <div id="nine" class="formation-position {{formation.nine}}">
@@ -252,75 +259,90 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="formation-select">
-                                <select class="form-control" name="five">
-                                    <option>...</option>
-                                    {% for player in players %}
-                                        {% if player.is_injured != "Yes" %}
-                                            {% if team.five == player.string_id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                            {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                            <div class="form-group row formation-select">
+                                <label for="five" class="col-sm-2 col-form-label">{{formation.five}}</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="five">
+                                        <option>...</option>
+                                        {% for player in players %}
+                                            {% if player.is_injured != "Yes" %}
+                                                {% if team.five == player.string_id %}
+                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% else %}
+                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% endif %}
                                             {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </select>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
-                            <div class="formation-select">
-                                <select class="form-control" name="four">
-                                    <option>...</option>
-                                    {% for player in players %}
-                                        {% if player.is_injured != "Yes" %}
-                                            {% if team.four == player.string_id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                            {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                            <div class="form-group row formation-select">
+                                <label for="four" class="col-sm-2 col-form-label">{{formation.four}}</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="four">
+                                        <option>...</option>
+                                        {% for player in players %}
+                                            {% if player.is_injured != "Yes" %}
+                                                {% if team.four == player.string_id %}
+                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% else %}
+                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% endif %}
                                             {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </select>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
-                            <div class="formation-select">
-                                <select class="form-control" name="three">
-                                    <option>...</option>
-                                    {% for player in players %}
-                                        {% if player.is_injured != "Yes" %}
-                                            {% if team.three == player.string_id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                            {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                            <div class="form-group row formation-select">
+                                <label for="three" class="col-sm-2 col-form-label">{{formation.three}}</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="three">
+                                        <option>...</option>
+                                        {% for player in players %}
+                                            {% if player.is_injured != "Yes" %}
+                                                {% if team.three == player.string_id %}
+                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% else %}
+                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% endif %}
                                             {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </select>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
-                            <div class="formation-select">
-                                <select class="form-control" name="two">
-                                    <option>...</option>
-                                    {% for player in players %}
-                                        {% if player.is_injured != "Yes" %}
-                                            {% if team.two == player.string_id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                            {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                            <div class="form-group row formation-select">
+                                <label for="two" class="col-sm-2 col-form-label">{{formation.two}}</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="two">
+                                        <option>...</option>
+                                        {% for player in players %}
+                                            {% if player.is_injured != "Yes" %}
+                                                {% if team.two == player.string_id %}
+                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% else %}
+                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% endif %}
                                             {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </select>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
-                            <div class="formation-select">
-                                <select class="form-control" name="one">
-                                    <option>...</option>
-                                    {% for player in players %}
-                                        {% if player.is_injured != "Yes" %}
-                                            {% if team.one == player.string_id %}
-                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                            {% else %}
-                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                            <div class="form-group row formation-select">
+                                <label for="one" class="col-sm-2 col-form-label">{{formation.one}}</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="one">
+                                        <option>...</option>
+                                        {% for player in players %}
+                                            {% if player.is_injured != "Yes" %}
+                                                {% if team.one == player.string_id %}
+                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% else %}
+                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                                {% endif %}
                                             {% endif %}
-                                        {% endif %}
-                                    {% endfor %}
-                                </select>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
                 
                 
