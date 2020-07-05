@@ -30,7 +30,7 @@
                         <div id="eleven" class="formation-position {{formation.eleven}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.eleven == player.last_name %}
+                                {% if team.eleven == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -40,10 +40,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.eleven == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.eleven == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -53,7 +53,7 @@
                         <div id="ten" class="formation-position {{formation.ten}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.ten == player.last_name %}
+                                {% if team.ten == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -63,10 +63,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.ten == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.ten == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -76,7 +76,7 @@
                         <div id="nine" class="formation-position {{formation.nine}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.nine == player.last_name %}
+                                {% if team.nine == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -86,10 +86,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.nine == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.nine == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -99,7 +99,7 @@
                         <div id="eight" class="formation-position {{formation.eight}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.eight == player.last_name %}
+                                {% if team.eight == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -109,10 +109,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.eight == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.eight == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -122,7 +122,7 @@
                         <div id="seven" class="formation-position {{formation.seven}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.seven == player.last_name %}
+                                {% if team.seven == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -132,10 +132,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.seven == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.seven == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -145,7 +145,7 @@
                         <div id="six" class="formation-position {{formation.six}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.six == player.last_name %}
+                                {% if team.six == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -155,10 +155,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.six == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.six == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -168,7 +168,7 @@
                         <div id="five" class="formation-position {{formation.five}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.five == player.last_name %}
+                                {% if team.five == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -178,10 +178,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.five == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.five == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -191,7 +191,7 @@
                         <div id="four" class="formation-position {{formation.four}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.four == player.last_name %}
+                                {% if team.four == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -201,10 +201,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.four == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.four == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -214,7 +214,7 @@
                         <div id="three" class="formation-position {{formation.three}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.three == player.last_name %}
+                                {% if team.three == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -224,10 +224,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.three == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.three == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -237,7 +237,7 @@
                         <div id="two" class="formation-position {{formation.two}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.two == player.last_name %}
+                                {% if team.two == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -247,10 +247,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.two == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.two == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
@@ -260,7 +260,7 @@
                         <div id="one" class="formation-position {{formation.one}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.one == player.last_name %}
+                                {% if team.one == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
@@ -270,10 +270,10 @@
                                     <option>...</option>
                                     {% for player in players %}
                                         {% if player.is_injured != "Yes" %}
-                                            {% if team.one == player.last_name %}
-                                            <option value="{{player.last_name}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                            {% if team.one == player.string_id %}
+                                            <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% else %}
-                                            <option value="{{player.last_name}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                            <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
