@@ -18,7 +18,7 @@
     <div class="row">
 {% for team in teams %}
     <div class="col-md-3 text-center">
-    <div class="card" style="background-image: linear-gradient(to right, {{team.first_colour}}, {{team.second_colour}})">
+    <div class="card" style="background-image: linear-gradient(to right, {{team.first_colour}} 50%, {{team.second_colour}} 100%)">
       <img src="{{team.emblem}}" class="card-img-top" alt="Team Emblem" />
       <div class="card-body">
         <h4 class="card-title">{{team.name}}</h4>
