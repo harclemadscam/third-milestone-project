@@ -8,29 +8,34 @@
     <div class="row">
         <div class="col-md-4">
             <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-primary home-button">
-                View Player List
+                <h2>View Player List</h2>
             </a>
         </div>
         <div class="col-md-4">
             <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success home-button">
-                Create a player
+                <h2>Create a Player</h2>
             </a>
         </div>
         <div class="col-md-4">
             <a type="button" href="{{ url_for('lineup', team_id=team._id) }}" class="btn btn-info home-button">
-                Edit team line-up
+                <h2>Edit Team Line-up</h2>
             </a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
             <a type="button" href="{{ url_for('team_edit', team_id=team._id) }}" class="btn btn-secondary home-button">
-                Edit team details
+                <h2>Edit Team Details</h2>
             </a>
         </div>
         <div class="col-md-4">
+            <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-light home-button">
+                <h2>View Free Agents</h2>
+             </a>
+        </div>
+        <div class="col-md-4">
             <a type="button" href="{{ url_for('team_select') }}" class="btn btn-warning home-button">
-                Select a different team
+                <h2>Select a Different Team</h2>
             </a>
         </div>
     </div>
