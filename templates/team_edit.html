@@ -6,57 +6,69 @@
 </div>
 <div class="container form-container">
     <form action="{{url_for('update_team', team_id=team._id) }}" method="POST">
-            <div class="form-group">
-                <label for="team_name">Team Name</label>
-                <input type="text" class="form-control" id="team_name" name="name" value="{{team.name}}">
+        <div class="form-background">
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="team_name">Team Name</label>
+                    <input type="text" class="form-control" id="team_name" name="name" value="{{team.name}}">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="year">Year Established</label>
-                <input type="number" min="0" max="9999" class="form-control" id="year" name="year" value="{{team.year}}">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="year">Year Established</label>
+                    <input type="number" min="0" max="9999" class="form-control" id="year" name="year" value="{{team.year}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="nation">Nation</label>
+                    <select class="form-control" id="nation" name="nation">
+                        <option selected>...</option>
+                        {% for nation in nations %}
+                            {% if team.nation == nation.name %}
+                                <option selected>{{nation.name}}</option>
+                            {% else %}
+                                <option>{{nation.name}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="nation">Nation</label>
-                <select class="form-control" id="nation" name="nation">
-                    <option selected>...</option>
-                    {% for nation in nations %}
-                        {% if team.nation == nation.name %}
-                        <option selected>{{nation.name}}</option>
-                        {% else %}
-                        <option>{{nation.name}}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="manager">Manager Name</label>
+                    <input type="text" class="form-control" id="manager" name="manager" value="{{team.manager}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="formation">Formation</label>
+                    <select class="form-control" id="formation" name="formation">
+                        {% for formation in formations %}
+                            {% if team.formation == formation.name %}
+                                <option selected>{{formation.name}}</option>
+                            {% else %}
+                                <option>{{formation.name}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="manager">Manager Name</label>
-                <input type="text" class="form-control" id="manager" name="manager" value="{{team.manager}}">
+            <div class="form-row">
+                <div class="form-group col-md">
+                    <label for="emblem">Team Emblem URL</label>
+                    <input type="text" class="form-control" id="emblem" name="emblem" value="{{team.emblem}}">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="formation">Formation</label>
-                <select class="form-control" id="formation" name="formation">
-                    {% for formation in formations %}
-                        {% if team.formation == formation.name %}
-                        <option selected>{{formation.name}}</option>
-                        {% else %}
-                        <option>{{formation.name}}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="emblem">First Colour</label>
+                    <input type="color" class="form-control-file" id="first_colour" name="first_colour" value="{{team.first_colour}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="emblem">Second Colour</label>
+                    <input type="color" class="form-control-file" id="second_colour" name="second_colour" value="{{team.second_colour}}">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="emblem">Team Emblem URL</label>
-                <input type="text" class="form-control" id="emblem" name="emblem" value="{{team.emblem}}">
-            </div>
-            <div class="form-group">
-                <label for="emblem">First Colour</label>
-                <input type="color" class="form-control-file" id="first_colour" name="first_colour" value="{{team.first_colour}}">
-            </div>
-            <div class="form-group">
-                <label for="emblem">Second Colour</label>
-                <input type="color" class="form-control-file" id="second_colour" name="second_colour" value="{{team.second_colour}}">
-            </div>
-            <a type="button" href="{{ url_for('team_select') }}" class="btn btn-danger">Cancel</a>
+        </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a type="button" href="{{ url_for('team_select') }}" class="btn btn-danger">Cancel</a>
             <a type="button" href="{{ url_for('delete_team', team_id=team._id) }}" class="btn btn-danger">Delete Team</a>
     </form>
 </div>
