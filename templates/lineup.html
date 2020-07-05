@@ -7,7 +7,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <h5>Formation side</h5>
                 <form action="{{ url_for('update_formation', team_id=team._id) }}" method="POST">
                     <div class="form-group">
                         <label for="formation">Formation</label>
@@ -23,8 +22,13 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Update Formation</button>
                 </form>
-                <form action="{{ url_for('submit_lineup', team_id=team._id) }}" method="POST">
-                <button type="submit" class="btn btn-primary">Set line-up</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Formation side</h5>
                 <div class="row lineup">
                     <div class="col lineup" id="football_field">
                         <div id="eleven" class="formation-position {{formation.eleven}}">
@@ -35,6 +39,117 @@
                                 {% endif %}
                             {% endfor %}
                             </div>
+                            
+                        </div>
+                        <div id="ten" class="formation-position {{formation.ten}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.ten == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="nine" class="formation-position {{formation.nine}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.nine == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="eight" class="formation-position {{formation.eight}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.eight == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="seven" class="formation-position {{formation.seven}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.seven == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="six" class="formation-position {{formation.six}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.six == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="five" class="formation-position {{formation.five}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.five == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="four" class="formation-position {{formation.four}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.four == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="three" class="formation-position {{formation.three}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.three == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="two" class="formation-position {{formation.two}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.two == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                        </div>
+                        <div id="one" class="formation-position {{formation.one}}">
+                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                            {% for player in players %}
+                                {% if team.one == player.string_id %}
+                                {{player.shirt_number}}
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            
+                            
+                        </div> 
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <h5>Selection side</h5>
+                <form action="{{ url_for('submit_lineup', team_id=team._id) }}" method="POST">
+                <button type="submit" class="btn btn-primary">Set line-up</button>
                             <div class="formation-select">
                                 <select class="form-control" name="eleven">
                                     <option>...</option>
@@ -48,15 +163,6 @@
                                         {% endif %}
                                     {% endfor %}
                                 </select>
-                            </div>
-                        </div>
-                        <div id="ten" class="formation-position {{formation.ten}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.ten == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
                             </div>
                             <div class="formation-select">
                                 <select class="form-control" name="ten">
@@ -72,15 +178,6 @@
                                     {% endfor %}
                                 </select>
                             </div>
-                        </div>
-                        <div id="nine" class="formation-position {{formation.nine}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.nine == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
                             <div class="formation-select">
                                 <select class="form-control" name="nine">
                                     <option>...</option>
@@ -94,15 +191,6 @@
                                         {% endif %}
                                     {% endfor %}
                                 </select>
-                            </div>
-                        </div>
-                        <div id="eight" class="formation-position {{formation.eight}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.eight == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
                             </div>
                             <div class="formation-select">
                                 <select class="form-control" name="eight">
@@ -118,15 +206,6 @@
                                     {% endfor %}
                                 </select>
                             </div>
-                        </div>
-                        <div id="seven" class="formation-position {{formation.seven}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.seven == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
                             <div class="formation-select">
                                 <select class="form-control" name="seven">
                                     <option>...</option>
@@ -140,15 +219,6 @@
                                         {% endif %}
                                     {% endfor %}
                                 </select>
-                            </div>
-                        </div>
-                        <div id="six" class="formation-position {{formation.six}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.six == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
                             </div>
                             <div class="formation-select">
                                 <select class="form-control" name="six">
@@ -164,15 +234,6 @@
                                     {% endfor %}
                                 </select>
                             </div>
-                        </div>
-                        <div id="five" class="formation-position {{formation.five}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.five == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
                             <div class="formation-select">
                                 <select class="form-control" name="five">
                                     <option>...</option>
@@ -186,15 +247,6 @@
                                         {% endif %}
                                     {% endfor %}
                                 </select>
-                            </div>
-                        </div>
-                        <div id="four" class="formation-position {{formation.four}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.four == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
                             </div>
                             <div class="formation-select">
                                 <select class="form-control" name="four">
@@ -210,15 +262,6 @@
                                     {% endfor %}
                                 </select>
                             </div>
-                        </div>
-                        <div id="three" class="formation-position {{formation.three}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.three == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
                             <div class="formation-select">
                                 <select class="form-control" name="three">
                                     <option>...</option>
@@ -232,15 +275,6 @@
                                         {% endif %}
                                     {% endfor %}
                                 </select>
-                            </div>
-                        </div>
-                        <div id="two" class="formation-position {{formation.two}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.two == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
                             </div>
                             <div class="formation-select">
                                 <select class="form-control" name="two">
@@ -256,15 +290,6 @@
                                     {% endfor %}
                                 </select>
                             </div>
-                        </div>
-                        <div id="one" class="formation-position {{formation.one}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.one == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
                             <div class="formation-select">
                                 <select class="form-control" name="one">
                                     <option>...</option>
@@ -279,14 +304,12 @@
                                     {% endfor %}
                                 </select>
                             </div>
-                        </div> 
-                    </div>
-                </div>
+                
+                
                 </form>
-            </div>
-            <div class="col-md-6">
-                <h5>Selection side</h5>
-            <div class="container-fluid">
+        </div> 
+    </div>
+    <div class="container-fluid">
                 <table class="table table-striped table-light table-borderless table-sm" data-toggle="table">
                 <thead class="thead-dark">
                     <tr>
@@ -326,6 +349,4 @@
                 </tbody>
                 </table>
             </div>
-        </div> 
-    </div>
 {% endblock %}
