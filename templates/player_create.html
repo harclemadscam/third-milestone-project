@@ -7,10 +7,11 @@
 </div>
 <div class="container">
   <form action="{{ url_for('submit_player', team_id=team._id) }}" method="POST">
+    <div class="form-background">
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="first_name">First Name</label>
-        <input type="text" class="form-control" id="first_name" name="first_name">
+        <input type="text" class="form-control" id="first_name" name="first_name" autofocus>
       </div>
       <div class="form-group col-md-4">
         <label for="last_name">Last Name</label>
@@ -75,33 +76,33 @@
       </div>
       <div class="form-group col-md-3">
         <label for="shirt_number">Shirt Number</label>
-        <input type="number" min="1" max="99" class="form-control" id="shirt_number" name="shirt_number">
+        <input type="number" min="1" max="99" class="form-control" id="shirt_number" name="shirt_number" placeholder="1 - 99">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-2">
         <label for="attacking">Attacking</label>
-        <input type="number" min="1" max="20" class="form-control" id="attacking" name="attacking">
+        <input type="number" min="1" max="20" class="form-control" id="attacking" name="attacking" placeholder="1 - 20">
       </div>
       <div class="form-group col-md-2">
         <label for="technique">Technique</label>
-        <input type="number" min="1" max="20" class="form-control" id="technique" name="technique">
+        <input type="number" min="1" max="20" class="form-control" id="technique" name="technique" placeholder="1 - 20">
       </div>
       <div class="form-group col-md-2">
         <label for="physical">Physical</label>
-        <input type="number" min="1" max="20" class="form-control" id="physical" name="physical">
+        <input type="number" min="1" max="20" class="form-control" id="physical" name="physical" placeholder="1 - 20">
       </div>
       <div class="form-group col-md-2">
         <label for="defending">Defending</label>
-        <input type="number" min="1" max="20" class="form-control" id="defending" name="defending">
+        <input type="number" min="1" max="20" class="form-control" id="defending" name="defending" placeholder="1 - 20">
       </div>
       <div class="form-group col-md-2">
         <label for="stamina">Stamina</label>
-        <input type="number" min="1" max="20" class="form-control" id="stamina" name="stamina">
+        <input type="number" min="1" max="20" class="form-control" id="stamina" name="stamina" placeholder="1 - 20">
       </div>
       <div class="form-group col-md-2">
         <label for="speed">Speed</label>
-        <input type="number" min="1" max="20" class="form-control" id="speed" name="speed">
+        <input type="number" min="1" max="20" class="form-control" id="speed" name="speed" placeholder="1 - 20">
       </div>
     </div>
     <div class="form-row">
@@ -119,6 +120,7 @@
             <label class="form-check-label" for="injured">Injured</label>
         </div>
       </div>
+    </div>
     </div>
     <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger">Cancel</a>
     <button type="submit" class="btn btn-primary">Submit</button>
