@@ -211,6 +211,17 @@ def submit_lineup(team_id):
             'one': request.form.get('one'),
           }
         })
+    players = mongo.db.players.find({'team_id': team_id})
+    for player in players:
+        player_id = player['_id']
+        string_id = str(player_id)
+        mongo.db.players.update_one(
+            {'_id': ObjectId(player_id)},
+            {
+              '$set': {
+                'string_id': string_id,
+              }
+            })
     return redirect(url_for('lineup', team_id=team_id))
 
 
