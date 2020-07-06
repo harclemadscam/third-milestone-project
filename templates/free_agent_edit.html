@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1>Edit Player</h1>
+<div class="container header-container">
+    <h1>Edit Free Agent</h1>
 </div>
 <div class="container form-container">
     <form action="{{ url_for('update_free_agent', player_id=player._id) }}" method="POST">
