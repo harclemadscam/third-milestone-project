@@ -3,9 +3,11 @@
 {% block content %}
     <div class="container-fluid header-container">
         <div class="row">
-            <div class="col-md-10">
-                <h1>Free Agents</h1>
-                <p>Instructions, buttons etc</p>
+            <div class="col-md-4">
+                <div>
+                    <h1>Free Agents</h1>
+                    <p>Players without a team</p>
+                </div>
             </div>
         </div>
     </div>
@@ -34,7 +36,11 @@
                 <tbody>
                 {% for player in players %}
                     <tr>
-                        <td><a href="{{ url_for('free_agent_details', player_id=player._id) }}" class="btn btn-primary">View Player</a></td>
+                        <td>
+                            <a href="{{ url_for('free_agent_details', player_id=player._id) }}" class="btn btn-primary">
+                                <i class="fas fa-search"></i>  View Player
+                            </a>
+                        </td>
                         <td>{{player.shirt_number}}</td>
                         <td>{{player.first_position}}</td>
                         <td>{{player.first_name}}</td>
