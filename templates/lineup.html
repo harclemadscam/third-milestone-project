@@ -2,23 +2,23 @@
 
 {% block content %}
     <div class="container header-container">
-        <h1>{{team.name}} - Line-Up Creator</h1>
-    </div>
-    <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <form action="{{ url_for('update_formation', team_id=team._id) }}" method="POST">
+                <h1>{{team.name}} - Line-Up Creator</h1>
+            </div>
+            <div class="col-md-6">
+            <form action="{{ url_for('update_formation', team_id=team._id) }}" method="POST">
                     <div class="form-group">
                         <label for="formation">Formation</label>
-                            <select class="form-control" id="formation" name="formation">
+                        <select class="form-control" id="formation" name="formation">
                             {% for formation in formations %}
                                 {% if team.formation == formation.name %}
-                                <option selected>{{formation.name}}</option>
+                                    <option selected>{{formation.name}}</option>
                                 {% else %}
-                                <option>{{formation.name}}</option>
+                                    <option>{{formation.name}}</option>
                             {% endif %}
                             {% endfor %}
-                            </select>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Update Formation</button>
                 </form>
