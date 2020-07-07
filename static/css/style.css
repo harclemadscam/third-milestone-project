@@ -53,16 +53,19 @@ ul {
 }
 
 .header-container {
-    background-color: rgba(152, 199, 152, 0.3);
     padding: 1rem;
     border-radius: 1%;
     text-align: center;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .header-container h1 {
     font-weight: 900;
+}
+
+.header-container p {
+    font-size: 1.25rem;
 }
 
 .box-shadow {
