@@ -1,18 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container header-container">
-  <h1>Select Team</h1>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h4>Instructions for team selection page</h4>
-    </div>
-    <div class="col-md-4">
-      <a type="button" href="{{ url_for('team_create') }}" class="btn btn-success">
-        Create a Team
-      </a>
-    </div>
-  </div>
+  <h1>Select an Existing Team</h1>
+    <p>Or create a new team using the button below:</p>
+        <a type="button" href="{{ url_for('team_create') }}" class="btn btn-success">
+            <i class="fas fa-pencil-ruler"></i>  Create a Team
+        </a>
 </div>
 <div class="container home-background">
     <div class="row">
@@ -30,7 +22,9 @@
                 <li>Formation: {{team.formation}}</li>
           </ul>
         </p>
-        <a href="{{ url_for('team_home', team_id=team._id) }}" class="btn btn-primary">Select Team</a>
+        <a href="{{ url_for('team_home', team_id=team._id) }}" class="btn btn-primary">
+            <i class="fas fa-hand-pointer"></i>  Select Team
+        </a>
       </div>
       </div>
     </div>
