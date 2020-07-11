@@ -184,7 +184,7 @@ ul {
 }
 
 #set-lineup {
-    margin-bottom: 1rem;
+    margin: 1rem 0 1rem 0;
 }
 
 #set-lineup button {
@@ -340,6 +340,7 @@ th, td {
     text-align: center;
 }
 
+
 @media (max-width: 1890px) {
     .form-container {
         width: 60%;
@@ -355,5 +356,40 @@ th, td {
 @media (max-width: 950px) {
     .form-container {
         width: 100%;
+    }
+}
+
+@media (max-width: 770px) {
+    #formation-form {
+        margin-top: 2rem;
+    }
+    #update-formation-btn {
+        margin-top: 1rem;  
+    }
+}
+@media (max-width: 770px) {
+    #set-lineup button {
+        width: 50%;
+    }
+}
+
+@media (max-height: 950px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-height: 750px) {
+    .large-icon {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-height: 560px) {
+    .large-icon {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1rem;
     }
 }
