@@ -1,25 +1,159 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Player Details</h1>
-    {{player.shirt_number}}
-    {{player.first_position}}
-    {{player.second_position}}
-    {{player.first_name}}
-    {{player.last_name}}
-    {{player.nation}}
-    {{player.attacking}}
-    {{player.technique}}
-    {{player.physical}}
-    {{player.defending}}
-    {{player.stamina}}
-    {{player.speed}}
-    {{player.foot}}
-    {{player.height}}
-    {{player.weight}}
-    {{player.notes}}
-    {{player.is_injured}}
-    <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-danger">Back</a>
-    <a type="button" href="{{ url_for('free_agent_edit', player_id=player._id) }}" class="btn btn-primary">Edit Player</a>
-    <a type="button" href="{{ url_for('delete_player', player_id=player._id) }}" class="btn btn-danger">Delete Player</a>
+<div class="container header-container">
+    <h1>{% if player.shirt_number %}
+            {{player.shirt_number}}.
+        {% endif %}
+        {{player.first_name}} {{player.last_name}} - Player Profile</h1>
+</div>
+<div class="container form-container">
+    <div class="form-background box-shadow">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="player-image">
+                    <img src="{{player.image}}" alt="Player Image" class="card-img-top">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Team: 
+                            <span class="larger-font">none</span>
+                    </li>
+                    <li>Nation:
+                        <span class="larger-font">{{player.nation}}</span>
+                    </li>
+                    <li>Age:
+                        <span class="larger-font">{{player.age}}</span>
+                    </li>
+                    <li>Height:
+                        {% if player.height %}
+                        <span class="larger-font">{{player.height}}cm</span>
+                        {% endif %}
+                    </li>
+                    <li>Weight:
+                        {% if player.weight %}
+                        <span class="larger-font">{{player.weight}}kg</span>
+                        {% endif %}
+                    </li>
+                    <li>Best Position:
+                        <span class="larger-font">{{player.first_position}}</span>
+                    </li>
+                    <li>Alt Position:
+                        <span class="larger-font">{{player.second_position}}</span>
+                    </li>
+                    <li>Preferred foot:
+                        <span class="larger-font">{{player.foot}}</span>
+                    </li>
+                    <li>Injured: 
+                    {% if player.is_injured == "Yes" %}
+                        <span class="larger-font">Yes</span>
+                    {% else %}
+                        <span class="larger-font">No</span>
+                    {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div>
+                    <div class="attr-header text-center">Attacking</div>
+                    <div class="attribute larger-font text-center">{{player.attacking}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div class="attr-header text-center">Technique</div>
+                    <div class="attribute larger-font text-center">{{player.technique}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div class="attr-header text-center">Physical</div>
+                    <div class="attribute larger-font text-center">{{player.physical}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div class="attr-header text-center">Defending</div>
+                    <div class="attribute larger-font text-center">{{player.defending}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div class="attr-header text-center">Stamina</div>
+                    <div class="attribute larger-font text-center">{{player.stamina}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div class="attr-header text-center">Speed</div>
+                    <div class="attribute larger-font text-center">{{player.speed}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <div class="attr-header">Notes:</div>
+                    <div>{{player.notes}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+        <div class="col-md-4">
+            <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-danger form-buttons">
+                <i class="fas fa-caret-left"></i>
+                <span> Back to Free Agents</span>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a type="button" href="{{ url_for('free_agent_edit', player_id=player._id) }}" class="btn btn-secondary form-buttons">
+                <i class="fas fa-user-cog"></i>
+                <span> Edit Player</span>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-danger form-buttons" data-toggle="modal" data-target="#deletePlayerModal">
+                <i class="fas fa-trash-alt"></i>    
+                <span>Delete Player</span>
+            </button>
+        </div>
+    </div>
+</div>
+    <div class="modal fade" id="deletePlayerModal" tabindex="-1" role="dialog" aria-labelledby="deletePlayerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deletePlayerModalLabel">Delete player {{player.first_name}} {{player.last_name}}?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Do you really want to delete player {{player.first_name}} {{player.last_name}}? This cannot be undone!</p>
+      </div>
+      <div class="modal-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-auto mr-auto">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <i class="fas fa-times-circle"></i>
+                        <span> No, go back!</span>
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <a type="button" href="{{ url_for('delete_player', player_id=player._id) }}" class="btn btn-success">
+                        <i class="fas fa-trash-alt"></i>    
+                        <span> Yes, delete!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
