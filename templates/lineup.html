@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container header-container">
+    <div class="container-fluid header-container">
         <div class="row">
             <div class="col-md-6">
                 <h1>{{team.name}} - Line-Up Creator</h1>
@@ -228,7 +228,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.eleven == player.string_id %}
+                                                {% if team.eleven and team.eleven == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -245,7 +245,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.ten == player.string_id %}
+                                                {% if team.ten and team.ten == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -262,7 +262,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.nine == player.string_id %}
+                                                {% if team.nine and team.nine == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -279,7 +279,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.eight == player.string_id %}
+                                                {% if team.eight and team.eight == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -296,7 +296,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.seven == player.string_id %}
+                                                {% if team.seven and team.seven == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -313,7 +313,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.six == player.string_id %}
+                                                {% if team.six and team.six == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -330,7 +330,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.five == player.string_id %}
+                                                {% if team.five and team.five == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -347,7 +347,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.four == player.string_id %}
+                                                {% if team.four and team.four == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -364,7 +364,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.three == player.string_id %}
+                                                {% if team.three and team.three == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -381,7 +381,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.two == player.string_id %}
+                                                {% if team.two and team.two == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
@@ -398,7 +398,7 @@
                                         <option>...</option>
                                         {% for player in players %}
                                             {% if player.is_injured != "Yes" %}
-                                                {% if team.one == player.string_id %}
+                                                {% if team.one and team.one == player.string_id %}
                                                 <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
                                                 {% else %}
                                                 <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
