@@ -3,7 +3,10 @@
 {% block content %}
    
 <div class="container header-container">
-    <h1>{{player.shirt_number}}. {{player.first_name}} {{player.last_name}} - Player Profile</h1>
+    <h1>{% if player.shirt_number %}
+            {{player.shirt_number}}.
+        {% endif %}
+        {{player.first_name}} {{player.last_name}} - Player Profile</h1>
 </div>
 <div class="container form-container">
     <div class="form-background box-shadow">
@@ -16,7 +19,7 @@
             <div class="col-md-6">
                 <ul>
                     <li>Team: 
-                        <span class="larger-font">{{team.name}}</span>
+                        <span class="larger-font">{{team.name}} <img src="{{team.emblem}}" alt="" class="img-thumbnail"></span>
                     </li>
                     <li>Nation:
                         <span class="larger-font">{{player.nation}}</span>
@@ -25,7 +28,9 @@
                         <span class="larger-font">{{player.age}}</span>
                     </li>
                     <li>Height:
+                        {% if player.height %}
                         <span class="larger-font">{{player.height}}cm</span>
+                        {% endif %}
                     </li>
                     <li>Weight:
                         <span class="larger-font">{{player.weight}}kg</span>
@@ -52,45 +57,45 @@
         <div class="row">
             <div class="col-md-2">
                 <div>
-                    <div>Attacking</div>
-                    <div>{{player.attacking}}</div>
+                    <div class="attr-header text-center">Attacking</div>
+                    <div class="larger-font text-center">{{player.attacking}}</div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div>
-                    <div>Technique</div>
-                    <div>{{player.technique}}</div>
+                    <div class="attr-header text-center">Technique</div>
+                    <div class="larger-font text-center">{{player.technique}}</div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div>
-                    <div>Physical</div>
-                    <div>{{player.physical}}</div>
+                    <div class="attr-header text-center">Physical</div>
+                    <div class="larger-font text-center">{{player.physical}}</div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div>
-                    <div>Defending</div>
-                    <div>{{player.defending}}</div>
+                    <div class="attr-header text-center">Defending</div>
+                    <div class="larger-font text-center">{{player.defending}}</div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div>
-                    <div>Stamina</div>
-                    <div>{{player.stamina}}</div>
+                    <div class="attr-header text-center">Stamina</div>
+                    <div class="larger-font text-center">{{player.stamina}}</div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div>
-                    <div>Speed</div>
-                    <div>{{player.speed}}</div>
+                    <div class="attr-header text-center">Speed</div>
+                    <div class="larger-font text-center">{{player.speed}}</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div>
-                    <div>Notes</div>
+                    <div class="attr-header">Notes:</div>
                     <div>{{player.notes}}</div>
                 </div>
             </div>
