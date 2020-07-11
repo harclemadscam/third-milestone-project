@@ -5,15 +5,16 @@
         <div class="row">
             <div class="col-md-4">
                 <h1>{{team.name}} - Players</h1>
+                <p>Click View Player to go to the player's profile, where you can view, edit and delete their data</p>
             </div>
             <div class="col-md-4">
-                <p>Add a new player to this team:</p>
+                <p class="player-list-text">Add a new player to this team:</p>
                 <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success">
                     <i class="fas fa-user-plus"></i>  Create a Player
                 </a>
             </div>
             <div class="col-md-4">
-                <p>View players without a team:</p>
+                <p class="player-list-text" >View players without a team:</p>
                 <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-light">
                     <i class="far fa-user"></i> Free Agents
                 </a>
