@@ -91,6 +91,12 @@ ul {
     margin-bottom: 1.5rem;
 }
 
+.player-image {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
 .lineup {
     height: 100vh;
     position: relative;
