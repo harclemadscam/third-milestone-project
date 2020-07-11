@@ -91,6 +91,10 @@ ul {
     margin-bottom: 1.5rem;
 }
 
+.larger-font {
+    font-size: 1.25rem;
+}
+
 .lineup {
     height: 100vh;
     position: relative;
