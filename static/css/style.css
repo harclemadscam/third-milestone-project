@@ -65,6 +65,10 @@ ul {
     margin-bottom: 1rem;
 }
 
+.header-container img {
+    margin-bottom: 1rem;
+}
+
 .header-container h1 {
     font-weight: 900;
 }
@@ -96,6 +100,10 @@ ul {
     margin-bottom: 1.5rem;
 }
 
+.larger-heading {
+    font-size: 3.5rem;
+}
+
 .larger-font {
     font-size: 1.25rem;
 }
@@ -104,8 +112,17 @@ ul {
     margin-top: 1rem;
 }
 
+.attribute {
+    margin-bottom: 1rem;
+}
+
 .small-thumb {
     height: 2rem;;
+    width: auto;
+}
+
+.medium-thumb {
+    height: 12vh;
     width: auto;
 }
 
