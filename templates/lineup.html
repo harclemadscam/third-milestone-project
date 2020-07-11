@@ -33,13 +33,13 @@
                         <div id="eleven" class="formation-position {{formation.eleven}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.eleven == player.string_id %}
+                                {% if team.eleven and team.eleven == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.eleven == player.string_id %}
+                                {% if team.eleven and team.eleven == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -50,13 +50,13 @@
                         <div id="ten" class="formation-position {{formation.ten}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.ten == player.string_id %}
+                                {% if team.ten and team.ten == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.ten == player.string_id %}
+                                {% if team.ten and team.ten == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -68,13 +68,13 @@
                         <div id="nine" class="formation-position {{formation.nine}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.nine == player.string_id %}
+                                {% if team.nine and team.nine == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.nine == player.string_id %}
+                                {% if team.nine and team.nine == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -85,13 +85,13 @@
                         <div id="eight" class="formation-position {{formation.eight}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.eight == player.string_id %}
+                                {% if team.eight and team.eight == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.eight == player.string_id %}
+                                {% if team.eight and team.eight == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -102,13 +102,13 @@
                         <div id="seven" class="formation-position {{formation.seven}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.seven == player.string_id %}
+                                {% if team.seven and team.seven == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.seven == player.string_id %}
+                                {% if team.seven and team.seven == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -119,13 +119,13 @@
                         <div id="six" class="formation-position {{formation.six}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.six == player.string_id %}
+                                {% if team.six and team.six == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.six == player.string_id %}
+                                {% if team.six and team.six == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -136,13 +136,13 @@
                         <div id="five" class="formation-position {{formation.five}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.five == player.string_id %}
+                                {% if team.five and team.five == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.five == player.string_id %}
+                                {% if team.five and team.five == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -153,13 +153,13 @@
                         <div id="four" class="formation-position {{formation.four}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.four == player.string_id %}
+                                {% if team.four and team.four == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.four == player.string_id %}
+                                {% if team.four and team.four == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -169,13 +169,13 @@
                         <div id="three" class="formation-position {{formation.three}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.three == player.string_id %}
+                                {% if team.three and team.three == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.three == player.string_id %}
+                                {% if team.three and team.three == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -185,13 +185,13 @@
                         <div id="two" class="formation-position {{formation.two}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.two == player.string_id %}
+                                {% if team.two and team.two == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.two == player.string_id %}
+                                {% if team.two and team.two == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
@@ -201,13 +201,13 @@
                         <div id="one" class="formation-position {{formation.one}}">
                             <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                             {% for player in players %}
-                                {% if team.one == player.string_id %}
+                                {% if team.one and team.one == player.string_id %}
                                 {{player.shirt_number}}
                                 {% endif %}
                             {% endfor %}
                             </div>
                             {% for player in players %}
-                                {% if team.one == player.string_id %}
+                                {% if team.one and team.one == player.string_id %}
                             <div>
                                 {{player.last_name}}
                             </div>
