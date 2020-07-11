@@ -95,6 +95,15 @@ ul {
     font-size: 1.25rem;
 }
 
+.attr-header {
+    margin-top: 1rem;
+}
+
+.img-thumbnail {
+    height: 2rem;;
+    width: auto;
+}
+
 .lineup {
     height: 100vh;
     position: relative;
