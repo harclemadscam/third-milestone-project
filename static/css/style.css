@@ -304,6 +304,30 @@ ul {
     top: 88%;
 }
 
+.forward-label {
+    background-color: rgb(227, 66, 66);
+}
+
+.attacking-mid-label {
+    background-color: rgb(227, 216, 66);
+}
+
+.midfield-label {
+    background-color: rgb(66, 227, 66);
+}
+
+.wing-back-label {
+    background-color: rgb(52, 207, 186);
+}
+
+.defence-label {
+    background-color: rgb(66, 168, 227);
+}
+
+.goalkeeper-label {
+    background-color: rgb(168, 66, 227);
+}
+
 th, td {
     text-align: center;
 }
