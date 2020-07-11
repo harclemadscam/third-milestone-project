@@ -166,6 +166,15 @@ ul {
     font-weight: 700;
 }
 
+.formation-select {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.position-label {
+    border-radius: 20%;
+}
+
 #set-lineup {
     margin-bottom: 1rem;
 }
