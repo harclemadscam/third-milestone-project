@@ -1,24 +1,45 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Player Details</h1>
-    {{player.shirt_number}}
-    {{player.first_position}}
-    {{player.second_position}}
-    {{player.first_name}}
-    {{player.last_name}}
-    {{player.nation}}
-    {{player.attacking}}
-    {{player.technique}}
-    {{player.physical}}
-    {{player.defending}}
-    {{player.stamina}}
-    {{player.speed}}
-    {{player.foot}}
-    {{player.height}}
-    {{player.weight}}
-    {{player.notes}}
-    {{player.is_injured}}
+   
+<div class="container header-container">
+    <h1>{{player.shirt_number}}. {{player.first_name}} {{player.last_name}} - Player Profile</h1>
+</div>
+<div class="container form-container">
+    <div class="form-background box-shadow">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="player-image">
+                    <img src="{{player.image}}" alt="Player Image">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Team: {{team.name}}</li>
+                    <li>Nation: {{player.nation}}</li>
+                    <li>Age: {{player.age}} </li>
+                    <li>Height: {{player.height}}cm</li>
+                    <li>Weight: {{player.weight}}kg</li>
+                    <li>{{player.first_position}}</li>
+                    <li>{{player.second_position}}</li>
+                    {{player.foot}}
+                    {{player.is_injured}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">{{player.attacking}}</div>
+            <div class="col-md-2">{{player.technique}}</div>
+            <div class="col-md-2">{{player.physical}}</div>
+            <div class="col-md-2">{{player.defending}}</div>
+            <div class="col-md-2">{{player.stamina}}</div>
+            <div class="col-md-2">{{player.speed}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">{{player.notes}}</div>
+        </div>
+    </div>
+</div>
     <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger">Back</a>
     <a type="button" href="{{ url_for('player_edit', player_id=player._id, team_id=team._id) }}" class="btn btn-primary">Edit Player</a>
     <a type="button" href="{{ url_for('delete_player', player_id=player._id) }}" class="btn btn-danger">Delete Player</a>
