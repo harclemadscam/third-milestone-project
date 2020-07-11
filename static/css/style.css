@@ -118,6 +118,14 @@ ul {
     font-size: 3.5rem;
 }
 
+.player-image {
+    min-height: 190px;
+}
+
+.player-info {
+    margin-top: 0.75rem;
+}
+
 .larger-font {
     font-size: 1.25rem;
 }
@@ -330,4 +338,22 @@ ul {
 
 th, td {
     text-align: center;
+}
+
+@media (max-width: 1890px) {
+    .form-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .form-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 950px) {
+    .form-container {
+        width: 100%;
+    }
 }
