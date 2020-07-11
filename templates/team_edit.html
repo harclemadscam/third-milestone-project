@@ -3,6 +3,11 @@
 {% block content %}
 <div class="container header-container">
     <h1>Edit {{team.name}}</h1>
+    <p>Or delete it using the button below:</p>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTeamModal">
+        <i class="fas fa-trash-alt"></i>    
+        <span>Delete Team</span>
+    </button>
 </div>
 <div class="container form-container">
     <form action="{{url_for('update_team', team_id=team._id) }}" method="POST">
@@ -80,12 +85,7 @@
                     <span> Submit Changes</span>
                 </button>
             </div>
-            </div>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTeamModal">
-                <i class="fas fa-trash-alt"></i>    
-                <span>Delete Team</span>
-            </button>
-
+        </div>
 <!-- Modal -->
 <div class="modal fade" id="deleteTeamModal" tabindex="-1" role="dialog" aria-labelledby="deleteTeamModalLabel" aria-hidden="true">
   <div class="modal-dialog">
