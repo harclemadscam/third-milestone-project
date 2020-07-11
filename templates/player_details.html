@@ -20,23 +20,58 @@
                     <li>Age: {{player.age}} </li>
                     <li>Height: {{player.height}}cm</li>
                     <li>Weight: {{player.weight}}kg</li>
-                    <li>{{player.first_position}}</li>
-                    <li>{{player.second_position}}</li>
-                    {{player.foot}}
-                    {{player.is_injured}}
+                    <li>Best Position: {{player.first_position}}</li>
+                    <li>Alt Position: {{player.second_position}}</li>
+                    <li>Preferred foot: {{player.foot}}</li>
+                    <li>Injured: {{player.is_injured}}</li>
                 </ul>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">{{player.attacking}}</div>
-            <div class="col-md-2">{{player.technique}}</div>
-            <div class="col-md-2">{{player.physical}}</div>
-            <div class="col-md-2">{{player.defending}}</div>
-            <div class="col-md-2">{{player.stamina}}</div>
-            <div class="col-md-2">{{player.speed}}</div>
+            <div class="col-md-2">
+                <div>
+                    <div>Attacking</div>
+                    <div>{{player.attacking}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div>Technique</div>
+                    <div>{{player.technique}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div>Physical</div>
+                    <div>{{player.physical}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div>Defending</div>
+                    <div>{{player.defending}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div>Stamina</div>
+                    <div>{{player.stamina}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <div>Speed</div>
+                    <div>{{player.speed}}</div>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-12">{{player.notes}}</div>
+            <div class="col-md-12">
+                <div>
+                    <div>Notes</div>
+                    <div>{{player.notes}}</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
