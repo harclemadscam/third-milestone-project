@@ -18,7 +18,7 @@ for (let i = 0; i < positionLabels.length; i++) {
     if (positionLabels[i].textContent === "left-attacking-midfield") {
         positionLabels[i].textContent = "LAM"
     }
-    if (positionLabels[i].textContent === "attacking-midfield") {
+    if (positionLabels[i].textContent === "centre-attacking-midfield") {
         positionLabels[i].textContent = "CAM"
     }
     if (positionLabels[i].textContent === "right-attacking-midfield") {
@@ -48,13 +48,13 @@ for (let i = 0; i < positionLabels.length; i++) {
     if (positionLabels[i].textContent === "left-back") {
         positionLabels[i].textContent = "LB"
     }
-    if (positionLabels[i].textContent === "back-three-left" || "left-centre-back") {
+    if ((positionLabels[i].textContent === "back-three-left") || (positionLabels[i].textContent === "left-centre-back")) {
         positionLabels[i].textContent = "LCB"
     }
     if (positionLabels[i].textContent === "centre-back") {
         positionLabels[i].textContent = "CB"
     }
-    if (positionLabels[i].textContent === "right-centre-back" || "back-three-right") {
+    if ((positionLabels[i].textContent === "right-centre-back") || (positionLabels[i].textContent === "back-three-right")) {
         positionLabels[i].textContent = "RCB"
     }
     if (positionLabels[i].textContent === "right-back") {
