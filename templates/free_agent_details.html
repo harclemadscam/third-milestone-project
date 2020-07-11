@@ -11,11 +11,11 @@
     <div class="form-background box-shadow">
         <div class="row">
             <div class="col-md-6">
-                <div class="player-image">
-                    <img src="{{player.image}}" alt="Player Image" class="card-img-top">
+                <div>
+                    <img src="{{player.image}}" alt="Player Image" class="card-img-top player-image">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 player-info">
                 <ul>
                     <li>Team: 
                             <span class="larger-font">none</span>
@@ -56,37 +56,37 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-4">
                 <div>
                     <div class="attr-header text-center">Attacking</div>
                     <div class="attribute larger-font text-center">{{player.attacking}}</div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-4">
                 <div>
                     <div class="attr-header text-center">Technique</div>
                     <div class="attribute larger-font text-center">{{player.technique}}</div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-4">
                 <div>
                     <div class="attr-header text-center">Physical</div>
                     <div class="attribute larger-font text-center">{{player.physical}}</div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-4">
                 <div>
                     <div class="attr-header text-center">Defending</div>
                     <div class="attribute larger-font text-center">{{player.defending}}</div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-4">
                 <div>
                     <div class="attr-header text-center">Stamina</div>
                     <div class="attribute larger-font text-center">{{player.stamina}}</div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-4">
                 <div>
                     <div class="attr-header text-center">Speed</div>
                     <div class="attribute larger-font text-center">{{player.speed}}</div>
