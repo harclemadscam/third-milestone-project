@@ -12,6 +12,10 @@ body {
     font-weight: 700;
 }
 
+h1 {
+    font-size: 3rem;
+}
+
 .unstyled-link:hover, .unstyled-link:visited, .unstyled-link:link, .unstyled-link:active {
     text-decoration: none;
     color: inherit;
@@ -74,7 +78,7 @@ ul {
 }
 
 .header-container p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .box-shadow {
