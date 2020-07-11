@@ -236,7 +236,53 @@
                     <button  type="submit" class="btn btn-primary">Set line-up</button>
                 </div>
                             <div class="form-group row formation-select">
-                                <label for="eleven" class="col-sm-2 col-form-label">{{formation.eleven}}</label>
+                                <label for="eleven" class="col-sm-2 col-form-label">
+                                {% if formation.eleven == "left-forward" %}
+                                LF
+                                {% elif formation.eleven == "left-centre-forward" %}
+                                LCF
+                                {% elif formation.eleven == "centre-forward" %}
+                                CF
+                                {% elif formation.eleven == "right-centre-forward" %}
+                                RCF
+                                {% elif formation.eleven == "right-forward" %}
+                                RF
+                                {% elif formation.eleven == "left-attacking-midfield" %}
+                                LAM
+                                {% elif formation.eleven == "attacking-midfield" %}
+                                CAM
+                                {% elif formation.eleven == "right-attacking-midfield" %}
+                                RAM
+                                {% elif formation.eleven == "left-midfield" %}
+                                LM
+                                {% elif formation.eleven == "left-centre-midfield" %}
+                                LCM
+                                {% elif formation.eleven == "right-centre-midfield" %}
+                                RCM
+                                {% elif formation.eleven == "right-midfield" %}
+                                RM
+                                {% elif formation.eleven == "left-wing-back " %}
+                                LWB
+                                {% elif formation.eleven == "centre-defensive-midfield" %}
+                                CDM
+                                {% elif formation.eleven == "right-wing-back" %}
+                                RWB
+                                {% elif formation.eleven == "left-back" %}
+                                LB
+                                {% elif formation.eleven == "back-three-left" or "left-centre-back" %}
+                                LCB
+                                {% elif formation.eleven == "centre-back" %}
+                                CB
+                                {% elif formation.eleven == "back-three-right" or "right-centre-back" %}
+                                RCB
+                                {% elif formation.eleven == "right-back" %}
+                                RB
+                                {% elif formation.eleven == "goalkeeper" %}
+                                GK
+                                {% else %}
+                                {{formation.eleven}}
+                                {% endif %}
+                                </label>
                                 <div class="col-sm-10">
                                     <select class="form-control" name="eleven">
                                         <option>...</option>
