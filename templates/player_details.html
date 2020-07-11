@@ -19,7 +19,10 @@
             <div class="col-md-6">
                 <ul>
                     <li>Team: 
-                        <span class="larger-font">{{team.name}} <img src="{{team.emblem}}" alt="" class="img-thumbnail"></span>
+                        <a href="{{ url_for('team_home', team_id=team._id) }}" class="unstyled-link">
+                            <span class="larger-font">{{team.name}}</span>
+                            <img src="{{team.emblem}}" alt="" class="img-thumbnail small-thumb">
+                        </a>
                     </li>
                     <li>Nation:
                         <span class="larger-font">{{player.nation}}</span>
