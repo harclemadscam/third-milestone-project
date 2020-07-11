@@ -12,6 +12,11 @@ body {
     font-weight: 700;
 }
 
+.unstyled-link:hover, .unstyled-link:visited, .unstyled-link:link, .unstyled-link:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -99,7 +104,7 @@ ul {
     margin-top: 1rem;
 }
 
-.img-thumbnail {
+.small-thumb {
     height: 2rem;;
     width: auto;
 }
