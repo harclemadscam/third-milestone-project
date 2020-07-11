@@ -12,18 +12,21 @@
                 <span class="large-icon"><i class="far fa-list-alt"></i></span>
                 <h2>View Player List</h2>
             </a>
+            <p class="text-center">View the players of {{team.name}}</p>
         </div>
         <div class="col-md-4">
             <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success home-button">
                 <span class="large-icon"><i class="fa fa-user-plus"></i></span>
                 <h2>Create a Player</h2>
             </a>
+            <p class="text-center">Add a new player to {{team.name}}</p>
         </div>
         <div class="col-md-4">
             <a type="button" href="{{ url_for('lineup', team_id=team._id) }}" class="btn btn-info home-button">
                 <span class="large-icon"><i class="fas fa-futbol"></i></span>
-                <h2>Edit Team Line-up</h2>
+                <h2>Edit Team Line-up</h2>   
             </a>
+            <p class="text-center">Set the starting eleven of {{team.name}}</p>
         </div>
     </div>
     <div class="row">
@@ -32,18 +35,21 @@
                 <span class="large-icon"><i class="fas fa-users-cog"></i></span>
                 <h2>Edit Team Details</h2>
             </a>
+            <p class="text-center">Update team information or delete the team</p>
         </div>
         <div class="col-md-4">
             <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-light home-button">
                 <span class="large-icon"><i class="far fa-user"></i></span>
                 <h2>View Free Agents</h2>
-             </a>
+            </a>
+            <p class="text-center">Free Agents are players without a team. Assign them to a team by editing their profile</p>
         </div>
         <div class="col-md-4">
             <a type="button" href="{{ url_for('team_select') }}" class="btn btn-warning home-button">
                 <span class="large-icon"><i class="fas fa-sign-out-alt"></i></span>
                 <h2>Select a Different Team</h2>
             </a>
+            <p class="text-center">Go back to the team selection page</p>
         </div>
     </div>
 </div>
