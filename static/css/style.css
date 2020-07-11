@@ -340,6 +340,15 @@ th, td {
     text-align: center;
 }
 
+#formation-form {
+    margin-top: 1rem;
+}
+
+#update-formation-btn {
+    margin-top: 3rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
 
 @media (max-width: 1890px) {
     .form-container {
