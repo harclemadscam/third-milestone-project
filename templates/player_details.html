@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="player-image">
-                    <img src="{{player.image}}" alt="Player Image">
+                    <img src="{{player.image}}" alt="Player Image" class="card-img-top">
                 </div>
             </div>
             <div class="col-md-6">
@@ -23,7 +23,13 @@
                     <li>Best Position: {{player.first_position}}</li>
                     <li>Alt Position: {{player.second_position}}</li>
                     <li>Preferred foot: {{player.foot}}</li>
-                    <li>Injured: {{player.is_injured}}</li>
+                    <li>Injured: 
+                    {% if player.is_injured == "Yes" %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}
+                    </li>
                 </ul>
             </div>
         </div>
