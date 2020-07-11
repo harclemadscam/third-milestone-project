@@ -15,19 +15,35 @@
             </div>
             <div class="col-md-6">
                 <ul>
-                    <li>Team: {{team.name}}</li>
-                    <li>Nation: {{player.nation}}</li>
-                    <li>Age: {{player.age}} </li>
-                    <li>Height: {{player.height}}cm</li>
-                    <li>Weight: {{player.weight}}kg</li>
-                    <li>Best Position: {{player.first_position}}</li>
-                    <li>Alt Position: {{player.second_position}}</li>
-                    <li>Preferred foot: {{player.foot}}</li>
+                    <li>Team: 
+                        <span class="larger-font">{{team.name}}</span>
+                    </li>
+                    <li>Nation:
+                        <span class="larger-font">{{player.nation}}</span>
+                    </li>
+                    <li>Age:
+                        <span class="larger-font">{{player.age}}</span>
+                    </li>
+                    <li>Height:
+                        <span class="larger-font">{{player.height}}cm</span>
+                    </li>
+                    <li>Weight:
+                        <span class="larger-font">{{player.weight}}kg</span>
+                    </li>
+                    <li>Best Position:
+                        <span class="larger-font">{{player.first_position}}</span>
+                    </li>
+                    <li>Alt Position:
+                        <span class="larger-font">{{player.second_position}}</span>
+                    </li>
+                    <li>Preferred foot:
+                        <span class="larger-font">{{player.foot}}</span>
+                    </li>
                     <li>Injured: 
                     {% if player.is_injured == "Yes" %}
-                        Yes
+                        <span class="larger-font">Yes</span>
                     {% else %}
-                        No
+                        <span class="larger-font">No</span>
                     {% endif %}
                     </li>
                 </ul>
