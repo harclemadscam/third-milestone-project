@@ -166,6 +166,15 @@ ul {
     font-weight: 700;
 }
 
+#set-lineup {
+    margin-bottom: 1rem;
+}
+
+#set-lineup button {
+    width: 30%;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
 #football_field {
     background-image: url("../images/football-field.png"); 
     background-size: 100% 100%;
