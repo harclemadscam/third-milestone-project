@@ -106,21 +106,38 @@
             </div>
         </div>
     </div>
+<div class="row">
+        <div class="col-md-4">
+            <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger form-buttons">
+                <i class="fas fa-caret-left"></i>
+                <span> Back to Players</span>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a type="button" href="{{ url_for('player_edit', player_id=player._id, team_id=team._id) }}" class="btn btn-secondary form-buttons">
+                <i class="fas fa-user-cog"></i>
+                <span> Edit Player</span>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-danger form-buttons" data-toggle="modal" data-target="#deletePlayerModal">
+                <i class="fas fa-trash-alt"></i>    
+                <span>Delete Player</span>
+            </button>
+        </div>
+    </div>
 </div>
-    <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger">Back</a>
-    <a type="button" href="{{ url_for('player_edit', player_id=player._id, team_id=team._id) }}" class="btn btn-primary">Edit Player</a>
-    <a type="button" href="{{ url_for('delete_player', player_id=player._id) }}" class="btn btn-danger">Delete Player</a>
-    <div class="modal fade" id="deleteTeamModal" tabindex="-1" role="dialog" aria-labelledby="deleteTeamModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deletePlayerModal" tabindex="-1" role="dialog" aria-labelledby="deletePlayerModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteTeamModalLabel">Delete Team?</h5>
+        <h5 class="modal-title" id="deletePlayerModalLabel">Delete player {{player.first_name}} {{player.last_name}}?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Do you really want to delete this team? This cannot be undone!</p>
+        <p>Do you really want to delete player {{player.first_name}} {{player.last_name}}? This cannot be undone!</p>
       </div>
       <div class="modal-footer">
         <div class="container">
@@ -132,9 +149,9 @@
                     </button>
                 </div>
                 <div class="col-auto">
-                    <a type="button" href="{{ url_for('delete_team', team_id=team._id) }}" class="btn btn-success">
+                    <a type="button" href="{{ url_for('delete_player', player_id=player._id) }}" class="btn btn-success">
                         <i class="fas fa-trash-alt"></i>    
-                        <span> Yes, delete it!</span>
+                        <span> Yes, delete!</span>
                     </a>
                 </div>
             </div>
