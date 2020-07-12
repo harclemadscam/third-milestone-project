@@ -99,13 +99,13 @@
     <!-- BUTTONS -->
     <div class="row">
         <div class="col-md-4">
-            <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-danger form-buttons">
+            <a href="{{ url_for('free_agents') }}" class="btn btn-danger form-buttons">
                 <i class="fas fa-caret-left"></i>
                 <span>Back to Free Agents</span>
             </a>
         </div>
         <div class="col-md-4">
-            <a type="button" href="{{ url_for('free_agent_edit', player_id=player._id) }}" class="btn btn-secondary form-buttons">
+            <a href="{{ url_for('free_agent_edit', player_id=player._id) }}" class="btn btn-secondary form-buttons">
                 <i class="fas fa-user-cog"></i>
                 <span>Edit Player</span>
             </a>
