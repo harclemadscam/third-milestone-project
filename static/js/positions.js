@@ -48,7 +48,7 @@ for (let i = 0; i < positionLabels.length; i++) {
         positionLabels[i].classList.add("midfield-label");
     }
     if (positionLabels[i].textContent === "right-midfield") {
-        positionLabels[i].textContent = "RF";
+        positionLabels[i].textContent = "RM";
         positionLabels[i].classList.add("midfield-label");
     }
     if (positionLabels[i].textContent === "left-wing-back") {
