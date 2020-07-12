@@ -1,3 +1,5 @@
+//loads on lineup page
+//loops through position labels, checks text content and updates it, adds css class
 const positionLabels = document.getElementsByClassName("position-label");
 for (let i = 0; i < positionLabels.length; i++) {
     if (positionLabels[i].textContent === "left-forward") {
