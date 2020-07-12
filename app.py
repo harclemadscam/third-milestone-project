@@ -63,7 +63,9 @@ def team_edit(team_id):
 
 @app.route('/teams/<team_id>/update-team', methods=['POST'])
 def update_team(team_id):
-    """Updates the team with matching team id with data from edit team form"""
+    """Updates the team of matching team id with data from edit team form,
+    redirects to team home page
+    """
     mongo.db.teams.update_one(
         {'_id': ObjectId(team_id)},
         {
@@ -157,6 +159,9 @@ def player_edit(player_id, team_id):
 
 @app.route('/teams/<team_id>/players/<player_id>/update-player', methods=['POST'])
 def update_player(player_id, team_id):
+    """Updates the player of matching player id with data from edit player form,
+    redirects to player list page
+    """
     mongo.db.players.update_one(
         {'_id': ObjectId(player_id)},
         {
@@ -188,6 +193,9 @@ def update_player(player_id, team_id):
 
 @app.route('/<player_id>/delete-player')
 def delete_player(player_id):
+    """Deletes a player with matching player id, checks if team id is blank for the player,
+    if not redirect to player list, if so redirect to free agents
+    """
     player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
     mongo.db.players.delete_one({'_id': ObjectId(player_id)})
     team_id = player['team_id']
@@ -199,6 +207,9 @@ def delete_player(player_id):
 # Lineups
 @app.route('/teams/<team_id>/line-up')
 def lineup(team_id):
+    """Renders the lineup creator page,
+    gets player, team and formation data to populate the forms on the page
+    """
     players = mongo.db.players.find({'team_id': team_id})
     # Creates a list of player data so that the data can be used more than once
     players_list = list(players)
@@ -210,6 +221,9 @@ def lineup(team_id):
 
 @app.route('/teams/<team_id>/line-up/update-formation', methods=['POST'])
 def update_formation(team_id):
+    """Updates the formation value of the team with matching team id,
+    using data from formation form
+    """
     mongo.db.teams.update_one(
         {'_id': ObjectId(team_id)},
         {
@@ -222,6 +236,9 @@ def update_formation(team_id):
 
 @app.route('/teams/<team_id>/line-up/submit-team', methods=['POST'])
 def submit_lineup(team_id):
+    """Updates the team of matching team id with lineup data from the set lineup form,
+    then updates players with a matching team id value with a string version of their own player id
+    """
     mongo.db.teams.update_one(
         {'_id': ObjectId(team_id)},
         {
@@ -239,6 +256,7 @@ def submit_lineup(team_id):
             'one': request.form.get('one'),
           }
         })
+    # Adding a string player id to each player allows it to be compared to the team lineup data
     players = mongo.db.players.find({'team_id': team_id})
     for player in players:
         player_id = player['_id']
@@ -255,30 +273,37 @@ def submit_lineup(team_id):
 # Free Agents
 @app.route('/free-agents')
 def free_agents():
+    """Renders the free agents page, getting players whose team id value is blank"""
     players = mongo.db.players.find({'team_id': ''})
     return render_template("free_agents.html", players=players)
 
 
 @app.route('/free_agents/<player_id>')
 def free_agent_details(player_id):
+    """Renders the free agent profile page for a free agent with matching player id"""
     player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
     return render_template("free_agent_details.html", player=player)
 
 
 @app.route('/free_agents/<player_id>/edit-player')
 def free_agent_edit(player_id):
+    """Renders the edit free agent form for a free agent with matching player id,
+    gets team, nation and position data to populate form
+    """
     player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
-    team_id = ""
     teams = mongo.db.teams.find()
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
     positions = mongo.db.positions.find()
     # Creates a list of position data so that the data can be used more than once
     positions_list = list(positions)
-    return render_template("free_agent_edit.html", player=player, team_id=team_id, teams=teams, nations=nations, positions=positions_list)
+    return render_template("free_agent_edit.html", player=player, teams=teams, nations=nations, positions=positions_list)
 
 
 @app.route('/free_agents/<player_id>/update-player', methods=['POST'])
 def update_free_agent(player_id):
+    """Updates the free agent of matching player id with data from edit free agent form,
+    redirects to free agents page
+    """
     mongo.db.players.update_one(
         {'_id': ObjectId(player_id)},
         {
