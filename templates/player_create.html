@@ -1,143 +1,164 @@
 {% extends 'base.html' %} 
-
 {% block content %}
-
+<!-- HEADER -->
 <div class="container header-container">
     <h1>Create a New Player for {{team.name}}</h1>
 </div>
+<!-- CREATE FORM -->
 <div class="container form-container">
     <form action="{{ url_for('submit_player', team_id=team._id) }}" method="POST">
-    <div class="form-background box-shadow">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="first_name">First Name</label>
-                <input type="text" class="form-control" id="first_name" name="first_name" autofocus>
+        <div class="form-background box-shadow">
+            <div class="form-row">
+                <!-- FIRST NAME -->
+                <div class="form-group col-md-6">
+                    <label for="first_name">First Name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" autofocus>
+                </div>
+                <!-- LAST NAME -->
+                <div class="form-group col-md-6">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name">
+                </div> 
             </div>
-            <div class="form-group col-md-6">
-                <label for="last_name">Last Name</label>
-                <input type="text" class="form-control" id="last_name" name="last_name">
-            </div> 
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-                <label for="shirt_number">Shirt Number</label>
-                <input type="number" min="1" max="99" class="form-control" id="shirt_number" name="shirt_number" placeholder="1 - 99">
+            <div class="form-row">
+                <!-- SHIRT NUMBER-->
+                <div class="form-group col-md-2">
+                    <label for="shirt_number">Shirt Number</label>
+                    <input type="number" min="1" max="99" class="form-control" id="shirt_number" name="shirt_number" placeholder="1 - 99">
+                </div>
+                <!-- NATION -->
+                <div class="form-group col-md-5">
+                    <label for="player_nation">Nation</label>
+                    <select class="form-control" id="player_nation" name="nation">
+                        <option selected>...</option>
+                        {% for nation in nations %}
+                            <option>{{nation.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <!-- NATION -->
+                <div class="form-group col-md-5">
+                    <label for="team_name">Team</label>
+                    <input type="text" class="form-control" id="team_name" name="team_name" value="{{team.name}}" disabled>
+                    <input type="hidden" class="form-control" id="team_id" name="team_id" value="{{team._id}}">
+                </div>
             </div>
-            <div class="form-group col-md-5">
-                <label for="player_nation">Nation</label>
-                <select class="form-control" id="player_nation" name="nation">
-                    <option selected>...</option>
-                    {% for nation in nations %}
-                    <option>{{nation.name}}</option>
-                    {% endfor %}
-                </select>
+            <div class="form-row">
+                <!-- AGE -->
+                <div class="form-group col-md-2">
+                    <label for="age">Age</label>
+                    <input type="number" min="0" class="form-control" id="age" name="age">
+                </div>
+                <!-- HEIGHT -->
+                <div class="form-group col-md-4">
+                    <label for="height">Height (cm)</label>
+                    <input type="number" min="1" class="form-control" id="height" name="height">
+                </div>
+                <!-- WEIGHT -->
+                <div class="form-group col-md-4">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" min="1" class="form-control" id="weight" name="weight">
+                </div>
             </div>
-            <div class="form-group col-md-5">
-                <label for="team_name">Team</label>
-                <input type="text" class="form-control" id="team_name" name="team_name" value="{{team.name}}" disabled>
-                <input type="hidden" class="form-control" id="team_id" name="team_id" value="{{team._id}}">
+            <div class="form-row">
+                <!-- FOOT -->
+                <div class="form-group col-md-2">
+                    <label for="foot">Foot</label>
+                    <select class="form-control" id="foot" name="foot">
+                        <option selected>...</option>
+                        <option>Right</option>
+                        <option>Left</option>
+                        <option>Either</option>
+                    </select>
+                </div>
+                <!-- FIRST POSITION -->
+                <div class="form-group col-md-4">
+                    <label for="first_position">Best Position</label>
+                    <select class="form-control" id="first_position" name="first_position">
+                        <option selected>...</option>
+                        {% for position in positions %}
+                            <option>{{position.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <!-- SECOND POSITION -->
+                <div class="form-group col-md-4">
+                    <label for="second_position">Second Position</label>
+                    <select class="form-control" id="second_position" name="second_position">
+                        <option selected>...</option>
+                        {% for position in positions %}
+                            <option>{{position.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <!-- INJURED -->
+                <div class="form-group col-md-2">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="injured" name="is_injured" value="Yes">
+                        <label class="form-check-label" for="injured">Injured</label>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-                <label for="age">Age</label>
-                <input type="number" min="0" class="form-control" id="age" name="age">
+            <div class="form-row">
+                <!-- ATTACKING -->
+                <div class="form-group col-md-2">
+                    <label for="attacking">Attacking</label>
+                    <input type="number" min="1" max="20" class="form-control" id="attacking" name="attacking" placeholder="1 - 20">
+                </div>
+                <!-- TECHNIQUE -->
+                <div class="form-group col-md-2">
+                    <label for="technique">Technique</label>
+                    <input type="number" min="1" max="20" class="form-control" id="technique" name="technique" placeholder="1 - 20">
+                </div>
+                <!-- PHYSICAL -->
+                <div class="form-group col-md-2">
+                    <label for="physical">Physical</label>
+                    <input type="number" min="1" max="20" class="form-control" id="physical" name="physical" placeholder="1 - 20">
+                </div>
+                <!-- DEFENDING -->
+                <div class="form-group col-md-2">
+                    <label for="defending">Defending</label>
+                    <input type="number" min="1" max="20" class="form-control" id="defending" name="defending" placeholder="1 - 20">
+                </div>
+                <!-- STAMINA -->
+                <div class="form-group col-md-2">
+                    <label for="stamina">Stamina</label>
+                    <input type="number" min="1" max="20" class="form-control" id="stamina" name="stamina" placeholder="1 - 20">
+                </div>
+                <!-- SPEED -->
+                <div class="form-group col-md-2">
+                    <label for="speed">Speed</label>
+                    <input type="number" min="1" max="20" class="form-control" id="speed" name="speed" placeholder="1 - 20">
+                </div>
             </div>
-            <div class="form-group col-md-4">
-                <label for="height">Height (cm)</label>
-                <input type="number" min="1" class="form-control" id="height" name="height">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="weight">Weight (kg)</label>
-                <input type="number" min="1" class="form-control" id="weight" name="weight">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-                <label for="foot">Foot</label>
-                <select class="form-control" id="foot" name="foot">
-                    <option selected>...</option>
-                    <option>Right</option>
-                    <option>Left</option>
-                    <option>Either</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="first_position">Best Position</label>
-                <select class="form-control" id="first_position" name="first_position">
-                    <option selected>...</option>
-                    {% for position in positions %}
-                    <option>{{position.name}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="second_position">Second Position</label>
-                <select class="form-control" id="second_position" name="second_position">
-                    <option selected>...</option>
-                    {% for position in positions %}
-                    <option>{{position.name}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-group col-md-2">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="injured" name="is_injured" value="Yes">
-                    <label class="form-check-label" for="injured">Injured</label>
+            <div class="form-row">
+                <!-- NOTES -->
+                <div class="form-group col-md-6">
+                    <label for="notes">Notes</label>
+                    <textarea class="form-control" id="notes" rows="3" name="notes"></textarea>
+                </div>
+                <!-- PLAYER IMAGE -->
+                <div class="form-group col-md-6">
+                    <label for="player_image">Player Image URL</label>
+                    <input type="text" class="form-control" id="player_image" name="image">
                 </div>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-                <label for="attacking">Attacking</label>
-                <input type="number" min="1" max="20" class="form-control" id="attacking" name="attacking" placeholder="1 - 20">
+        <!-- BUTTONS -->
+        <div class="row">
+            <div class="col-auto mr-auto">
+                <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger form-buttons">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Cancel</span>
+                </a>
             </div>
-            <div class="form-group col-md-2">
-                <label for="technique">Technique</label>
-                <input type="number" min="1" max="20" class="form-control" id="technique" name="technique" placeholder="1 - 20">
-            </div>
-            <div class="form-group col-md-2">
-                <label for="physical">Physical</label>
-                <input type="number" min="1" max="20" class="form-control" id="physical" name="physical" placeholder="1 - 20">
-            </div>
-            <div class="form-group col-md-2">
-                <label for="defending">Defending</label>
-                <input type="number" min="1" max="20" class="form-control" id="defending" name="defending" placeholder="1 - 20">
-            </div>
-            <div class="form-group col-md-2">
-                <label for="stamina">Stamina</label>
-                <input type="number" min="1" max="20" class="form-control" id="stamina" name="stamina" placeholder="1 - 20">
-            </div>
-            <div class="form-group col-md-2">
-                <label for="speed">Speed</label>
-                <input type="number" min="1" max="20" class="form-control" id="speed" name="speed" placeholder="1 - 20">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success form-buttons">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Submit Player</span>
+                </button>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="notes">Notes</label>
-                <textarea class="form-control" id="notes" rows="3" name="notes"></textarea>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="player_image">Player Image URL</label>
-                <input type="text" class="form-control" id="player_image" name="image">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-auto mr-auto">
-            <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-danger form-buttons">
-                <i class="fas fa-times-circle"></i>
-                <span> Cancel</span>
-            </a>
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-success form-buttons">
-                <i class="fas fa-check-circle"></i>
-                <span> Submit Player</span>
-            </button>
-        </div>
-    </div>
     </form>
 </div>
 {% endblock %}
