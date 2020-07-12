@@ -10,7 +10,7 @@
     <div class="row">
         <!-- VIEW PLAYER LIST -->
         <div class="col-md-4">
-            <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-primary home-button">
+            <a href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-primary home-button">
                 <span class="large-icon"><i class="far fa-list-alt"></i></span>
                 <h2>View Player List</h2>
             </a>
@@ -18,7 +18,7 @@
         </div>
         <!-- CREATE A PLAYER -->
         <div class="col-md-4">
-            <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success home-button">
+            <a href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success home-button">
                 <span class="large-icon"><i class="fa fa-user-plus"></i></span>
                 <h2>Create a Player</h2>
             </a>
@@ -26,7 +26,7 @@
         </div>
         <!-- EDIT TEAM LINEUP -->
         <div class="col-md-4">
-            <a type="button" href="{{ url_for('lineup', team_id=team._id) }}" class="btn btn-info home-button">
+            <a href="{{ url_for('lineup', team_id=team._id) }}" class="btn btn-info home-button">
                 <span class="large-icon"><i class="fas fa-futbol"></i></span>
                 <h2>Edit Team Line-up</h2>   
             </a>
@@ -36,7 +36,7 @@
     <div class="row">
         <!-- EDIT TEAM DETAILS -->
         <div class="col-md-4">
-            <a type="button" href="{{ url_for('team_edit', team_id=team._id) }}" class="btn btn-secondary home-button">
+            <a href="{{ url_for('team_edit', team_id=team._id) }}" class="btn btn-secondary home-button">
                 <span class="large-icon"><i class="fas fa-users-cog"></i></span>
                 <h2>Edit Team Details</h2>
             </a>
@@ -44,7 +44,7 @@
         </div>
         <!-- VIEW FREE AGENTS -->
         <div class="col-md-4">
-            <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-light home-button">
+            <a href="{{ url_for('free_agents') }}" class="btn btn-light home-button">
                 <span class="large-icon"><i class="far fa-user"></i></span>
                 <h2>View Free Agents</h2>
             </a>
@@ -52,7 +52,7 @@
         </div>
         <!-- SELECT A DIFFERENT TEAM -->
         <div class="col-md-4">
-            <a type="button" href="{{ url_for('team_select') }}" class="btn btn-warning home-button">
+            <a href="{{ url_for('team_select') }}" class="btn btn-warning home-button">
                 <span class="large-icon"><i class="fas fa-sign-out-alt"></i></span>
                 <h2>Select a Different Team</h2>
             </a>
