@@ -68,8 +68,8 @@ for (let i = 0; i < positionLabels.length; i++) {
         positionLabels[i].classList.add("defence-label");
     }
     if ((positionLabels[i].textContent === "back-three-left") || (positionLabels[i].textContent === "left-centre-back")) {
-        positionLabels[i].textContent = "LCB"
-        positionLabels[i].classList.add("defence-label")
+        positionLabels[i].textContent = "LCB";
+        positionLabels[i].classList.add("defence-label");
     }
     if (positionLabels[i].textContent === "centre-back") {
         positionLabels[i].textContent = "CB";
