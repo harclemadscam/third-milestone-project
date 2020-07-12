@@ -32,17 +32,31 @@ This includes documents detailing my thoughts on the strategy and scope planes o
 ## Features
 ### Existing Features
 
-* A
-* B
-* C
-
+* Team data management. You can create, view, edit and delete teams. The following values can be saved to a team: team name, year established, nation, manager name, formation, team emblem url,
+first colour and second colour. You can also save a lineup of 11 players to a team, which can be viewed on the lineup page.
+* Player data management. You can also create, view, edit and delete players. Players are initially assigned to a team and viewed from the team specific player list. Each player has a profile
+page where their information can be viewed easily. The following values can be saved to a player: first name, last name, shirt number, nation, team, age, height, weight, preferred foot,
+best position, second position, injured, attacking, technique, physical, defending, stamina, speed, notes and player image url.
+* The navbar allows for access to pages that are relevant to the user depending on the page they are on. More options appear when a team has been selected.
+* Modals for data deletion. When you click to delete a player or team, a modal appears asking for confirmation.
+* Free agents. When a team is deleted, the players that were on the team are still accessible. They appear on the free agents list and can be assigned to a new team.
+* The line-up creator. The line-up creator displays a formation screen that can be customised using the forms on the page. The currently set line-up is saved to the team.
+* Sortable tables. Bootstrap Table is used to provide sortable tables to view player data.
 ### Future Features
 
-* 1
-* 2
-
-  * 1
-  * 2
+* User authentication could be implemented to limit which teams and players a user can view, edit or delete. Teams and players could be made private for certain users.
+* More values could be added to players and teams to allow for greater customisation.
+* Free Agents cannot currently be edited without assigning them to a team, so a method of editing them without doing so could be created.
+* More features related to football could be added, like stadiums and training.
+* Currently only one line-up can be saved, so a feature to save more than one could be added.
+* The ability to search for players and teams to find data more easily.
+* More formations could be added to the database for teams to select. To do so the following is required:
+  * The formation must be saved to the formations collection in MongoDB.
+  * It must be given a name value, this is displayed to the user.
+  * It must have another eleven keys, named one to eleven. The values of each must use the names of the existing position classes in CSS which determine the 
+  positioning on the line-up page pitch. Ideally they will be in order of appearance on the pitch, with eleven being a striker and one the goalkeeper.
+  * If new positions are needed, these must be created in CSS and given the appropriate values for left and top. The positions.js file should also be updated
+  to include the new positions. 
 
 ## Technologies Used
 * [HTML5](https://www.w3.org/TR/2017/REC-html52-20171214/)
