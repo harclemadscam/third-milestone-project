@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% block content %}
+<!-- HEADER -->
 <div class="container header-container">
     <h1>Edit {{team.name}}</h1>
     <p>Or delete it using the button below:</p>
@@ -9,20 +9,24 @@
         <span>Delete Team</span>
     </button>
 </div>
+<!-- EDIT FORM -->
 <div class="container form-container">
     <form action="{{url_for('update_team', team_id=team._id) }}" method="POST">
         <div class="form-background box-shadow">
             <div class="form-row">
+                <!-- TEAM NAME -->
                 <div class="form-group col-md">
                     <label for="team_name">Team Name</label>
                     <input type="text" class="form-control" id="team_name" name="name" value="{{team.name}}">
                 </div>
             </div>
             <div class="form-row">
+                <!-- YEAR ESTABLISHED -->
                 <div class="form-group col-md-6">
                     <label for="year">Year Established</label>
                     <input type="number" min="0" max="9999" class="form-control" id="year" name="year" value="{{team.year}}">
                 </div>
+                <!-- NATION -->
                 <div class="form-group col-md-6">
                     <label for="nation">Nation</label>
                     <select class="form-control" id="nation" name="nation">
@@ -38,10 +42,12 @@
                 </div>
             </div>
             <div class="form-row">
+                <!-- MANAGER NAME -->
                 <div class="form-group col-md-6">
                     <label for="manager">Manager Name</label>
                     <input type="text" class="form-control" id="manager" name="manager" value="{{team.manager}}">
                 </div>
+                <!-- FORMATION -->
                 <div class="form-group col-md-6">
                     <label for="formation">Formation</label>
                     <select class="form-control" id="formation" name="formation">
@@ -56,72 +62,75 @@
                 </div>
             </div>
             <div class="form-row">
+                <!-- TEAM EMBLEM -->
                 <div class="form-group col-md">
                     <label for="emblem">Team Emblem URL</label>
                     <input type="text" class="form-control" id="emblem" name="emblem" value="{{team.emblem}}">
                 </div>
             </div>
             <div class="form-row">
+                <!-- FIRST COLOUR -->
                 <div class="form-group col-md-6">
                     <label for="emblem">First Colour</label>
                     <input type="color" class="form-control-file" id="first_colour" name="first_colour" value="{{team.first_colour}}">
                 </div>
+                <!-- SECOND COLOUR -->
                 <div class="form-group col-md-6">
                     <label for="emblem">Second Colour</label>
                     <input type="color" class="form-control-file" id="second_colour" name="second_colour" value="{{team.second_colour}}">
                 </div>
             </div>
         </div>
+        <!-- BUTTONS -->
         <div class="row">
             <div class="col-auto mr-auto">
                 <a type="button" href="{{ url_for('team_home', team_id=team._id) }}" class="btn btn-danger form-buttons">
                     <i class="fas fa-times-circle"></i>
-                    <span> Cancel</span>
+                    <span>Cancel</span>
                 </a>
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-success form-buttons">
                     <i class="fas fa-check-circle"></i>
-                    <span> Submit Changes</span>
+                    <span>Submit Changes</span>
                 </button>
             </div>
         </div>
-<!-- Modal -->
+    </form>
+</div>
+<!-- MODAL -->
 <div class="modal fade" id="deleteTeamModal" tabindex="-1" role="dialog" aria-labelledby="deleteTeamModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteTeamModalLabel">Delete Team?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Do you really want to delete this team? This cannot be undone!</p>
-        <p>All players of the deleted team will become free agents.</p>
-      </div>
-      <div class="modal-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-auto mr-auto">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">
-                        <i class="fas fa-times-circle"></i>
-                        <span> No, go back!</span>
-                    </button>
-                </div>
-                <div class="col-auto">
-                    <a type="button" href="{{ url_for('delete_team', team_id=team._id) }}" class="btn btn-success">
-                        <i class="fas fa-trash-alt"></i>    
-                        <span> Yes, delete it!</span>
-                    </a>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteTeamModalLabel">Delete Team?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete this team? This cannot be undone!</p>
+                <p>All players of the deleted team will become free agents.</p>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-auto mr-auto">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times-circle"></i>
+                                <span> No, go back!</span>
+                            </button>
+                        </div>
+                        <div class="col-auto">
+                            <a type="button" href="{{ url_for('delete_team', team_id=team._id) }}" class="btn btn-success">
+                                <i class="fas fa-trash-alt"></i>    
+                                <span> Yes, delete it!</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
-    </form>
-</div>
-
 {% endblock %}
