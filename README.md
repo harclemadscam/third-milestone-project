@@ -14,8 +14,8 @@ selection. The list of players is presented in a sortable table, and from this p
 data, or delete the player entirely. The data that can be stored for teams and players is comprehensive and relevant for football fans.
 
 The Python Flask framework is used extensively to create HTML templates for each page, with routes created in the "app.py" file. The database is MongoDB, storing data for teams, players,
-nations, postions and formations (though the user can only manage team and player data). For the frontend, I made use of Bootstrap, custom CSS and JavaScript. The website is deployed to
-Heroku.
+nations, postions and formations (though the user can only manage team and player data). For the frontend, I made use of Bootstrap, custom CSS and JavaScript and the site is fully responsive
+across devices. The website is deployed to [Heroku](http://football-squad-manager.herokuapp.com/).
 
 ## UX
 My full UX documentation can be found in the ux-design folder, which can be found [here](ux-design).
@@ -51,15 +51,31 @@ This includes documents detailing my thoughts on the strategy and scope planes o
 
 * [CSS3](https://www.w3.org/Style/CSS/)
 
-  * Used to add custom styling to the HTML - including fonts, layout and colours.
+  * Custom styling to the HTML - including font, layout and colours.
+
+* [Python3](https://www.python.org/)
+
+  * Used to create the app.py file - primarily for template routing and accessing the MongoDB database. Packages listed in requirements file.
+
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+
+  * Python framework used to route to and render HTML templates.
+
+* [MongoDB](https://www.mongodb.com/)
+
+  * The database of the project, where all user data is stored.
+
+* [Bootstrap](https://getbootstrap.com/)
+
+  * An open source framework focused on responsive, mobile-first development. Used to create a number of components and features on the page, such as forms, the navbar and modals.
 
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-  * The
+  * JavaScript was used to create dynamic visuals for the lineup page.
 
 * [Git](https://git-scm.com/)
 
-  * Used for version control and committing changes to GitHub.
+  * Version control and committing changes to GitHub.
 
 * [GitHub](https://github.com/)
 
@@ -77,6 +93,10 @@ This includes documents detailing my thoughts on the strategy and scope planes o
 * [GitPod IDE](https://gitpod.io/)
 
   * The application I used to develop the project.
+
+* [Bootstrap Table](https://bootstrap-table.com/)
+
+  * Bootstrap-inspired framework. Used to create the sortable tables.
 
 * [Font Awesome](https://fontawesome.com/)
 
@@ -98,7 +118,8 @@ To publish my website in GitHub, I used GitHub Pages from the settings of my rep
 
 ## Credits
 ### Content
-All text content was created by myself.
+All static text content was created by myself.
+
 ### Media
 Images were sourced from: 
 
