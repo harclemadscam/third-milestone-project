@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+<!-- HEADER -->
 <div class="container-fluid header-container">
     <div class="row">
         <div class="col-md-6">
             <h1>{{team.name}} - Line-up Creator</h1>
         </div>
+        <!-- FORMATION FORM -->
         <div class="col-md-6">
             <form action="{{ url_for('update_formation', team_id=team._id)}}" method="POST">
                 <div class="row justify-content-center">
@@ -30,11 +32,13 @@
         </div>
     </div>
 </div>
+<!-- FORMATION LINEUP -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 lineup">
             <div class="row lineup" id="football_field">
-                <div class="col lineup" >
+                <div class="col lineup">
+                    <!-- POSITION ELEVEN -->
                     <div id="eleven" class="formation-position {{formation.eleven}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -51,6 +55,7 @@
                             {% endif %}
                         {% endfor %}    
                     </div>
+                    <!-- POSITION TEN -->
                     <div id="ten" class="formation-position {{formation.ten}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -67,6 +72,7 @@
                             {% endif %}
                         {% endfor %}      
                     </div>
+                    <!-- POSITION NINE -->
                     <div id="nine" class="formation-position {{formation.nine}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -82,7 +88,8 @@
                         </div>
                             {% endif %}
                         {% endfor %}
-                        </div>
+                    </div>
+                    <!-- POSITION EIGHT -->
                     <div id="eight" class="formation-position {{formation.eight}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -99,6 +106,7 @@
                             {% endif %}
                         {% endfor %}   
                     </div>
+                    <!-- POSITION SEVEN -->
                     <div id="seven" class="formation-position {{formation.seven}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -115,6 +123,7 @@
                             {% endif %}
                         {% endfor %} 
                     </div>
+                    <!-- POSITION SIX -->
                     <div id="six" class="formation-position {{formation.six}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -131,6 +140,7 @@
                             {% endif %}
                         {% endfor %}  
                     </div>
+                    <!-- POSITION FIVE -->
                     <div id="five" class="formation-position {{formation.five}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -147,6 +157,7 @@
                             {% endif %}
                         {% endfor %}    
                     </div>
+                    <!-- POSITION FOUR -->
                     <div id="four" class="formation-position {{formation.four}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -163,6 +174,7 @@
                             {% endif %}
                         {% endfor %}
                     </div>
+                    <!-- POSITION THREE -->
                     <div id="three" class="formation-position {{formation.three}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -179,6 +191,7 @@
                             {% endif %}
                         {% endfor %}
                     </div>
+                    <!-- POSITION TWO -->
                     <div id="two" class="formation-position {{formation.two}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -195,6 +208,7 @@
                             {% endif %}
                         {% endfor %}
                     </div>
+                    <!-- POSITION ONE -->
                     <div id="one" class="formation-position {{formation.one}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
@@ -214,11 +228,13 @@
                 </div>
             </div>   
         </div>
+        <!-- SELECTION FORM -->
         <div class="col-md-6 form-background">
             <form action="{{ url_for('submit_lineup', team_id=team._id) }}" method="POST">
                 <div id="set-lineup" class="text-center">
                     <button type="submit" class="btn btn-primary">Set line-up</button>
                 </div>
+                <!-- POSITION ELEVEN -->
                 <div class="form-group row formation-select">
                     <label for="eleven" class="col-sm-2 col-form-label text-center position-label">{{formation.eleven}}</label>
                     <div class="col-sm-10">
@@ -236,6 +252,7 @@
                         </select>
                     </div>
                 </div>
+                <!-- POSITION TEN -->
                 <div class="form-group row formation-select">
                     <label for="ten" class="col-sm-2 col-form-label text-center position-label">{{formation.ten}}</label>
                     <div class="col-sm-10">
@@ -253,6 +270,7 @@
                         </select>
                     </div>
                 </div>
+                <!-- POSITION NINE -->
                 <div class="form-group row formation-select">
                     <label for="nine" class="col-sm-2 col-form-label text-center position-label">{{formation.nine}}</label>
                     <div class="col-sm-10">
@@ -270,6 +288,7 @@
                         </select>
                     </div>
                 </div>
+                <!-- POSITION EIGHT -->
                 <div class="form-group row formation-select">
                     <label for="eight" class="col-sm-2 col-form-label text-center position-label">{{formation.eight}}</label>
                     <div class="col-sm-10">
@@ -287,6 +306,7 @@
                         </select>
                     </div>
                 </div>
+                <!-- POSITION SEVEN -->
                 <div class="form-group row formation-select">
                     <label for="seven" class="col-sm-2 col-form-label text-center position-label">{{formation.seven}}</label>
                     <div class="col-sm-10">
@@ -304,150 +324,159 @@
                         </select>
                     </div>
                 </div>
-                            <div class="form-group row formation-select">
-                                <label for="six" class="col-sm-2 col-form-label text-center position-label">{{formation.six}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="six">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.six and team.six == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="five" class="col-sm-2 col-form-label text-center position-label">{{formation.five}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="five">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.five and team.five == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="four" class="col-sm-2 col-form-label text-center position-label">{{formation.four}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="four">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.four and team.four == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="three" class="col-sm-2 col-form-label text-center position-label">{{formation.three}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="three">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.three and team.three == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="two" class="col-sm-2 col-form-label text-center position-label">{{formation.two}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="two">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.two and team.two == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="one" class="col-sm-2 col-form-label text-center position-label">{{formation.one}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="one">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.one and team.one == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                </form>
+                <!-- POSITION SIX -->
+                <div class="form-group row formation-select">
+                    <label for="six" class="col-sm-2 col-form-label text-center position-label">{{formation.six}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="six">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.six and team.six == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!-- POSITION FIVE -->
+                <div class="form-group row formation-select">
+                    <label for="five" class="col-sm-2 col-form-label text-center position-label">{{formation.five}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="five">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.five and team.five == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!-- POSITION FOUR -->
+                <div class="form-group row formation-select">
+                    <label for="four" class="col-sm-2 col-form-label text-center position-label">{{formation.four}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="four">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.four and team.four == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!-- POSITION THREE -->
+                <div class="form-group row formation-select">
+                    <label for="three" class="col-sm-2 col-form-label text-center position-label">{{formation.three}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="three">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.three and team.three == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!-- POSITION TWO -->
+                <div class="form-group row formation-select">
+                    <label for="two" class="col-sm-2 col-form-label text-center position-label">{{formation.two}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="two">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.two and team.two == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!-- POSITION ONE -->
+                <div class="form-group row formation-select">
+                    <label for="one" class="col-sm-2 col-form-label text-center position-label">{{formation.one}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="one">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.one and team.one == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </form>
         </div> 
     </div>
-    <div class="container-fluid table-container">
-        <table class="table table-striped table-light table-borderless table-sm" data-toggle="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col" data-sortable="true">#</th>
-                        <th scope="col" data-sortable="true">Position</th>
-                        <th scope="col" data-sortable="true">Alt Position</th>
-                        <th scope="col" data-sortable="true">Name</th>
-                        <th scope="col" data-sortable="true">Att</th>
-                        <th scope="col" data-sortable="true">Tech</th>
-                        <th scope="col" data-sortable="true">Phys</th>
-                        <th scope="col" data-sortable="true">Def</th>
-                        <th scope="col" data-sortable="true">Stam</th>
-                        <th scope="col" data-sortable="true">Spd</th>
-                        <th scope="col" data-sortable="true">Foot</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for player in players %}
-                    {% if player.is_injured != "Yes" %}
-                    <tr>
-                        <td><a href="{{ url_for('player_details', player_id=player._id, team_id=team._id) }}" class="btn btn-primary">View Player</a></td>
-                        <td>{{player.shirt_number}}</td>
-                        <td>{{player.first_position}}</td>
-                        <td>{{player.second_position}}</td>
-                        <td>{{player.last_name}}</td>
-                        <td>{{player.attacking}}</td>
-                        <td>{{player.technique}}</td>
-                        <td>{{player.physical}}</td>
-                        <td>{{player.defending}}</td>
-                        <td>{{player.stamina}}</td>
-                        <td>{{player.speed}}</td>
-                        <td>{{player.foot}}</td>
-                    </tr>
-                    {% endif %}
-                {% endfor %}
-                </tbody>
-        </table>
-    </div>
+</div>
+<!-- PLAYER TABLE -->
+<div class="container-fluid table-container">
+    <table class="table table-striped table-light table-borderless table-sm" data-toggle="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col" data-sortable="true">#</th>
+                <th scope="col" data-sortable="true">Position</th>
+                <th scope="col" data-sortable="true">Alt Position</th>
+                <th scope="col" data-sortable="true">Name</th>
+                <th scope="col" data-sortable="true">Att</th>
+                <th scope="col" data-sortable="true">Tech</th>
+                <th scope="col" data-sortable="true">Phys</th>
+                <th scope="col" data-sortable="true">Def</th>
+                <th scope="col" data-sortable="true">Stam</th>
+                <th scope="col" data-sortable="true">Spd</th>
+                <th scope="col" data-sortable="true">Foot</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for player in players %}
+            {% if player.is_injured != "Yes" %}
+            <tr>
+                <td><a href="{{ url_for('player_details', player_id=player._id, team_id=team._id) }}" class="btn btn-primary">View Player</a></td>
+                <td>{{player.shirt_number}}</td>
+                <td>{{player.first_position}}</td>
+                <td>{{player.second_position}}</td>
+                <td>{{player.last_name}}</td>
+                <td>{{player.attacking}}</td>
+                <td>{{player.technique}}</td>
+                <td>{{player.physical}}</td>
+                <td>{{player.defending}}</td>
+                <td>{{player.stamina}}</td>
+                <td>{{player.speed}}</td>
+                <td>{{player.foot}}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- SCRIPT FOR POSITIONS.JS -->
 <script defer src="{{ url_for('static', filename='js/positions.js') }}"></script>
 {% endblock %}
