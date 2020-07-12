@@ -1,38 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<!-- HEADER -->
 <div class="container header-container">
     <h1>Create a New Team</h1>
 </div>
+<!-- CREATE FORM -->
 <div class="container form-container">
     <form action="{{url_for('submit_team') }}" method="POST">
         <div class="form-background box-shadow">
             <div class="form-row">
+                <!-- TEAM NAME -->
                 <div class="form-group col-md">
                     <label for="team_name">Team Name</label>
                     <input type="text" class="form-control" id="team_name" name="name" autofocus>
                 </div>
             </div>
             <div class="form-row">
+                <!-- YEAR ESTABLISHED -->
                 <div class="form-group col-md-6">
                     <label for="year">Year Established</label>
                     <input type="number" min="0" max="9999" class="form-control" id="year" name="year">
                 </div>
+                <!-- NATION -->
                 <div class="form-group col-md-6">
                     <label for="nation">Nation</label>
                     <select class="form-control" id="nation" name="nation">
-                    <option selected>...</option>
-                    {% for nation in nations %}
-                        <option>{{nation.name}}</option>
-                    {% endfor %}
-                </select>
+                        <option selected>...</option>
+                        {% for nation in nations %}
+                            <option>{{nation.name}}</option>
+                        {% endfor %}
+                    </select>
                 </div>
             </div>
             <div class="form-row">
+                <!-- MANAGER NAME -->
                 <div class="form-group col-md-6">
                     <label for="manager">Manager Name</label>
                     <input type="text" class="form-control" id="manager" name="manager">
                 </div>
+                <!-- FORMATION -->
                 <div class="form-group col-md-6">
                     <label for="formation">Formation</label>
                     <select class="form-control" id="formation" name="formation">
@@ -43,37 +49,40 @@
                 </div>
             </div>
             <div class="form-row">
+                <!-- TEAM EMBLEM -->
                 <div class="form-group col-md">
                     <label for="emblem">Team Emblem URL</label>
                     <input type="text" class="form-control" id="emblem" name="emblem">
                 </div>
             </div>
             <div class="form-row">
+                <!-- FIRST COLOUR -->
                 <div class="form-group col-md-6">
                     <label for="emblem">First Colour</label>
                     <input type="color" class="form-control-file" id="first_colour" name="first_colour">
                 </div>
+                <!-- SECOND COLOUR-->
                 <div class="form-group col-md-6">
                     <label for="emblem">Second Colour</label>
                     <input type="color" class="form-control-file" id="second_colour" name="second_colour">
                 </div>
             </div> 
         </div>
-            <div class="row">
-                <div class="col-auto mr-auto">
-                    <a type="button" href="{{ url_for('team_select') }}" class="btn btn-danger form-buttons">
-                        <i class="fas fa-times-circle"></i>
-                        <span> Cancel</span>
-                    </a>
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-success form-buttons">
-                        <i class="fas fa-check-circle"></i>
-                        <span> Submit Team</span>
-                    </button>
-                </div>
+        <!-- BUTTONS -->
+        <div class="row">
+            <div class="col-auto mr-auto">
+                <a type="button" href="{{ url_for('team_select') }}" class="btn btn-danger form-buttons">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Cancel</span>
+                </a>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success form-buttons">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Submit Team</span>
+                </button>
+            </div>
         </div>
     </form>
 </div>
-
 {% endblock %}
