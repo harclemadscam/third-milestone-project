@@ -13,26 +13,30 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
-
+# Home Page
 @app.route('/')
 @app.route('/index')
 def index():
+    """Renders index page"""
     return render_template("index.html")
 
-
+# Teams
 @app.route('/teams')
 def team_select():
+    """Renders team selection page"""
     return render_template("team_select.html", teams=mongo.db.teams.find())
 
 
 @app.route('/teams/<team_id>')
 def team_home(team_id):
+    """Renders home page of team with matching team id"""
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     return render_template("team_home.html", team=team)
 
 
 @app.route('/create-team')
 def team_create():
+    """Renders the team creation form, gets nation and formation data to populate form"""
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
     formations = mongo.db.formations.find()
     return render_template("team_create.html", nations=nations, formations=formations)
@@ -40,6 +44,7 @@ def team_create():
 
 @app.route('/submit-team', methods=['POST'])
 def submit_team():
+    """Creates a team using data from team creation form, redirects to team select page"""
     teams = mongo.db.teams
     teams.insert_one(request.form.to_dict())
     return redirect(url_for('team_select'))
@@ -47,6 +52,9 @@ def submit_team():
 
 @app.route('/teams/<team_id>/edit-team')
 def team_edit(team_id):
+    """Renders the edit team form for a team with matching team id,
+    gets nation and formation data to populate form
+    """
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
     formations = mongo.db.formations.find()
@@ -55,6 +63,7 @@ def team_edit(team_id):
 
 @app.route('/teams/<team_id>/update-team', methods=['POST'])
 def update_team(team_id):
+    """Updates the team with matching team id with data from edit team form"""
     mongo.db.teams.update_one(
         {'_id': ObjectId(team_id)},
         {
@@ -75,6 +84,10 @@ def update_team(team_id):
 
 @app.route('/teams/<team_id>/delete-team')
 def delete_team(team_id):
+    """Deletes a team with matching team id, clears the team id value for players
+    whose team id value matches the team id of the deleted team
+    """
+    # Sets team id for matching players to blank, for them to appear as free agents
     mongo.db.players.update_many(
         {'team_id': team_id},
         {
@@ -85,9 +98,10 @@ def delete_team(team_id):
     mongo.db.teams.delete_one({'_id': ObjectId(team_id)})
     return redirect(url_for('team_select'))
 
-
+# Players
 @app.route('/teams/<team_id>/players')
 def player_list(team_id):
+    """Renders player list page, getting players whose team id value matches the team id"""
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     players = mongo.db.players.find({'team_id': team_id})
     return render_template("player_list.html", team=team, players=players)
@@ -95,6 +109,9 @@ def player_list(team_id):
 
 @app.route('/teams/<team_id>/players/<player_id>')
 def player_details(player_id, team_id):
+    """Renders the player profile page for the player of matching player id,
+    gets team with matching team id
+    """
     player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     return render_template("player_details.html", player=player, team=team)
@@ -102,15 +119,20 @@ def player_details(player_id, team_id):
 
 @app.route('/teams/<team_id>/create-player')
 def player_create(team_id):
+    """Renders the player creation form,
+    gets team, nation, and position data to populate the form
+    """
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
     positions = mongo.db.positions.find()
+    # Creates a list of position data so that the data can be used more than once
     positions_list = list(positions)
     return render_template("player_create.html", team=team, nations=nations, positions=positions_list)
 
 
 @app.route('/teams/<team_id>/submit-player', methods=['POST'])
 def submit_player(team_id):
+    """Creates a player using data from player creation form, redirects to player list"""
     players = mongo.db.players
     players.insert_one(request.form.to_dict())
     return redirect(url_for('player_list', team_id=team_id))
@@ -118,12 +140,17 @@ def submit_player(team_id):
 
 @app.route('/teams/<team_id>/players/<player_id>/edit-player')
 def player_edit(player_id, team_id):
+    """Renders the edit player form for a player with matching player id,
+    gets team, nation and position data to populate form
+    """
     player = mongo.db.players.find_one({'_id': ObjectId(player_id)})
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
+    # Converts team id into a string so that it can used in the form
     team_id = ObjectId(str(team_id))
     teams = mongo.db.teams.find()
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
     positions = mongo.db.positions.find()
+    # Creates a list of position data so that the data can be used more than once
     positions_list = list(positions)
     return render_template("player_edit.html", player=player, team=team, team_id=team_id, teams=teams, nations=nations, positions=positions_list)
 
@@ -169,10 +196,11 @@ def delete_player(player_id):
     else:
         return redirect(url_for('player_list', team_id=team_id))
 
-
+# Lineups
 @app.route('/teams/<team_id>/line-up')
 def lineup(team_id):
     players = mongo.db.players.find({'team_id': team_id})
+    # Creates a list of player data so that the data can be used more than once
     players_list = list(players)
     team = mongo.db.teams.find_one({'_id': ObjectId(team_id)})
     formation = mongo.db.formations.find_one({'name': team['formation']})
@@ -224,7 +252,7 @@ def submit_lineup(team_id):
             })
     return redirect(url_for('lineup', team_id=team_id))
 
-
+# Free Agents
 @app.route('/free-agents')
 def free_agents():
     players = mongo.db.players.find({'team_id': ''})
@@ -244,6 +272,7 @@ def free_agent_edit(player_id):
     teams = mongo.db.teams.find()
     nations = mongo.db.nations.find().collation({'locale': 'en'}).sort('name')
     positions = mongo.db.positions.find()
+    # Creates a list of position data so that the data can be used more than once
     positions_list = list(positions)
     return render_template("free_agent_edit.html", player=player, team_id=team_id, teams=teams, nations=nations, positions=positions_list)
 
