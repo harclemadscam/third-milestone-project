@@ -39,7 +39,7 @@
             <div class="row lineup" id="football_field">
                 <div class="col lineup">
                     <!-- POSITION ELEVEN -->
-                    <div id="eleven" class="formation-position {{formation.eleven}}">
+                    <div class="formation-position {{formation.eleven}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.eleven and team.eleven == player.string_id %}
@@ -56,7 +56,7 @@
                         {% endfor %}    
                     </div>
                     <!-- POSITION TEN -->
-                    <div id="ten" class="formation-position {{formation.ten}}">
+                    <div class="formation-position {{formation.ten}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.ten and team.ten == player.string_id %}
@@ -73,7 +73,7 @@
                         {% endfor %}      
                     </div>
                     <!-- POSITION NINE -->
-                    <div id="nine" class="formation-position {{formation.nine}}">
+                    <div class="formation-position {{formation.nine}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.nine and team.nine == player.string_id %}
@@ -90,7 +90,7 @@
                         {% endfor %}
                     </div>
                     <!-- POSITION EIGHT -->
-                    <div id="eight" class="formation-position {{formation.eight}}">
+                    <div class="formation-position {{formation.eight}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.eight and team.eight == player.string_id %}
@@ -107,7 +107,7 @@
                         {% endfor %}   
                     </div>
                     <!-- POSITION SEVEN -->
-                    <div id="seven" class="formation-position {{formation.seven}}">
+                    <div class="formation-position {{formation.seven}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.seven and team.seven == player.string_id %}
@@ -124,7 +124,7 @@
                         {% endfor %} 
                     </div>
                     <!-- POSITION SIX -->
-                    <div id="six" class="formation-position {{formation.six}}">
+                    <div class="formation-position {{formation.six}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.six and team.six == player.string_id %}
@@ -141,7 +141,7 @@
                         {% endfor %}  
                     </div>
                     <!-- POSITION FIVE -->
-                    <div id="five" class="formation-position {{formation.five}}">
+                    <div class="formation-position {{formation.five}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.five and team.five == player.string_id %}
@@ -158,7 +158,7 @@
                         {% endfor %}    
                     </div>
                     <!-- POSITION FOUR -->
-                    <div id="four" class="formation-position {{formation.four}}">
+                    <div class="formation-position {{formation.four}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.four and team.four == player.string_id %}
@@ -175,7 +175,7 @@
                         {% endfor %}
                     </div>
                     <!-- POSITION THREE -->
-                    <div id="three" class="formation-position {{formation.three}}">
+                    <div class="formation-position {{formation.three}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.three and team.three == player.string_id %}
@@ -192,7 +192,7 @@
                         {% endfor %}
                     </div>
                     <!-- POSITION TWO -->
-                    <div id="two" class="formation-position {{formation.two}}">
+                    <div class="formation-position {{formation.two}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.two and team.two == player.string_id %}
@@ -209,7 +209,7 @@
                         {% endfor %}
                     </div>
                     <!-- POSITION ONE -->
-                    <div id="one" class="formation-position {{formation.one}}">
+                    <div class="formation-position {{formation.one}}">
                         <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
                         {% for player in players %}
                             {% if team.one and team.one == player.string_id %}
@@ -238,7 +238,7 @@
                 <div class="form-group row formation-select">
                     <label for="eleven" class="col-sm-2 col-form-label text-center position-label">{{formation.eleven}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="eleven">
+                        <select class="form-control" id="eleven" name="eleven">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -256,7 +256,7 @@
                 <div class="form-group row formation-select">
                     <label for="ten" class="col-sm-2 col-form-label text-center position-label">{{formation.ten}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="ten">
+                        <select class="form-control" id="ten" name="ten">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -274,7 +274,7 @@
                 <div class="form-group row formation-select">
                     <label for="nine" class="col-sm-2 col-form-label text-center position-label">{{formation.nine}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="nine">
+                        <select class="form-control" id="nine" name="nine">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -292,7 +292,7 @@
                 <div class="form-group row formation-select">
                     <label for="eight" class="col-sm-2 col-form-label text-center position-label">{{formation.eight}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="eight">
+                        <select class="form-control" id="eight" name="eight">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -310,7 +310,7 @@
                 <div class="form-group row formation-select">
                     <label for="seven" class="col-sm-2 col-form-label text-center position-label">{{formation.seven}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="seven">
+                        <select class="form-control" id="seven" name="seven">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -328,7 +328,7 @@
                 <div class="form-group row formation-select">
                     <label for="six" class="col-sm-2 col-form-label text-center position-label">{{formation.six}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="six">
+                        <select class="form-control" id="six" name="six">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -346,7 +346,7 @@
                 <div class="form-group row formation-select">
                     <label for="five" class="col-sm-2 col-form-label text-center position-label">{{formation.five}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="five">
+                        <select class="form-control" id="five" name="five">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -364,7 +364,7 @@
                 <div class="form-group row formation-select">
                     <label for="four" class="col-sm-2 col-form-label text-center position-label">{{formation.four}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="four">
+                        <select class="form-control" id="four" name="four">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -382,7 +382,7 @@
                 <div class="form-group row formation-select">
                     <label for="three" class="col-sm-2 col-form-label text-center position-label">{{formation.three}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="three">
+                        <select class="form-control" id="three" name="three">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -400,7 +400,7 @@
                 <div class="form-group row formation-select">
                     <label for="two" class="col-sm-2 col-form-label text-center position-label">{{formation.two}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="two">
+                        <select class="form-control" id="two" name="two">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
@@ -418,7 +418,7 @@
                 <div class="form-group row formation-select">
                     <label for="one" class="col-sm-2 col-form-label text-center position-label">{{formation.one}}</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="one">
+                        <select class="form-control" id="one" name="one">
                             <option>...</option>
                             {% for player in players %}
                                 {% if player.is_injured != "Yes" %}
