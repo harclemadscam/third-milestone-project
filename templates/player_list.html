@@ -9,14 +9,14 @@
         </div>
         <div class="col-md-4">
             <p class="player-list-text">Add a new player to this team:</p>
-            <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success">
+            <a href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success">
                 <i class="fas fa-user-plus"></i>
                 Create a Player
             </a>
             </div>
         <div class="col-md-4">
             <p class="player-list-text" >View players without a team:</p>
-            <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-light">
+            <a href="{{ url_for('free_agents') }}" class="btn btn-light">
                 <i class="far fa-user"></i>
                 Free Agents
             </a>
