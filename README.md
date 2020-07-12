@@ -14,7 +14,8 @@ selection. The list of players is presented in a sortable table, and from this p
 data, or delete the player entirely. The data that can be stored for teams and players is comprehensive and relevant for football fans.
 
 The Python Flask framework is used extensively to create HTML templates for each page, with routes created in the "app.py" file. The database is MongoDB, storing data for teams, players,
-nations, postions and formations (though the user can only manage team and player data). For the frontend, I made use of Bootstrap, custom CSS and JavaScript.
+nations, postions and formations (though the user can only manage team and player data). For the frontend, I made use of Bootstrap, custom CSS and JavaScript. The website is deployed to
+Heroku.
 
 ## UX
 My full UX documentation can be found in the ux-design folder, which can be found [here](ux-design).
@@ -22,11 +23,11 @@ This includes documents detailing my thoughts on the strategy and scope planes o
 
 ### User Stories
 
-* One
-* Two
-* Three
-* Four
-* Five
+* As a football fan, I want to create my favourite team in the database - with the correct colours, emblem and players.
+* As an imaginative football fan, I want to create a fantasy team in the database with fantasy or even celebrity players.
+* As a football coach, I want to be able to use the app to help manage my team. I can do this by storing and comparing player data or setting lineups.
+* As someone with an interest in creating football lineups, I want to be able to create a team and players and choose a lineup for it.
+* As a member of the football community, I want to be able to see what other users have created.
 
 ## Features
 ### Existing Features
@@ -46,11 +47,11 @@ This includes documents detailing my thoughts on the strategy and scope planes o
 ## Technologies Used
 * [HTML5](https://www.w3.org/TR/2017/REC-html52-20171214/)
 
-  * A fundamental requirement. Used to create the index file, providing the structure of the page.
+  * Used to create the structure of each page. As a Flask requirement, they are stored in the templates folder.
 
 * [CSS3](https://www.w3.org/Style/CSS/)
 
-  * Another fundamental requirement. Used to add custom styling to the HTML - including fonts, layout and colours.
+  * Used to add custom styling to the HTML - including fonts, layout and colours.
 
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
@@ -62,9 +63,13 @@ This includes documents detailing my thoughts on the strategy and scope planes o
 
 * [GitHub](https://github.com/)
 
-  * Used to host and publish my project files.
+  * Used to host my project files.
 
-* [Microsoft Edge/Developer Tools](https://www.microsoft.com/en-us/edge)
+* [Heroku](https://heroku.com/)
+
+  * Used to deploy the final version of the project.
+
+* [Google Chrome/Developer Tools](https://www.google.com/intl/en/chrome/)
 
   * My internet browser. 
   The Developer Tools were used to troubleshoot, edit the layout, and preview changes, as well as test the responsiveness of the page.
@@ -75,7 +80,7 @@ This includes documents detailing my thoughts on the strategy and scope planes o
 
 * [Font Awesome](https://fontawesome.com/)
 
-  * Used to source the the marker, phone and star icons on the results screen.
+  * Used to source the icons shown on buttons.
 
 * [Google Fonts](https://fonts.google.com/)
   
@@ -98,14 +103,14 @@ All text content was created by myself.
 Images were sourced from: 
 
 <https://www.pexels.com/>
+<https://pixabay.com/>
 
-<https://unsplash.com/>
-
-<https://www.piqsels.com/>
+The user can also submit web URLs as player photos or team emblems.
 
 ### Acknowledgements
-My design was inspired by
+The idea was inspired by computer games such as Football Manager, FIFA and Pro Evolution Soccer.
 
-I made frequent use of [Stack Overflow](https://stackoverflow.com/)
+I made frequent use of [Stack Overflow](https://stackoverflow.com/) and the [Bootstrap Documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/).
+Bootstrap components were copied from the documentation and adapted to suit my own needs. The adjustments to the "card-img-top" class were taken from [this thread](https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width).
 
-To create box shadow effects, I used the following online tool [Here](https://www.cssmatic.com/box-shadow).
+To create the box shadow effect, I used the tool [Here](https://www.cssmatic.com/box-shadow).
