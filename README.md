@@ -1,39 +1,99 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Football Squad Manager - Practical Python and Data-Centric Development Milestone Project
+<http://football-squad-manager.herokuapp.com/>
+## Overview
+Here
 
-Welcome USER_NAME,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## UX
+My full UX documentation can be found in the ux-design folder, which can be found [here](ux-design).
+This includes documents detailing my thoughts on the strategy and scope planes of this project, plus the basic structure and my skeleton wireframes.
 
-## Gitpod Reminders
+### User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* One
+* Two
+* Three
+* Four
+* Five
 
-`python3 -m http.server`
+## Features
+### Existing Features
 
-A blue button should appear to click: *Make Public*,
+* A
+* B
+* C
 
-Another blue button should appear to click: *Open Browser*.
+### Future Features
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* 1
+* 2
 
-A blue button should appear to click: *Make Public*,
+  * 1
+  * 2
 
-Another blue button should appear to click: *Open Browser*.
+## Technologies Used
+* [HTML5](https://www.w3.org/TR/2017/REC-html52-20171214/)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+  * A fundamental requirement. Used to create the index file, providing the structure of the page.
 
-## Updates Since The Instructional Video
+* [CSS3](https://www.w3.org/Style/CSS/)
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+  * Another fundamental requirement. Used to add custom styling to the HTML - including fonts, layout and colours.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  * The
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* [Git](https://git-scm.com/)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  * Used for version control and committing changes to GitHub.
 
---------
+* [GitHub](https://github.com/)
 
-Happy coding!
+  * Used to host and publish my project files.
+
+* [Microsoft Edge/Developer Tools](https://www.microsoft.com/en-us/edge)
+
+  * My internet browser. 
+  The Developer Tools were used to troubleshoot, edit the layout, and preview changes, as well as test the responsiveness of the page.
+
+* [GitPod IDE](https://gitpod.io/)
+
+  * The application I used to develop the project.
+
+* [Font Awesome](https://fontawesome.com/)
+
+  * Used to source the the marker, phone and star icons on the results screen.
+
+* [Google Fonts](https://fonts.google.com/)
+  
+  * Used to provide the Arimo font.
+
+## Testing
+My full testing documentation can be found in the testing folder, which can be found [here](testing).
+
+## Deployment
+The project was coded in the GitPod IDE. I had previously installed the GitPod browser extension, which allows you to create a GitPod workspace with the click of a button in GitHub.
+I first created a new repository in GitHub and then created the GitPod workspace, where I coded the project. 
+I used Git within GitPod for version control, with all commits being pushed to the linked GitHub repository. As I was not working on a live website and I was the sole developer, I used only the master branch.
+
+To publish my website in GitHub, I used GitHub Pages from the settings of my repository. After selecting the master branch as the source, my website project can be found here: <https://harclemadscam.github.io/second-milestone-project/>
+
+## Credits
+### Content
+All text content was created by myself.
+### Media
+Images were sourced from: 
+
+<https://www.pexels.com/>
+
+<https://unsplash.com/>
+
+<https://www.piqsels.com/>
+
+### Acknowledgements
+My design was inspired by
+
+I made frequent use of [Stack Overflow](https://stackoverflow.com/)
+
+To create box shadow effects, I used the following online tool [Here](https://www.cssmatic.com/box-shadow).
