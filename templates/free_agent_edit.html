@@ -1,39 +1,45 @@
 {% extends 'base.html' %}
-
 {% block content %}
+<!-- HEADER -->
 <div class="container header-container">
     <h1>Edit Free Agent {{player.first_name}} {{player.last_name}}</h1>
 </div>
+<!-- EDIT FORM -->
 <div class="container form-container">
     <form action="{{ url_for('update_free_agent', player_id=player._id) }}" method="POST">
         <div class="form-background box-shadow">
             <div class="form-row">
+                <!-- FIRST NAME -->
                 <div class="form-group col-md-6">
                     <label for="first_name">First Name</label>
                     <input type="text" class="form-control" id="first_name" name="first_name" value="{{player.first_name}}">
                 </div>
+                <!-- LAST NAME -->
                 <div class="form-group col-md-6">
                     <label for="last_name">Last Name</label>
                     <input type="text" class="form-control" id="last_name" name="last_name" value="{{player.last_name}}">
                 </div>
             </div>
             <div class="form-row">
+                <!-- SHIRT NUMBER -->
                 <div class="form-group col-md-2">
                     <label for="shirt_number">Shirt Number</label>
                     <input type="number" min="1" max="99" class="form-control" id="shirt_number" name="shirt_number" value="{{player.shirt_number}}">
                 </div>
+                <!-- NATION -->
                 <div class="form-group col-md-5">
                     <label for="player_nation">Nation</label>
                     <select class="form-control" id="player_nation" name="nation">
                     {% for nation in nations %}
-                    {% if player.nation == nation.name %}
-                        <option selected>{{nation.name}}</option>
-                    {% else %}
-                        <option>{{nation.name}}</option>
-                    {% endif %}
+                        {% if player.nation == nation.name %}
+                            <option selected>{{nation.name}}</option>
+                        {% else %}
+                            <option>{{nation.name}}</option>
+                        {% endif %}
                     {% endfor %}
                     </select>
                 </div>
+                <!-- TEAM -->
                 <div class="form-group col-md-5">
                     <label for="team_id">Team</label>
                     <select class="form-control" id="team_id" name="team_id">
@@ -48,20 +54,24 @@
                 </div>
             </div>
             <div class="form-row">
+                <!-- AGE -->
                 <div class="form-group col-md-2">
                     <label for="age">Age</label>
                     <input type="number" min="0" class="form-control" id="age" name="age" value="{{player.age}}">
                 </div>
+                <!-- HEIGHT -->
                 <div class="form-group col-md-4">
                     <label for="height">Height (cm)</label>
                     <input type="number" min="1" class="form-control" id="height" name="height" value="{{player.height}}">
                 </div>
+                <!-- WEIGHT -->
                 <div class="form-group col-md-4">
                     <label for="weight">Weight (kg)</label>
                     <input type="number" min="1" class="form-control" id="weight" name="weight" value="{{player.weight}}">
                 </div>
             </div>
             <div class="form-row">
+                <!-- FOOT -->
                 <div class="form-group col-md-2">
                     <label for="foot">Foot</label>
                     <select class="form-control" id="foot" name="foot">
@@ -88,30 +98,33 @@
                     {% endif %}
                     </select>
                 </div>
+                <!-- FIRST POSITION -->
                 <div class="form-group col-md-4">
                     <label for="first_position">Best Position</label>
                     <select class="form-control" id="first_position" name="first_position">
                     {% for position in positions %}
-                    {% if player.first_position == position.name %}
-                        <option selected>{{position.name}}</option>
-                    {% else %}
-                        <option>{{position.name}}</option>
-                    {% endif %}
+                        {% if player.first_position == position.name %}
+                            <option selected>{{position.name}}</option>
+                        {% else %}
+                            <option>{{position.name}}</option>
+                        {% endif %}
                     {% endfor %}
                     </select>
                 </div>
+                <!-- SECOND POSITION -->
                 <div class="form-group col-md-4">
                     <label for="second_position">Second Position</label>
                     <select class="form-control" id="second_position" name="second_position">
                     {% for position in positions %}
-                    {% if player.second_position == position.name %}
-                        <option selected>{{position.name}}</option>
-                    {% else %}
-                        <option>{{position.name}}</option>
-                    {% endif %}
+                        {% if player.second_position == position.name %}
+                            <option selected>{{position.name}}</option>
+                        {% else %}
+                            <option>{{position.name}}</option>
+                        {% endif %}
                     {% endfor %}
                     </select>
                 </div>
+                <!-- INJURED -->
                 <div class="form-group col-md-2">
                     <div class="form-check">
                     {% if player.is_injured == "Yes" %}
@@ -124,55 +137,64 @@
                 </div>
             </div>
             <div class="form-row">
+                <!-- ATTACKING -->
                 <div class="form-group col-md-2">
                     <label for="attacking">Attacking</label>
                     <input type="number" min="1" max="20" class="form-control" id="attacking" name="attacking" value="{{player.attacking}}">
                 </div>
+                <!-- TECHNIQUE -->
                 <div class="form-group col-md-2">
                     <label for="technique">Technique</label>
                     <input type="number" min="1" max="20" class="form-control" id="technique" name="technique" value="{{player.technique}}">
                 </div>
+                <!-- PHYSICAL -->
                 <div class="form-group col-md-2">
                     <label for="physical">Physical</label>
                     <input type="number" min="1" max="20" class="form-control" id="physical" name="physical" value="{{player.physical}}">
                 </div>
+                <!-- DEFENDING -->
                 <div class="form-group col-md-2">
                     <label for="defending">Defending</label>
                     <input type="number" min="1" max="20" class="form-control" id="defending" name="defending" value="{{player.defending}}">
                 </div>
+                <!-- STAMINA -->
                 <div class="form-group col-md-2">
                     <label for="stamina">Stamina</label>
                     <input type="number" min="1" max="20" class="form-control" id="stamina" name="stamina" value="{{player.stamina}}">
                 </div>
+                <!-- SPEED -->
                 <div class="form-group col-md-2">
                     <label for="speed">Speed</label>
-                <input type="number" min="1" max="20" class="form-control" id="speed" name="speed" value="{{player.speed}}">
+                    <input type="number" min="1" max="20" class="form-control" id="speed" name="speed" value="{{player.speed}}">
                 </div>
             </div>
             <div class="form-row">
+                <!-- NOTES -->
                 <div class="form-group col-md-6">
                     <label for="notes">Notes</label>
                     <textarea class="form-control" id="notes" rows="3" name="notes">{{player.notes}}</textarea>
                 </div>
+                <!-- PLAYER IMAGE -->
                 <div class="form-group col-md-6">
                     <label for="player_image">Player Image URL</label>
                     <input type="text" class="form-control" id="player_image" name="image" value="{{player.image}}">
                 </div>
             </div>
         </div>
+        <!-- BUTTONS -->
         <div class="row">
-        <div class="col-auto mr-auto">
-            <a type="button" href="{{ url_for('free_agent_details', player_id=player._id) }}" class="btn btn-danger form-buttons">
-                <i class="fas fa-times-circle"></i>
-                <span> Cancel</span>
-            </a>
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-success form-buttons">
-                <i class="fas fa-check-circle"></i>
-                <span> Submit Changes</span>
-            </button>
-        </div>
+            <div class="col-auto mr-auto">
+                <a type="button" href="{{ url_for('free_agent_details', player_id=player._id) }}" class="btn btn-danger form-buttons">
+                    <i class="fas fa-times-circle"></i>
+                    <span>Cancel</span>
+                </a>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success form-buttons">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Submit Changes</span>
+                </button>
+            </div>
         </div>
     </form>
 </div>
