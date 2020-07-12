@@ -1,29 +1,32 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <div class="container-fluid header-container">
-        <div class="row">
-            <div class="col-md-4">
-                <h1>{{team.name}} - Players</h1>
-                <p>Click View Player to go to the player's profile, where you can view, edit and delete their data</p>
+<!-- HEADER -->
+<div class="container-fluid header-container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>{{team.name}} - Players</h1>
+            <p>Click View Player to go to the player's profile, where you can view, edit and delete their data</p>
+        </div>
+        <div class="col-md-4">
+            <p class="player-list-text">Add a new player to this team:</p>
+            <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success">
+                <i class="fas fa-user-plus"></i>
+                Create a Player
+            </a>
             </div>
-            <div class="col-md-4">
-                <p class="player-list-text">Add a new player to this team:</p>
-                <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success">
-                    <i class="fas fa-user-plus"></i>  Create a Player
-                </a>
-            </div>
-            <div class="col-md-4">
-                <p class="player-list-text" >View players without a team:</p>
-                <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-light">
-                    <i class="far fa-user"></i> Free Agents
-                </a>
-            </div>
+        <div class="col-md-4">
+            <p class="player-list-text" >View players without a team:</p>
+            <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-light">
+                <i class="far fa-user"></i>
+                Free Agents
+            </a>
         </div>
     </div>
-    <div class="container-fluid table-container">
-        <table class="table table-striped table-light table-borderless table-sm" data-toggle="table">
-            <thead class="thead-dark">
+</div>
+<!-- PLAYER TABLE -->
+<div class="container-fluid table-container">
+    <table class="table table-striped table-light table-borderless table-sm" data-toggle="table">
+        <thead class="thead-dark">
             <tr>
                 <th scope="col"></th>
                 <th scope="col" data-sortable="true">#</th>
@@ -42,40 +45,40 @@
                 <th scope="col" data-sortable="true">Weight</th>
                 <th scope="col" data-sortable="true">Injured</th>
             </tr>
-            </thead>
-                <tbody>
-                {% for player in players %}
-                    <tr>
-                        <td>
-                            <a href="{{ url_for('player_details', player_id=player._id, team_id=team._id) }}" class="btn btn-primary">
-                                <i class="fas fa-search"></i>  View Player
-                            </a>
-                        </td>
-                        <td>{{player.shirt_number}}</td>
-                        <td>{{player.first_position}}</td>
-                        <td>{{player.first_name}}</td>
-                        <td>{{player.last_name}}</td>
-                        <td>{{player.nation}}</td>
-                        <td>{{player.attacking}}</td>
-                        <td>{{player.technique}}</td>
-                        <td>{{player.physical}}</td>
-                        <td>{{player.defending}}</td>
-                        <td>{{player.stamina}}</td>
-                        <td>{{player.speed}}</td>
-                        <td>{{player.foot}}</td>
-                        <td>{{player.height}}</td>
-                        <td>{{player.weight}}</td>
-                        <td>
-                        {% if player.is_injured == "Yes" %}
-                            Yes
-                        {% else %}
-                            No
-                        {% endif %}
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-        </table>
-    </div>
-        
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('player_details', player_id=player._id, team_id=team._id) }}" class="btn btn-primary">
+                     <i class="fas fa-search"></i>
+                     View Player
+                    </a>
+                </td>
+                <td>{{player.shirt_number}}</td>
+                <td>{{player.first_position}}</td>
+                <td>{{player.first_name}}</td>
+                <td>{{player.last_name}}</td>
+                <td>{{player.nation}}</td>
+                <td>{{player.attacking}}</td>
+                <td>{{player.technique}}</td>
+                <td>{{player.physical}}</td>
+                <td>{{player.defending}}</td>
+                <td>{{player.stamina}}</td>
+                <td>{{player.speed}}</td>
+                <td>{{player.foot}}</td>
+                <td>{{player.height}}</td>
+                <td>{{player.weight}}</td>
+                <td>
+                    {% if player.is_injured == "Yes" %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>     
 {% endblock %}
