@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <div class="container-fluid header-container">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>{{team.name}} - Line-up Creator</h1>
-            </div>
-            <div class="col-md-6">
+<div class="container-fluid header-container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>{{team.name}} - Line-up Creator</h1>
+        </div>
+        <div class="col-md-6">
             <form action="{{ url_for('update_formation', team_id=team._id)}}" method="POST">
-            <div class="row justify-content-center">
-                <div class="col-md-6">  
-                    <div class="form-group" id="formation-form">
-                        <label for="formation">Formation</label>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">  
+                        <div class="form-group" id="formation-form">
+                            <label for="formation">Formation</label>
                             <select class="form-control" id="formation" name="formation">
                                 {% for formation in formations %}
                                     {% if team.formation == formation.name %}
@@ -21,300 +20,290 @@
                                 {% endif %}
                                 {% endfor %}
                             </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="update-formation-btn" type="submit" class="btn btn-secondary">Update Formation</button>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <button id="update-formation-btn" type="submit" class="btn btn-secondary">Update Formation</button>
-                </div>
-            </div>
             </form>
-            </div>
         </div>
     </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 lineup">
-                <div class="row lineup" id="football_field">
-                    <div class="col lineup" >
-                        <div id="eleven" class="formation-position {{formation.eleven}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.eleven and team.eleven == player.string_id %}
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 lineup">
+            <div class="row lineup" id="football_field">
+                <div class="col lineup" >
+                    <div id="eleven" class="formation-position {{formation.eleven}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.eleven and team.eleven == player.string_id %}
                                 {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.eleven and team.eleven == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
-                            
+                            {% endif %}
+                        {% endfor %}
                         </div>
-                        <div id="ten" class="formation-position {{formation.ten}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.ten and team.ten == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.ten and team.ten == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
-                            
-                            
+                        {% for player in players %}
+                            {% if team.eleven and team.eleven == player.string_id %}
+                        <div>
+                            {{player.last_name}}
                         </div>
-                        <div id="nine" class="formation-position {{formation.nine}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.nine and team.nine == player.string_id %}
+                            {% endif %}
+                        {% endfor %}    
+                    </div>
+                    <div id="ten" class="formation-position {{formation.ten}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.ten and team.ten == player.string_id %}
                                 {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.nine and team.nine == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
-                            
+                            {% endif %}
+                        {% endfor %}
                         </div>
-                        <div id="eight" class="formation-position {{formation.eight}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.eight and team.eight == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.eight and team.eight == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
-                            
+                        {% for player in players %}
+                            {% if team.ten and team.ten == player.string_id %}
+                        <div>
+                            {{player.last_name}}
                         </div>
-                        <div id="seven" class="formation-position {{formation.seven}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.seven and team.seven == player.string_id %}
+                            {% endif %}
+                        {% endfor %}      
+                    </div>
+                    <div id="nine" class="formation-position {{formation.nine}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.nine and team.nine == player.string_id %}
                                 {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.seven and team.seven == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
-                            
+                            {% endif %}
+                        {% endfor %}
                         </div>
-                        <div id="six" class="formation-position {{formation.six}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.six and team.six == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.six and team.six == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
-                            
+                        {% for player in players %}
+                            {% if team.nine and team.nine == player.string_id %}
+                        <div>
+                            {{player.last_name}}
                         </div>
-                        <div id="five" class="formation-position {{formation.five}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.five and team.five == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.five and team.five == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
-                            
+                            {% endif %}
+                        {% endfor %}
                         </div>
-                        <div id="four" class="formation-position {{formation.four}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.four and team.four == player.string_id %}
+                    <div id="eight" class="formation-position {{formation.eight}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.eight and team.eight == player.string_id %}
                                 {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.four and team.four == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                         </div>
-                        <div id="three" class="formation-position {{formation.three}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.three and team.three == player.string_id %}
-                                {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.three and team.three == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
+                        {% for player in players %}
+                            {% if team.eight and team.eight == player.string_id %}
+                        <div>
+                            {{player.last_name}}
                         </div>
-                        <div id="two" class="formation-position {{formation.two}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.two and team.two == player.string_id %}
+                            {% endif %}
+                        {% endfor %}   
+                    </div>
+                    <div id="seven" class="formation-position {{formation.seven}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.seven and team.seven == player.string_id %}
                                 {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
-                            {% for player in players %}
-                                {% if team.two and team.two == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
-                                {% endif %}
-                            {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                         </div>
-                        <div id="one" class="formation-position {{formation.one}}">
-                            <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
-                            {% for player in players %}
-                                {% if team.one and team.one == player.string_id %}
+                        {% for player in players %}
+                            {% if team.seven and team.seven == player.string_id %}
+                        <div>
+                            {{player.last_name}}
+                        </div>
+                            {% endif %}
+                        {% endfor %} 
+                    </div>
+                    <div id="six" class="formation-position {{formation.six}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.six and team.six == player.string_id %}
                                 {{player.shirt_number}}
-                                {% endif %}
-                            {% endfor %}
-                            </div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        {% for player in players %}
+                            {% if team.six and team.six == player.string_id %}
+                        <div>
+                            {{player.last_name}}
+                        </div>
+                            {% endif %}
+                        {% endfor %}  
+                    </div>
+                    <div id="five" class="formation-position {{formation.five}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.five and team.five == player.string_id %}
+                                {{player.shirt_number}}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        {% for player in players %}
+                            {% if team.five and team.five == player.string_id %}
+                        <div>
+                            {{player.last_name}}
+                        </div>
+                            {% endif %}
+                        {% endfor %}    
+                    </div>
+                    <div id="four" class="formation-position {{formation.four}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.four and team.four == player.string_id %}
+                                {{player.shirt_number}}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        {% for player in players %}
+                            {% if team.four and team.four == player.string_id %}
+                        <div>
+                            {{player.last_name}}
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div id="three" class="formation-position {{formation.three}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.three and team.three == player.string_id %}
+                                {{player.shirt_number}}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        {% for player in players %}
+                            {% if team.three and team.three == player.string_id %}
+                        <div>
+                            {{player.last_name}}
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div id="two" class="formation-position {{formation.two}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.two and team.two == player.string_id %}
+                                {{player.shirt_number}}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        {% for player in players %}
+                            {% if team.two and team.two == player.string_id %}
+                        <div>
+                            {{player.last_name}}
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div id="one" class="formation-position {{formation.one}}">
+                        <div class="circle text-center" style="background-color: {{team.first_colour}}; border: 2px solid {{team.second_colour}}; color: {{team.second_colour}}">
+                        {% for player in players %}
+                            {% if team.one and team.one == player.string_id %}
+                                {{player.shirt_number}}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        {% for player in players %}
+                            {% if team.one and team.one == player.string_id %}
+                        <div>
+                            {{player.last_name}}
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div> 
+                </div>
+            </div>   
+        </div>
+        <div class="col-md-6 form-background">
+            <form action="{{ url_for('submit_lineup', team_id=team._id) }}" method="POST">
+                <div id="set-lineup" class="text-center">
+                    <button type="submit" class="btn btn-primary">Set line-up</button>
+                </div>
+                <div class="form-group row formation-select">
+                    <label for="eleven" class="col-sm-2 col-form-label text-center position-label">{{formation.eleven}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="eleven">
+                            <option>...</option>
                             {% for player in players %}
-                                {% if team.one and team.one == player.string_id %}
-                            <div>
-                                {{player.last_name}}
-                            </div>
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.eleven and team.eleven == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
                                 {% endif %}
                             {% endfor %}
-                        </div> 
+                        </select>
                     </div>
                 </div>
-                
-            </div>
-            <div class="col-md-6 form-background">
-                <form action="{{ url_for('submit_lineup', team_id=team._id) }}" method="POST">
-                    <div id="set-lineup" class="text-center">
-                        <button type="submit" class="btn btn-primary">Set line-up</button>
+                <div class="form-group row formation-select">
+                    <label for="ten" class="col-sm-2 col-form-label text-center position-label">{{formation.ten}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="ten">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.ten and team.ten == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
                     </div>
-                            <div class="form-group row formation-select">
-                                <label for="eleven" class="col-sm-2 col-form-label text-center position-label">{{formation.eleven}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="eleven">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.eleven and team.eleven == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="ten" class="col-sm-2 col-form-label text-center position-label">{{formation.ten}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="ten">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.ten and team.ten == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="nine" class="col-sm-2 col-form-label text-center position-label">{{formation.nine}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="nine">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.nine and team.nine == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="eight" class="col-sm-2 col-form-label text-center position-label">{{formation.eight}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="eight">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.eight and team.eight == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row formation-select">
-                                <label for="seven" class="col-sm-2 col-form-label text-center position-label">{{formation.seven}}</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="seven">
-                                        <option>...</option>
-                                        {% for player in players %}
-                                            {% if player.is_injured != "Yes" %}
-                                                {% if team.seven and team.seven == player.string_id %}
-                                                <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% else %}
-                                                <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
-                                                {% endif %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
+                </div>
+                <div class="form-group row formation-select">
+                    <label for="nine" class="col-sm-2 col-form-label text-center position-label">{{formation.nine}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="nine">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.nine and team.nine == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row formation-select">
+                    <label for="eight" class="col-sm-2 col-form-label text-center position-label">{{formation.eight}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="eight">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.eight and team.eight == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row formation-select">
+                    <label for="seven" class="col-sm-2 col-form-label text-center position-label">{{formation.seven}}</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="seven">
+                            <option>...</option>
+                            {% for player in players %}
+                                {% if player.is_injured != "Yes" %}
+                                    {% if team.seven and team.seven == player.string_id %}
+                                        <option value="{{player._id}}" selected>{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% else %}
+                                        <option value="{{player._id}}">{{player.shirt_number}}. {{player.last_name}}</option>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
                             <div class="form-group row formation-select">
                                 <label for="six" class="col-sm-2 col-form-label text-center position-label">{{formation.six}}</label>
                                 <div class="col-sm-10">
