@@ -1,32 +1,30 @@
 {% extends 'base.html' %}
-
 {% block content %}
+<!-- HEADER -->
 <div class="container header-container">
     <h1>{% if player.shirt_number %}
             {{player.shirt_number}}.
         {% endif %}
-        {{player.first_name}} {{player.last_name}} - Player Profile</h1>
+        {{player.first_name}} {{player.last_name}} - Player Profile
+    </h1>
 </div>
+<!-- PROFILE CONTAINER -->
 <div class="container form-container">
     <div class="form-background box-shadow">
         <div class="row">
             <div class="col-md-6">
                 <div>
+                    <!-- PLAYER IMAGE -->
                     <img src="{{player.image}}" alt="Player Image" class="card-img-top player-image">
                 </div>
             </div>
             <div class="col-md-6 player-info">
+                <!-- PLAYER INFO LIST -->
                 <ul>
-                    <li>Team: 
-                            <span class="larger-font">none</span>
-                    </li>
-                    <li>Nation:
-                        <span class="larger-font">{{player.nation}}</span>
-                    </li>
-                    <li>Age:
-                        <span class="larger-font">{{player.age}}</span>
-                    </li>
-                    <li>Height:
+                    <li>Team: <span class="larger-font">none</span></li>
+                    <li>Nation: <span class="larger-font">{{player.nation}}</span></li>
+                    <li>Age: <span class="larger-font">{{player.age}}</span></li>
+                    <li>Height: 
                         {% if player.height %}
                         <span class="larger-font">{{player.height}}cm</span>
                         {% endif %}
@@ -36,15 +34,9 @@
                         <span class="larger-font">{{player.weight}}kg</span>
                         {% endif %}
                     </li>
-                    <li>Best Position:
-                        <span class="larger-font">{{player.first_position}}</span>
-                    </li>
-                    <li>Alt Position:
-                        <span class="larger-font">{{player.second_position}}</span>
-                    </li>
-                    <li>Preferred foot:
-                        <span class="larger-font">{{player.foot}}</span>
-                    </li>
+                    <li>Best Position: <span class="larger-font">{{player.first_position}}</span></li>
+                    <li>Alt Position: <span class="larger-font">{{player.second_position}}</span></li>
+                    <li>Preferred foot: <span class="larger-font">{{player.foot}}</span></li>
                     <li>Injured: 
                     {% if player.is_injured == "Yes" %}
                         <span class="larger-font">Yes</span>
@@ -55,6 +47,7 @@
                 </ul>
             </div>
         </div>
+        <!-- PLAYER ATTRIBUTES -->
         <div class="row">
             <div class="col-md-2 col-sm-4">
                 <div>
@@ -93,6 +86,7 @@
                 </div>
             </div>
         </div>
+        <!-- PLAYER NOTES -->
         <div class="row">
             <div class="col-md-12">
                 <div>
@@ -102,17 +96,18 @@
             </div>
         </div>
     </div>
-<div class="row">
+    <!-- BUTTONS -->
+    <div class="row">
         <div class="col-md-4">
             <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-danger form-buttons">
                 <i class="fas fa-caret-left"></i>
-                <span> Back to Free Agents</span>
+                <span>Back to Free Agents</span>
             </a>
         </div>
         <div class="col-md-4">
             <a type="button" href="{{ url_for('free_agent_edit', player_id=player._id) }}" class="btn btn-secondary form-buttons">
                 <i class="fas fa-user-cog"></i>
-                <span> Edit Player</span>
+                <span>Edit Player</span>
             </a>
         </div>
         <div class="col-md-4">
@@ -123,37 +118,38 @@
         </div>
     </div>
 </div>
-    <div class="modal fade" id="deletePlayerModal" tabindex="-1" role="dialog" aria-labelledby="deletePlayerModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deletePlayerModalLabel">Delete player {{player.first_name}} {{player.last_name}}?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Do you really want to delete player {{player.first_name}} {{player.last_name}}? This cannot be undone!</p>
-      </div>
-      <div class="modal-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-auto mr-auto">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">
-                        <i class="fas fa-times-circle"></i>
-                        <span> No, go back!</span>
-                    </button>
-                </div>
-                <div class="col-auto">
-                    <a type="button" href="{{ url_for('delete_player', player_id=player._id) }}" class="btn btn-success">
-                        <i class="fas fa-trash-alt"></i>    
-                        <span> Yes, delete!</span>
-                    </a>
+<!-- MODAL -->
+<div class="modal fade" id="deletePlayerModal" tabindex="-1" role="dialog" aria-labelledby="deletePlayerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePlayerModalLabel">Delete player {{player.first_name}} {{player.last_name}}?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete player {{player.first_name}} {{player.last_name}}? This cannot be undone!</p>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-auto mr-auto">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times-circle"></i>
+                                <span> No, go back!</span>
+                            </button>
+                        </div>
+                        <div class="col-auto">
+                            <a type="button" href="{{ url_for('delete_player', player_id=player._id) }}" class="btn btn-success">
+                                <i class="fas fa-trash-alt"></i>    
+                                <span> Yes, delete!</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 {% endblock %}
