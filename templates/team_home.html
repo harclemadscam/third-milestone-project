@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
-
 {% block content %}
+<!-- HEADER -->
 <div class="container header-container">
     <img src="{{team.emblem}}" alt="" class="img-thumbnail medium-thumb">
     <h1>{{team.name}} - Home</h1>
 </div>
+<!-- NAV BUTTONS -->
 <div class="container home-background">
     <div class="row">
+        <!-- VIEW PLAYER LIST -->
         <div class="col-md-4">
             <a type="button" href="{{ url_for('player_list', team_id=team._id) }}" class="btn btn-primary home-button">
                 <span class="large-icon"><i class="far fa-list-alt"></i></span>
@@ -14,6 +16,7 @@
             </a>
             <p class="text-center">View the players of {{team.name}}</p>
         </div>
+        <!-- CREATE A PLAYER -->
         <div class="col-md-4">
             <a type="button" href="{{ url_for('player_create', team_id=team._id) }}" class="btn btn-success home-button">
                 <span class="large-icon"><i class="fa fa-user-plus"></i></span>
@@ -21,6 +24,7 @@
             </a>
             <p class="text-center">Add a new player to {{team.name}}</p>
         </div>
+        <!-- EDIT TEAM LINEUP -->
         <div class="col-md-4">
             <a type="button" href="{{ url_for('lineup', team_id=team._id) }}" class="btn btn-info home-button">
                 <span class="large-icon"><i class="fas fa-futbol"></i></span>
@@ -30,6 +34,7 @@
         </div>
     </div>
     <div class="row">
+        <!-- EDIT TEAM DETAILS -->
         <div class="col-md-4">
             <a type="button" href="{{ url_for('team_edit', team_id=team._id) }}" class="btn btn-secondary home-button">
                 <span class="large-icon"><i class="fas fa-users-cog"></i></span>
@@ -37,6 +42,7 @@
             </a>
             <p class="text-center">Update team information or delete the team</p>
         </div>
+        <!-- VIEW FREE AGENTS -->
         <div class="col-md-4">
             <a type="button" href="{{ url_for('free_agents') }}" class="btn btn-light home-button">
                 <span class="large-icon"><i class="far fa-user"></i></span>
@@ -44,6 +50,7 @@
             </a>
             <p class="text-center">Free Agents are players without a team. Assign them to a team by editing their profile</p>
         </div>
+        <!-- SELECT A DIFFERENT TEAM -->
         <div class="col-md-4">
             <a type="button" href="{{ url_for('team_select') }}" class="btn btn-warning home-button">
                 <span class="large-icon"><i class="fas fa-sign-out-alt"></i></span>
