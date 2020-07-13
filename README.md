@@ -125,10 +125,17 @@ My full testing documentation can be found in the testing folder, which can be f
 
 ## Deployment
 The project was coded in the GitPod IDE. I had previously installed the GitPod browser extension, which allows you to create a GitPod workspace with the click of a button in GitHub.
-I first created a new repository in GitHub and then created the GitPod workspace, where I coded the project. 
-I used Git within GitPod for version control, with all commits being pushed to the linked GitHub repository. As I was not working on a live website and I was the sole developer, I used only the master branch.
+I first created a new repository in GitHub, using the Code Institute’s full GitPod template, then clicked the GitPod button to launch a GitPod workspace from that repository. I used
+Git within GitPod for version control, with all commits being pushed to the linked GitHub repository.
 
-To publish my website in GitHub, I used GitHub Pages from the settings of my repository. After selecting the master branch as the source, my website project can be found here: <https://harclemadscam.github.io/second-milestone-project/>
+To deploy a live version of the site, I used Heroku. I created a new app in Heroku called football-squad-manager, and linked my newly created GitHub repository to the app from the
+“Deploy” section of Heroku.  A Procfile is a requirement for Heroku, so I created one using the “echo web: python app.py > Procfile” command in my workspace terminal. In addition, I had
+to set values for IP and PORT as Heroku config vars. Once that was in place, I switched on “Automatic deploys”, meaning that every push to my GitHub repository master branch automatically
+deployed to Heroku and updated the live version of the app.  The app is live [here](http://football-squad-manager.herokuapp.com/).
+
+To keep my MongoDB URI and password secret and not accessible from the deployed version, the development version is different to the deployed version. In the deployed version, this
+information is stored as Heroku config vars. In the development version, I created a second Python file called “env.py” to store the information as environment variables. The “app.py”
+file checks if this “env” file exists and if it does, imports it. The “env.py” file is not pushed to GitHub and only exists in the development workspace.
 
 ## Credits
 ### Content
