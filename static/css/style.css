@@ -117,6 +117,10 @@ th, td {
     margin-bottom: 1rem;
 }
 
+.modal-button {
+    margin-top: 2rem;
+}
+
 /* THUMBNAIL CLASSES */
 .small-thumb {
     height: 2rem;;
