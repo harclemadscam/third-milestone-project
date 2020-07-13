@@ -47,9 +47,10 @@ best position, second position, injured, attacking, technique, physical, defendi
 * User authentication could be implemented to limit which teams and players a user can view, edit or delete. Teams and players could be made private for certain users.
 * More values could be added to players and teams to allow for greater customisation.
 * Free Agents cannot currently be edited without assigning them to a team, so a method of editing them without doing so could be created.
-* More features related to football could be added, like stadiums and training.
+* More features related to football could be added, like stadiums, contracts and training.
 * Currently only one line-up can be saved, so a feature to save more than one could be added.
 * The ability to search for players and teams to find data more easily.
+* Improvements to the visuals. The inclusion of an favicon. A different title for each page.
 * More formations could be added to the database for teams to select. To do so the following is required:
   * The formation must be saved to the formations collection in MongoDB.
   * It must be given a name value, this is displayed to the user.
